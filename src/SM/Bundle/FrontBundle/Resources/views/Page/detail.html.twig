@@ -1,0 +1,27 @@
+{% extends 'SMFrontBundle::layout.home.html.twig' %}
+{% block title %}{{ entity.getName|raw }}{% endblock %}
+{% block body%}
+    <div class="newsCategory defaultTitle">
+        <h1>{{ entity.getName|raw }}</h1>
+    </div>
+
+    <div class="defaultContent newsList">
+        <table cellspacing="0" cellpadding="0" class="newsList_Item">
+            <tbody>
+                <tr>
+                    <td class="newsList_Content">
+                        <div>
+                            <span class="newsList_Summary">
+                                {{ entity.getIntro|raw }}
+                                {{ entity.getDescription|raw }}
+                            </span>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="clear defaultFooter newsList-footer"><div></div></div>
+    <div class="clear"></div>
+{% endblock %}

@@ -1,0 +1,9 @@
+<h3 class="title-3">{{ 'Register to get product'|trans({}, 'SMFrontBundle') }}</h3>
+<form class="registration-product-frm" id="registration-product-frm" action="{{path('sm_front_send_email')}}" method="post">
+  <label for="email">{{ 'Inputting a email that to recieve new and sale product'|trans({}, 'SMFrontBundle') }}.</label>
+  <div class="input-content">
+    <input type="text" class="input-1" id="email" name="email" />
+    <button type="button" name="send-btn" id="send-btn">{{'Send'|trans({}, 'SMFrontBundle') }}</button>
+  </div>
+  <div id="notice-ajax" style="display: none; float: inside;"><img src="/web/front/images/loading.gif" width="20" height="20">{{ 'Loading'|trans({}, 'SMFrontBundle') }}</div>
+</form>

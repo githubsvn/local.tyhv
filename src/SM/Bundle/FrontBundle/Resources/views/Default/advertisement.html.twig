@@ -1,0 +1,10 @@
+<div class="block advertise-block">
+<h2 class="title-1">{{ 'Advertisement'|trans({}, 'SMFrontBundle') }}</h2>
+<ul>
+    {% if entities|length > 0%}
+        {% for img in entities %}
+        <li><a href="{{ img.getLink }}" title="" target="_blank"><img src="{{ asset(path ~ img.getName) }}" alt="" width="190" height="130"/></a></li>
+        {% endfor %}
+    {% endif%}
+</ul>
+</div>

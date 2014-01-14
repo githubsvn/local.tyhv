@@ -1,0 +1,13 @@
+<nav>
+<h2 class="title-1">{{ 'Menu Product'|trans({}, 'SMFrontBundle') }}</h2>
+<ul>
+    {% if entities|length > 0%}
+        {% for entity in entities %}
+            {% if entity.getCurrentLanguage is not null %}
+                {% set mnu = urlHost ~ '/product/view-branch/1/' ~ mtxbuildurl(entity.id, entity.getCurrentLanguage.getName) %}
+                <li class="{{mtxactivemenu(mnu, currentUrl)}}"><a href="{{urlHost}}/product/view-branch/1/{{mtxbuildurl(entity.id, entity.getCurrentLanguage.getName)}}" title="{{entity.getCurrentLanguage.getName}}">{{entity.getCurrentLanguage.getName}}</a></li>
+            {% endif %}
+        {% endfor %}
+    {% endif%}
+</ul>
+</nav>

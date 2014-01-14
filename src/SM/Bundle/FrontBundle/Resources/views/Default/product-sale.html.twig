@@ -1,0 +1,18 @@
+{% if entities|length  > 0%}
+    <div class="block sale-block">
+        <h2 class="title-1">{{ 'Promotion Product'|trans({}, 'SMFrontBundle') }}</h2>
+        <ul>
+            {% for ent in entities %}
+                <a href="{{ path('sm_front_view_product_detail', { 'slug': mtxbuildurl(ent.product.id, ent.name) }) }}" title="{{ mtxgetteaser(ent.name)|raw }}">
+                    {% if ent.product.thumb  > 0%}
+                        <img src="{{ asset(uploadPath ~ ent.product.thumb) }}" alt="{{ mtxgetteaser(ent.name, countWordProductTitle)|raw }}" width="127" height="101"/>
+                    {% else %}
+                        <img src="{{asset('/web/front/images/no-image.jpg')}}" alt="#" width="127" height="101"/>
+                    {% endif %}
+                    <h3>{{ mtxgetteaser(ent.name, countWordProductTitle)|raw }}</h3>
+                    {{ent.intro|raw}}
+                </a>
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}

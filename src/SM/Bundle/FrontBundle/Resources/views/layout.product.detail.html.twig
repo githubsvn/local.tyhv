@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html lang="en" class="no-js ie ie8"><![endif]-->
+<!--[if IE 9]><html lang="en" class="no-js ie ie9"><![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en" class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}{{ 'Product'|trans({}, 'SMFrontBundle') }}{% endblock %}</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=1300">
+    <link rel="shortcut icon" href="{{ asset('web/front/images/favicon.ico') }}" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('web/front/images/apple-touch-icon-57x57.png') }}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('web/front/images/apple-touch-icon-72x72.png') }}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('web/front/images/apple-touch-icon-114x114.png') }}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('web/front/images/apple-touch-icon-144x144.png') }}">
+    <!-- build:css css/style.min.css-->
+    <link rel="stylesheet" href="{{ asset('web/front/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('web/front/css/custom.css') }}">
+    <!-- endbuild-->
+    <!-- build:js js/modernizr.min.js-->
+    <script src="{{ asset('web/front/js/modernizr.js') }}"></script>
+    <!-- endbuild-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="inner">
+        <div id="container">
+          <header id="header">
+            <!-- BEGIN HEADER -->
+            {% render 'SMFrontBundle:Default:header' %}
+            <!-- END HEADER -->
+          </header>
+          <div class="inner">
+            <section class="specialty-page specialty-detail">
+              <aside class="sidebar-left">
+                <!-- BEGIN MENU LEFT -->
+                {% render 'SMFrontBundle:Default:leftMenu' %}
+                <!-- END MENU LEFT -->
+
+                <!-- BEGIN GIA CA THI TRUONG -->
+                {% render 'SMFrontBundle:Default:pricesMarket' %}
+                <!-- END GIA CA THI TRUONG -->
+
+                <!-- BEGIN SAN PHAM KHUYEN MAI-->
+                {% render 'SMFrontBundle:Default:saleProduct' %}
+                <!-- END SAN PHAM KHUYEN MAI-->
+
+                <div class="block contact-block">
+                  <!-- BEGIN SUPPORT-->
+                  {% render 'SMFrontBundle:Default:support' %}
+                  <!-- END SUPPORT-->
+
+                  <!-- BEGIN REGISTER TO GET PRODUCT -->
+                  {% render 'SMFrontBundle:Default:registerGetProduct' %}
+                  <!-- END REGISTER TO GET PRODUCT -->
+                </div>
+
+                <!-- BEGIN COUNTER -->
+                {% render 'SMFrontBundle:Default:counter' %}
+                <!-- END COUNTER -->
+              </aside>
+  
+              <section class="main-content">
+                <section id="main">
+                    <!-- BEGIN BODY -->
+                    {% block body%}{% endblock %}
+                    <!-- END BODY -->
+                </section>
+              </section>
+            </section>          
+            </div>
+        </div>
+        
+        {% render 'SMFrontBundle:Default:feedback' %}
+        
+        <!-- BEGIN FOOTER -->
+        {% render 'SMFrontBundle:Default:footer' %}
+        <!-- END FOOTER -->
+      </div>
+    </div>
+    
+      <!-- build:js js/libs.min.js-->
+    <script src="{{ asset('web/front/js/libs.js') }}"></script>
+    <!-- endbuild-->
+    <!-- build:js js/l10n.min.js-->
+    <script src="{{ asset('web/front/js/l10n.js') }}"></script>
+    <!-- endbuild-->
+    <!-- build:js js/plugins.min.js-->
+    <script src="{{ asset('web/front/js/plugins.js') }}"></script>
+    <script src="{{ asset('web/front/js/jquery.mousewheel.js') }}"></script>
+    <script src="{{ asset('web/front/js/jquery.flexslider.js') }}"></script>
+    <script src="{{ asset('web/front/js/bootstrap.js') }}"></script>
+    <!-- endbuild-->
+    <!-- build:js js/start.min.js-->
+    <script src="{{ asset('web/front/js/start.js') }}"></script>
+    <script src="{{ asset('web/front/js/custom.js') }}"></script>
+    <!-- endbuild-->
+  </body>
+</html>

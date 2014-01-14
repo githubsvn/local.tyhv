@@ -1,0 +1,17 @@
+.noProduct {
+    padding-left: 18px;
+    padding-bottom: 10px;
+}
+
+.detail-img-logo {
+    float: left;
+    margin-right: 13px;
+    position: relative;
+}
+
+.detail-img-news {
+    display: block;
+    height: 196px;
+    overflow: hidden;
+    width: 250px;
+}

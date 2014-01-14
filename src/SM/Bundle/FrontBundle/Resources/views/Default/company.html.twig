@@ -1,0 +1,31 @@
+<div class="block">
+    <div class="title-2">
+        <div class="inner">
+            <h2><span><span>{{ 'Logo Company'|trans({}, 'SMFrontBundle') }}</span></span></h2>
+<!--            <a href="{{ path('sm_front_company_view_all') }}" title="Xem thêm" class="readmore">Xem thêm</a>-->
+        </div>
+    </div>
+    <div class="thumbnails-1">
+        <ul>
+            {% if entities|length  > 0%}
+                {% for ent in entities %}
+                <li>
+                    <a href="{{ path('sm_front_company_detail', { 'slug': mtxbuildurl(ent.company.id, ent.name) }) }}" title="{{ mtxgetteaser(ent.name)|raw }}">
+                        <a href="{{ path('sm_front_company_detail', { 'slug': mtxbuildurl(ent.company.id, ent.name) }) }}" title="{{ mtxgetteaser(ent.name)|raw }}">
+                            <span class="wi-frame wi-frame-1">
+                                <span>
+                                    <span>
+                                        <img title="{{ mtxgetteaser(ent.name)|raw }}"
+                                            alt="{{ mtxgetteaser(ent.name)|raw }}" 
+                                            src="{{asset(uploadPath ~ ent.company.thumb)}}"/>
+                                    </span>
+                                </span>
+                            </span>
+                        <h3>{{ mtxgetteaser(ent.name)|raw }}</h3>
+                    </a>
+                </li>
+                {% endfor %}
+            {% endif %}
+        </ul>
+    </div>
+</div>

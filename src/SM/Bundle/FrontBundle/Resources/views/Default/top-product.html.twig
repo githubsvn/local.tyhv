@@ -1,0 +1,79 @@
+<div class="block">
+    <div class="title-2">
+      <div class="inner">
+        <h2><span><span>{{ 'Newest Product'|trans({}, 'SMFrontBundle') }}</span></span></h2>
+<!--        <a href="#" title="{{ 'View more'|trans({}, 'SMFrontBundle') }}" class="readmore">{{ 'View more'|trans({}, 'SMFrontBundle') }}</a>-->
+      </div>
+    </div>
+    <div class="highlight">
+      {% if topEnt is not null %}
+            <article>
+            <a href="{{ path('sm_front_view_product_detail', { 'slug': mtxbuildurl(topEnt.product.id, topEnt.name) }) }}" title="{{ mtxgetteaser(topEnt.name, countWordProductTitle)|raw }}" class="img-thumb">
+                <span>
+                {% if topEnt.product.thumb  > 0%}
+                        <img src="{{ asset(uploadPath ~ topEnt.product.thumb) }}" alt="{{ mtxgetteaser(topEnt.name, countWordProductTitle)|raw }}" width="250" height="196"/>
+                    {% else %}
+                        <img src="{{asset('/web/front/images/no-image.jpg')}}" alt="#" width="250" height="196"/>
+                    {% endif %}
+                </span>
+            </a>
+            <div class="content">
+              <h3><a href="{{ path('sm_front_view_product_detail', { 'slug': mtxbuildurl(topEnt.product.id, topEnt.name) }) }}" title="{{topEnt.name}}">{{topEnt.name}}</a></h3>
+              <div class="desc">
+                <p>{{ mtxgetteaser(topEnt.description)|raw }}
+        <!--            <a href="{{ path('sm_front_view_product_detail', { 'slug': mtxbuildurl(topEnt.product.id, topEnt.name) }) }}" title="{{ 'View more'|trans({}, 'SMFrontBundle') }}">[...]</a>-->
+                </p>
+              </div>
+            </div>
+            </article>
+        {% endif %}
+    </div>
+    <div class="thumbnails">
+      <ul>
+          {% if entities|length  > 0%}
+            {% for ent in entities %}
+                <li>
+                    {% if ent.product.thumb  > 0%}
+                        <a href="javascript:void(0);" 
+                            class="img-thumb"
+                            data-html="true"
+                            data-toggle="popover"
+                            data-content="<img src='{{ asset(uploadPath ~ ent.product.thumb) }}' alt='{{ mtxgetteaser(ent.name)|raw }}'/>
+                             <span class='title'>{{ mtxgetteaser(ent.name)|raw }}</span>
+                             <div class='content'>{{ mtxgetteaser(ent.description)|raw }}
+                             </div>">
+                             <span>
+                                 <img src="{{ asset(uploadPath ~ ent.product.thumb) }}" alt="{{ mtxgetteaser(ent.name, countWordProductTitle)|raw }}"/>
+                             </span>
+                            <a href="{{ path('sm_front_view_product_detail', { 'slug': mtxbuildurl(ent.product.id, ent.name) }) }}" title="{{ mtxgetteaser(ent.name)|raw }}">
+                                <strong class="title">
+                                    {{ mtxgetteaser(ent.name, countWordProductTitle)|raw }}
+                                </strong>
+                            </a>
+                        </a>
+                    {% else %}
+                        <a href="javascript:void(0);" 
+                            class="img-thumb" 
+                            data-html="true" 
+                            data-toggle="popover" 
+                            data-content="<img src='{{asset('/web/front/images/no-image.jpg')}}' alt='{{ mtxgetteaser(ent.name)|raw }}' />
+                             <span class='title'>{{ mtxgetteaser(ent.name)|raw }}</span>
+                             <div class='content'>{{ mtxgetteaser(ent.description)|raw }}
+                             </div>">
+                             <span>
+                                <img src="{{asset('/web/front/images/no-image.jpg')}}" alt="#" width="157" height="104"/>
+                             </span>
+                             <a href="{{ path('sm_front_view_product_detail', { 'slug': mtxbuildurl(ent.product.id, ent.name) }) }}" title="{{ mtxgetteaser(ent.name)|raw }}">
+                                 <strong class="title">
+                                    {{ mtxgetteaser(ent.name, countWordProductTitle)|raw }}
+                                 </strong>
+                             </a>
+                        </a>
+                    {% endif %}
+                </li> 
+            {% endfor %}
+          {% endif %}
+      </ul>
+<!--      <a href="#" title="Xem thêm" class="wi-icon wi-icon-3">Xem thêm</a>-->
+    </div>
+  </div>

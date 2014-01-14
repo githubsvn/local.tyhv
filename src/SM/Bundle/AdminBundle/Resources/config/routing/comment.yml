@@ -1,0 +1,37 @@
+admin_comment:
+    pattern:  /{product}/{page}/{lang}
+    defaults: { _controller: "SMAdminBundle:Comment:index", product: null, page : 1, lang : null }
+    requirements:
+        product: \d+
+        page:  \d+
+        lang:  \d+
+
+admin_comment_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "SMAdminBundle:Comment:show" }
+
+admin_comment_change_status:
+    pattern:  /change-status/{product}/{id}/{status}
+    defaults: { _controller: "SMAdminBundle:Comment:changeStatus" }
+    requirements:
+        status: \d+
+        product: \d+
+
+admin_comment_change_status_all:
+    pattern:  /change-status-all/{product}/{status}
+    defaults: { _controller: "SMAdminBundle:Comment:changeStatusAll" }
+    requirements: 
+        _method: post
+        status: \d+
+        product: \d+
+        
+
+admin_comment_delete:
+    pattern:  /delete/{id}/{product}
+    defaults: { _controller: "SMAdminBundle:Comment:delete" }
+    requirements: { _method: post|get }
+
+admin_comment_delete_all:
+    pattern:  /deleteall/{product}
+    defaults: { _controller: "SMAdminBundle:Comment:deleteAll" }
+    requirements: { _method: post }

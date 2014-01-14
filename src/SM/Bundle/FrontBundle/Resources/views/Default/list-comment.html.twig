@@ -1,0 +1,50 @@
+<div class="view-comments">
+  <h3>{{ 'Comment of custommer'|trans({}, 'SMFrontBundle') }}</h3>
+  <ul>
+      {% if entities|length  > 0%}
+        {% for ent in entities %}
+            <li>
+                <div class="heading-1">
+                  <div class="star">
+                    <img src="/web/front/images/star-active.png" alt="" />
+                    <img src="/web/front/images/star-active.png" alt="" />
+                    <img src="/web/front/images/star-active.png" alt="" />
+                    <img src="/web/front/images/star-active.png" alt="" />
+                    <img src="/web/front/images/star.png" alt="" />
+                  </div>
+                  <h4>{{ ent.title }}</h4>
+                </div>
+                <h5>{{ ent.name }} <span class="time">{{ ent.comment.getUpdatedAt|date("m/d/Y")}}</span></h5>
+                <div class="desc">
+                  <p>{{ ent.content }}</p>
+                </div>
+              </li>
+        {% endfor %}
+      {% endif %}
+  </ul>
+</div>
+    
+    {% if totalPage > perPage %}
+        <div class="paging">
+            <span>{{ 'Page'|trans({}, 'SMFrontBundle') }} {{currentPage}} / {{totalPage}}</span>
+            <ul>
+                <li class="prev-btn"><a class="wi-icon wi-icon-10" href="{{ path('sm_front_list_comment', { 'page': previousPage }) }}" title="<<"><<</a></li>
+                {% set start = startPageOfCurrentRange + perPage - 1%}
+                {% set classActive = ''%}
+                {% set style = ''%}
+                {% for i in startPageOfCurrentRange..start %}
+                    {% if i == currentPage %}
+                        {% set classActive = 'active'%}
+                    {% else %}
+                        {% set classActive = ''%}
+                    {% endif %}
+
+                    {% if i <= totalPage %}
+                    <li class="{{classActive}}"><a href="{{ path('sm_front_list_comment', { 'page': i }) }}">{{i}}</a></li>
+                    {% endif %}
+                {% endfor %}
+                <li class="next-btn"><a class="wi-icon wi-icon-11" href="{{ path('sm_front_list_comment', { 'page': nextPage }) }}" title=">>">>></a></li>
+            </ul>
+        </div>
+    {% endif %}
+</div>

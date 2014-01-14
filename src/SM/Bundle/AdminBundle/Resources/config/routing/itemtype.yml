@@ -1,0 +1,45 @@
+admin_itemtype:
+    pattern:  /{page}/{lang}
+    defaults: { _controller: "SMAdminBundle:ItemType:index", page : 1, lang : null }
+    requirements:
+        page:  \d+
+        lang:  \d+
+admin_itemtype_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "SMAdminBundle:ItemType:show" }
+
+admin_itemtype_new:
+    pattern:  /new
+    defaults: { _controller: "SMAdminBundle:ItemType:new" }
+
+admin_itemtype_create:
+    pattern:  /create
+    defaults: { _controller: "SMAdminBundle:ItemType:create" }
+    requirements: { _method: post }
+
+admin_itemtype_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "SMAdminBundle:ItemType:edit" }
+
+admin_itemtype_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "SMAdminBundle:ItemType:update" }
+    requirements: { _method: post }
+
+admin_itemtype_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "SMAdminBundle:ItemType:delete" }
+    requirements: { _method: post|get }
+
+admin_itemtype_up:
+    pattern:  /up/{id}
+    defaults: { _controller: "SMAdminBundle:ItemType:up" }
+
+admin_itemtype_down:
+    pattern:  /down/{id}
+    defaults: { _controller: "SMAdminBundle:ItemType:down" }
+
+admin_itemtype_delete_all:
+    pattern:  /deleteall
+    defaults: { _controller: "SMAdminBundle:ItemType:deleteAll" }
+    requirements: { _method: post }

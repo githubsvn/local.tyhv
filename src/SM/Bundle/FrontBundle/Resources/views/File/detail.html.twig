@@ -1,0 +1,66 @@
+{% extends 'SMFrontBundle::layout.home.html.twig' %}
+{% block title %}{{ entity.getName|raw }}{% endblock %}
+{% block body%}
+    <div class="newsCategory defaultTitle">
+        <h1>{{ entity.getName|raw }}</h1>
+    </div>
+    <div class="defaultContent newsList">
+        <div class="Block newsDetail_Content Clear">
+            <table cellspacing="0" cellpadding="0" class="newsList_Item">
+                <tbody>
+                    <tr>
+                        <td class="newsList_Image" style="padding-top: 10px;">
+                            <a href="{{ path('sm_front_view_news_detail', { 'slug': mtxbuildurl(entity.id, entity.name) }) }}" title="{{ entity.name|raw }}">
+                                {% if entity.news.image != '' %}
+                                    <img src="{{asset(dir ~ entity.news.image)}}" alt="" class="sizeNewsImage" />
+                                {% else %}
+                                    <img src="{{asset(dir ~ 'no-image.jpg')}}" alt="" class="sizeNewsImage"/>
+                                {% endif %}
+                            </a>
+                        </td>
+                        <td class="newsList_Content">
+                            <div>
+                                <a title="{{ entity.name|raw }}" class="newsList_Title" href="{{ path('sm_front_view_news_detail', { 'slug': mtxbuildurl(entity.id, entity.name) }) }}"/>
+                                {{ entity.name|raw }}
+                                </a>
+                            </div>
+                            <div>
+                                <span class="newsList_Summary">
+                                    {{ entity.getIntro|raw }}
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">{{ entity.getDescription|raw }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        
+            <div class="newsDetail_OrtherNews">
+                <div class="newsDetail_OrtherNews_Label">{{ 'Other news'|trans({}, "SMFrontBundle") }}</div>
+                <div class="newsDetail_OtherNews_List">
+                    {% for ent in newsLastest %}
+                        <div>
+                            <a class="newsDetail_OrtherNews_Link" href="{{ path('sm_front_view_news_detail', { 'slug': mtxbuildurl(ent.id, ent.name) }) }}" title="{{ ent.name|raw }}">
+                                <span>{{ ent.name|raw}}</span>
+                            </a>
+                        </div>
+                    {% endfor %}
+                    {% for ent in newsOldest %}
+                        <div>
+                            <a class="newsDetail_OrtherNews_Link" href="{{ path('sm_front_view_news_detail', { 'slug': mtxbuildurl(ent.id, ent.name) }) }}" title="{{ ent.name|raw }}">
+                                <span>{{ ent.name|raw}}</span>
+                            </a>
+                        </div>
+                    {% endfor %}
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="clear defaultFooter newsList-footer"></div>
+    <div class="clear"></div>
+    
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends 'SMFrontBundle::layout.company.html.twig' %}
+{% block title %}{{ 'Logo Company'|trans({}, 'SMFrontBundle') }}{% endblock %}
+{% block body%}
+<div class="block">
+<div class="title-2">
+  <div class="inner">
+    <h2><span><span>{{ 'Logo Company'|trans({}, 'SMFrontBundle') }}</span></span></h2>
+  </div>
+</div>
+    
+<div class="thumbnails-1">
+  <ul>
+      {% if entities|length  > 0%}
+        {% for ent in entities %}
+            <li>
+                <a href="{{ path('sm_front_company_detail', { 'slug': mtxbuildurl(ent.company.id, ent.name) }) }}" title="{{ mtxgetteaser(ent.name)|raw }}">
+                <a href="{{ path('sm_front_company_detail', { 'slug': mtxbuildurl(ent.company.id, ent.name) }) }}" title="{{ mtxgetteaser(ent.name)|raw }}">
+                    <span class="wi-frame wi-frame-1">
+                        <span>
+                            <span>
+                                {% if ent.company.thumb  != '' %}
+                                    <img src="{{ asset(uploadPath ~ ent.company.thumb) }}" alt="{{ mtxgetteaser(ent.name, countWordProductTitle)|raw }}"/>
+                                {% else %}
+                                    <img src="{{asset('/web/front/images/no-image.jpg')}}" alt="{{ mtxgetteaser(ent.name, countWordProductTitle)|raw }}"/>
+                                {% endif %}
+                            </span>
+                        </span>
+                    </span>
+                    <h3>{{ mtxgetteaser(ent.name, countWordProductTitle)|raw }}</h3>
+                </a>
+            </li>
+        {% endfor %}
+      {% else %}
+            <div class="noProduct">{{ 'No data was be found'|trans({}, 'SMFrontBundle') }}</div>
+      {% endif %}
+  </ul>
+</div>
+    
+    {% if totalPage > 0%}
+        <div class="paging">
+            <span>{{ 'Page'|trans({}, 'SMFrontBundle') }} {{currentPage}} / {{totalPage}}</span>
+            <ul>
+                <li class="prev-btn"><a class="wi-icon wi-icon-10" href="{{ path('sm_front_company_view_all', {'page': previousPage}) }}" title="<<"><<</a></li>
+                {% set start = startPageOfCurrentRange + perPage - 1%}
+                {% set classActive = ''%}
+                {% set style = ''%}
+                {% for i in startPageOfCurrentRange..start %}
+                    {% if i == currentPage %}
+                        {% set classActive = 'active'%}
+                    {% else %}
+                        {% set classActive = ''%}
+                    {% endif %}
+
+                    {% if i <= totalPage %}
+                    <li class="{{classActive}}"><a href="{{ path('sm_front_company_view_all', {'page': i}) }}">{{i}}</a></li>
+                    {% endif %}
+                {% endfor %}
+                <li class="next-btn"><a class="wi-icon wi-icon-11" href="{{ path('sm_front_company_view_all', {'page': nextPage} ) }}" title=">>">>></a></li>
+            </ul>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'SMFrontBundle::layout.news.detail.html.twig' %}
+{% block title %}{{ entity.getName|raw }}{% endblock %}
+{% block body%}
+<div class="block">
+    <div class="title-2">
+      <div class="inner">
+        <h2><span><span>{{ 'Detail Information'|trans({}, 'SMFrontBundle') }}</span></span></h2>
+      </div>
+    </div>
+    <div class="highlight">
+      <article>
+          <div class="detail-img-logo">
+          <div class="wi-frame wi-frame-1">
+            <ul class="slides">
+                {% if entity.getCompany.getThumb  != '' %}
+                    <li><img src="{{ asset(uploadPath ~ entity.company.thumb) }}" alt="{{ mtxgetteaser(entity.name)|raw }}"/></li>
+                {% else %}
+                <li><img src="{{asset('/web/front/images/no-image.jpg')}}" alt="#" width="155" height="67"/></li>
+                {% endif %}
+            </ul>
+          </div>
+        </div>                                           
+        <div class="content">
+          {% if entity is not null %}
+            <h3>{{entity.getName|raw}}</h3>
+            <div class="desc">
+                {{entity.getDescription|raw}}
+            </div>
+          {% endif %}
+
+        </div>
+      </article>
+    </div><!-- end highlight -->
+<!-- BEGIN RELATION PRODUCT -->
+</div>
+
+    {% render 'SMFrontBundle:Default:company' %}
+{% endblock %}

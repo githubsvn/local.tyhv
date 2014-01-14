@@ -1,0 +1,12 @@
+<div id="SearchForm">
+    <script type="text/javascript">
+        function OnSearchClick() { var content = document.getElementById('ctlSearch_txtSearch').value; if (content == "") return false; return true; }
+    </script>
+    <div id="SearchFormContainer">
+        <input name="ctl00$ctlSearch$txtSearch" type="text" id="ctlSearch_txtSearch" class="search-input" onkeydown="" />
+        <input type="submit" name="ctl00$ctlSearch$btnSearch" value="" onclick="javascript:return OnSearchClick();" id="ctlSearch_btnSearch" class="search-button" />
+        <a href="search.html-action=advance.htm" class="search-adv" title="Tìm kiếm nâng cao">
+            <span>+</span>
+        </a>
+    </div>
+</div>

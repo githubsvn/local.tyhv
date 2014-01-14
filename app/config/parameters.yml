@@ -1,0 +1,62 @@
+parameters:
+  database_driver: pdo_mysql
+  database_host: 127.0.0.1
+  database_port: null
+  database_name: local.tyhv
+  database_user: root
+  database_password:
+  host : http://local.tyhv
+  locale: vi
+  secret: d00245c7bda39aa016baa57370bfebc9b11deda3
+  database_path: null
+
+  per_item_page: 50
+  imgRoot : "/web/"
+  upload : "/web/uploads/images/"
+  thumbUpload : "/web/uploads/images/media/cache/thumbs/"
+  fileUpload : "/web/uploads/files/"
+
+  menu_type_company_category: 1
+  menu_type_company_detail: 2
+  menu_type_product_branch: 3
+  menu_type_product_group: 4
+  menu_type_product_detail: 5
+  menu_type_news_category: 6
+  menu_type_news_detail: 7
+  menu_type_page_detail: 8
+  menu_type_text: 9
+  menu_type_link: 10
+  menu_type_file: 11
+
+  menu_position_top: 1
+  menu_position_left: 2
+  menu_position_left_bottom: 3
+  menu_position_right: 4
+  menu_position_bottom: 5
+
+  ext_nice_url: html
+  comma_nice_url: "-"
+
+  per_item_page_front: 15
+  per_page_front: 10
+  per_item_new_product_front: 12
+  per_item_hot_product_front: 12
+  #The number of product will be displayed in section 'Dac San Moi'
+  per_new_item: 3
+
+  per_item_news_hot_front: 5
+  per_item_news_front: 20
+
+  number_slide_show: 5
+  number_advertisement_front: 5
+
+  support_skype: [skype]
+  support_yahoo: [yahoo]
+
+  countWordNewsTitle: 15
+
+  countWordNewsTitleList: 20
+  countWordNewsIntro: 50
+
+  countWordProductTitle: 15
+  per_item_comment_front: 20

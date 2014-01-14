@@ -1,0 +1,26 @@
+<h1 class="logo"><a href="/" title="Logo"><img src="/web/front/images/logo-toi-yeu-hang-viet.png" alt="{{'Toi Yeu Hang Viet'|trans({}, 'SMFrontBundle')}}" /></a></h1>
+<a href="#" title="Vietnam Airlines"><img src="/web/front/images/advertise-vietnam-airlines.png" alt="Vietnam Airlines" /></a>
+<!-- BEGIN TOP MENU -->
+    {% render 'SMFrontBundle:Default:topMenu' %}
+<!-- END TOP MENU -->
+    
+<div class="controls-block">
+  <div class="inner">
+    <ul class="tel-block">
+      <li><img src="/web/front/images/img-phone.png" alt="" />{{'Hot line'|trans({}, 'SMFrontBundle')}}: <strong>{{ hotLine }}</strong></li>
+      <li><img src="/web/front/images/img-phone.png" alt="" />{{'Advertisement'|trans({}, 'SMFrontBundle')}}: <strong>{{ advNumber }}</strong></li>
+    </ul><!-- end tel-block -->
+
+    <!-- BEGIN FORM SEARCH-->
+    <form id="search-form" class="search-frm" action="{{path('sm_front_search_product')}}" method="post">
+      <input type="text" id="product_name_top" name="product_name" value="{{name}}"/>
+      <button type="submit" id="search-btn" name="search-btn">{{'Search'|trans({}, 'SMFrontBundle')}}</button>
+    </form>
+    <!-- END FORM SEARCH-->
+
+    <!-- BEGIN LANGUAGE -->
+    {% render 'SMFrontBundle:Default:language' %}
+    <!-- END LANGUAGE -->
+
+  </div>
+</div><!-- end controls-block -->

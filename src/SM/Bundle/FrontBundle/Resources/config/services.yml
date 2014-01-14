@@ -1,0 +1,25 @@
+parameters:
+#    sm_front.example.class: SM\Bundle\FrontBundle\Example
+
+services:
+    mtx.twig.teaser_extension:
+        class: SM\Bundle\AdminBundle\Twig\MTxTwigTeaserExtension
+        tags:
+            - { name: twig.extension }
+            
+    mtx.twig.build_url_extension:
+        class: SM\Bundle\AdminBundle\Twig\MTxTwigBuildUrlExtension
+        tags:
+            - { name: twig.extension }
+    
+    mtx.twig.active_menu_extension:
+        class: SM\Bundle\AdminBundle\Twig\MTxTwigActiveMenuExtension
+        tags:
+            - { name: twig.extension }
+    
+    locale_listener:
+        class: SM\Bundle\FrontBundle\Listener\LocaleListener
+        arguments: [%locale%]
+        tags:
+            -  { name: kernel.event_subscriber }            
+

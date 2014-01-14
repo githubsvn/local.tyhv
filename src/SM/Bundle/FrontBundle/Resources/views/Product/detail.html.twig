@@ -1,0 +1,103 @@
+{% extends 'SMFrontBundle::layout.product.detail.html.twig' %}
+{% block title %}{{entity.name}}{% endblock %}
+{% block body%}
+<div class="block">
+<div class="title-2">
+  <div class="inner">
+    <h2><span><span>{{ 'Detail Information'|trans({}, 'SMFrontBundle') }}</span></span></h2>
+<!--    <a href="#" title="Xem thêm" class="readmore">Xem thêm</a>-->
+  </div>
+</div>
+<div class="highlight">
+  <article>
+    <div class="carousel">
+      <div class="preview wi-frame wi-frame-3">
+        <ul class="slides">
+            {% if entity.product.thumb  > 0%}
+                <li><img src="{{ asset(uploadPath ~ entity.product.thumb) }}" alt="{{ mtxgetteaser(entity.name)|raw }}" width="420" height="277"/></li>
+            {% else %}
+                <li><img src="{{asset('/web/front/images/no-image.jpg')}}" alt="#" width="420" height="277"/></li>
+            {% endif %}
+            {% if medias|length  > 0%}
+                {% for img in medias %}
+                    {% if img is not null %}
+                        <li><img src="{{ asset(uploadPath ~ img.name) }}" alt="{{ mtxgetteaser(entity.name)|raw }}" width="420" height="277"/></li>
+                    {% else %}
+                        <li><img src="{{asset('/web/front/images/no-image.jpg')}}" alt="#" width="420" height="277"/></li>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </ul>
+      </div>
+      <div class="thumb">
+        <ul class="slides">
+            {% if entity.product.thumb  > 0%}
+                <li><img src="{{ asset(uploadPath ~ entity.product.thumb) }}" alt="{{ mtxgetteaser(entity.name)|raw }}" width="104" height="64"/></li>
+            {% else %}
+                <li><img src="{{asset('/web/front/images/no-image.jpg')}}" alt="#" width="104" height="64"/></li>
+            {% endif %}
+            
+            {% if medias|length  > 0%}
+                {% for img in medias %}
+                    {% if img is not null %}
+                        <li><img src="{{ asset(uploadPath ~ img.name) }}" alt="{{ mtxgetteaser(entity.name)|raw }}" width="104" height="64"/></li>
+                    {% else %}
+                        <li><img src="{{asset('/web/front/images/no-image.jpg')}}" alt="#" width="104" height="64"/></li>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </ul>
+      </div>
+    </div>                                           
+    <div class="content">
+      {% if entity is not null %}
+        <h3>{{entity.getName|raw}}</h3>
+        <div class="desc">
+            {{entity.getDescription|raw}}
+        </div>
+      {% endif %}
+      
+    </div>
+  </article>
+</div><!-- end highlight -->
+
+{% render 'SMFrontBundle:Default:formComment' %}
+{% render 'SMFrontBundle:Default:listComment' %}
+
+<!-- BEGIN RELATION PRODUCT -->
+<div class="block specialty">
+    <div class="title-2">
+      <div class="inner">
+        <h2><span><span>{{ 'Relation Product'|trans({}, 'SMFrontBundle') }}</span></span></h2>
+        <a href="{{urlHost}}/product/view-branch/1/{{mtxbuildurl(branch.id, branch.getCurrentLanguage.getName)}}" title="{{ 'View more'|trans({}, 'SMFrontBundle') }}" class="readmore">{{ 'View more'|trans({}, 'SMFrontBundle') }}</a>
+      </div>
+    </div>
+    <div class="thumbnails-1">
+      <ul>
+          {% if productsRelative|length  > 0%}
+            {% for ent in productsRelative %}
+                <li>
+                    {% if ent.product.thumb  != '' %}
+                        <a href="{{ path('sm_front_view_product_detail', { 'slug': mtxbuildurl(ent.product.id, ent.name) }) }}" title="{{ mtxgetteaser(ent.name)|raw }}"">
+                            <span class="wi-frame wi-frame-2"><span><span>
+                                <img src="{{ asset(uploadPath ~ ent.product.thumb) }}" alt="{{ mtxgetteaser(ent.name, countWordProductTitle)|raw }}"/>
+                            </span></span></span>
+                            <h3>{{ mtxgetteaser(ent.name, countWordProductTitle)|raw }}</h3>
+                        </a>
+                    {% else %}
+                        <a href="{{ path('sm_front_view_product_detail', { 'slug': mtxbuildurl(ent.product.id, ent.name) }) }}" title="{{ mtxgetteaser(ent.name)|raw }}">
+                            <span class="wi-frame wi-frame-2"><span><span>
+                                <img src="{{asset('/web/front/images/no-image.jpg')}}" width="157" height="104" alt="{{ mtxgetteaser(ent.name, countWordProductTitle)|raw }}"/>
+                            </span></span></span>
+                            <h3>{{ mtxgetteaser(ent.name, countWordProductTitle)|raw }}</h3>
+                        </a>
+                    {% endif %}
+                </li> 
+            {% endfor %}
+      {% endif %}
+      </ul>
+    </div>
+  </div>
+<!-- END NEW RELATIONPRODUCT -->
+</div>                  
+{% endblock %}

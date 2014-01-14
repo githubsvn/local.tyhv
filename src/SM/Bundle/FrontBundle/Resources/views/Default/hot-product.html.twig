@@ -1,0 +1,49 @@
+<div id="HomeFeaturedProducts" class="Block FeaturedProducts DefaultModule">
+    <div class="defaultTitle TitleContent">
+        <span>{{ 'Hot Product'|trans({}, 'SMFrontBundle') }}</span>
+    </div>
+    <div class="defaultContent BlockContent">
+        {% if entities|length  > 0%}
+            <ul class="ProductList First">
+                {% for ent in entities %}
+                    <li>
+                        <div id="ProductImage" class="ProductImage ProductImageTooltip">
+                            <a href="{{ path('sm_front_view_product_detail', { 'slug': mtxbuildurl(ent.product.id, ent.name) }) }}"
+                               productname="{{ mtxgetteaser(ent.name)|raw }}"
+                               thumbnail="{{ asset(uploadPath ~ ent.product.thumb) }}"
+                               description="{{ mtxgetteaser(ent.description)|raw }}"
+                               promotion="">
+                                <img alt="{{ mtxgetteaser(ent.name)|raw }}" title="{{ mtxgetteaser(ent.name)|raw }}" class="image"
+                                     src="{{ asset(uploadPath ~ ent.product.thumb) }}"/>
+                            </a>
+                        </div>
+                        <div class="ProductDetails">
+                            <strong><a href="#" >{{ mtxgetteaser(ent.name, countWordProductTitle)|raw }}</a></strong>
+                        </div>
+                        <div class="ProductPrice">
+                            <div class="special-price">
+                                <span class="price">
+                                    <em>
+                                        {% if ent.product.price  > 0%}
+                                            <font color="red"> {{ ent.product.price }} {{ 'VND'|trans({}, 'SMFrontBundle') }}</font>
+                                        {% else %}
+                                            {{ 'Contact'|trans({}, 'SMFrontBundle') }}
+                                        {% endif %}
+                                    </em>
+                                </span>
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <div class="noProduct">{{ 'No data was be found'|trans({}, 'SMFrontBundle') }}</div>
+        {% endif %}
+<!--        <div class="ViewMore">
+            <a href="#">{{ 'View more'|trans({}, 'SMFrontBundle') }}</a>
+        </div>-->
+        <div class="Clear"></div>
+    </div>
+    <div class="defaultFooter FooterContent"><div></div></div>
+    <div class="Clear"></div>
+</div>

@@ -1,0 +1,89 @@
+{% extends 'SMFrontBundle::layout.news.html.twig' %}
+{% block title %}{{ 'News'|trans({}, "SMFrontBundle") }}{% endblock %}
+{% block body%}
+<div class="block">
+<div class="title-2">
+  <div class="inner">
+    <h2><span><span>{{ 'News'|trans({}, "SMFrontBundle") }}</span></span></h2>
+  </div>
+</div>
+    
+<div class="highlight">
+{% if topEnt is not null %}
+    <article>
+        <a href="{{ path('sm_front_view_product_detail', { 'slug': mtxbuildurl(topEnt.news.id, topEnt.name) }) }}" title="" class="img-thumb">
+            <span>
+                {% if topEnt.news.image != '' %}
+                    <img src="{{asset(dir ~ topEnt.news.image)}}" alt="" class="sizeNewsImage" width="250" height="196"/>
+                {% else %}
+                    <img src="{{asset('/web/front/images/no-image.jpg')}}" alt="#" width="250" height="196"/>
+                {% endif %}
+            </span>
+        </a>
+        <div class="content">
+          <h3><a href="{{ path('sm_front_view_news_detail', { 'slug': mtxbuildurl(topEnt.news.id, topEnt.name) }) }}" title="{{topEnt.name}}">{{topEnt.name}}</a></h3>
+          <div class="desc">
+            <p>{{ mtxgetteaser(topEnt.description)|raw }}</p>
+          </div>
+        </div>
+    </article>
+{% endif %}
+</div>
+    
+<div class="thumbnails">
+  <ul>
+      {% if entities|length  > 0%}
+        {% for ent in entities %}
+            <li>
+                {% if ent.news.image  != '' %}
+                    <a href="{{ path('sm_front_view_news_detail', { 'slug': mtxbuildurl(ent.news.id, ent.name) }) }}" title="{{ mtxgetteaser(ent.name)|raw }}">
+                         <span>
+                             <img src="{{ asset(uploadPath ~ ent.news.thumb) }}" alt="{{ mtxgetteaser(ent.name, countWordNewsTitleList)|raw }}"/>
+                         </span>
+                        <strong class="title">
+                            {{ mtxgetteaser(ent.name, countWordNewsTitleList)|raw }}
+                        </strong>
+                    </a>
+                {% else %}
+                    <a href="{{ path('sm_front_view_news_detail', { 'slug': mtxbuildurl(ent.news.id, ent.name) }) }}" title="{{ mtxgetteaser(ent.name)|raw }}">
+                         <span>
+                            <img src="{{asset('/web/front/images/no-image.jpg')}}" alt="#" width="157" height="104"/>
+                         </span>
+                        <strong class="title">
+                            {{ mtxgetteaser(ent.name, countWordNewsTitleList)|raw }}
+                        </strong>
+                    </a>
+                {% endif %}
+            </li> 
+        {% endfor %}
+      {% else %}
+            <div class="noProduct">{{ 'No data was be found'|trans({}, 'SMFrontBundle') }}</div>
+      {% endif %}
+  </ul>
+</div>
+    
+    {% if totalPage > 0%}
+        <div class="paging">
+            <span>{{ 'Page'|trans({}, 'SMFrontBundle') }} {{currentPage}} / {{totalPage}}</span>
+            <ul>
+                <li class="prev-btn"><a class="wi-icon wi-icon-10" href="{{ path('sm_front_view_news_cat', { 'slug': mtxbuildurl(category.category.id, category.name), 'page': previousPage }) }}" title="<<"><<</a></li>
+                {% set start = startPageOfCurrentRange + perPage - 1%}
+                {% set classActive = ''%}
+                {% set style = ''%}
+                {% for i in startPageOfCurrentRange..start %}
+                    {% if i == currentPage %}
+                        {% set classActive = 'active'%}
+                    {% else %}
+                        {% set classActive = ''%}
+                    {% endif %}
+
+                    {% if i <= totalPage %}
+                    <li class="{{classActive}}"><a href="{{ path('sm_front_view_news_cat', { 'slug': mtxbuildurl(category.category.id, category.name), 'page': i }) }}">{{i}}</a></li>
+                    {% endif %}
+                {% endfor %}
+                <li class="next-btn"><a class="wi-icon wi-icon-11" href="{{ path('sm_front_view_news_cat', { 'slug': mtxbuildurl(category.category.id, category.name), 'page': nextPage }) }}" title=">>">>></a></li>
+            </ul>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

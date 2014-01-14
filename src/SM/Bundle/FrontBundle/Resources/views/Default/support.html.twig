@@ -1,0 +1,10 @@
+<h2 class="title-1">{{ 'Support'|trans({}, 'SMFrontBundle') }}</h2>
+<div class="contact">
+  <img src="/web/front/images/img-contact.jpg" alt="" />
+  {% if skypes is not null %}
+    <a href="skype:plugcreative?{{skypes}}" title="Skype" class="btn-skype">Skype</a>
+  {% endif %}
+  {% if yahoos is not null %}
+    <a href="skype:plugcreative?{{yahoos}}" title="Yahoo" class="btn-yahoo">Yahoo</a>
+  {% endif %}
+</div>

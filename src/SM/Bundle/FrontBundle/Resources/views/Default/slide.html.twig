@@ -1,0 +1,9 @@
+{% if entities|length > 0%}
+    <article class="banner">          	
+        <ul class="slides">
+    {% for img in entities %}
+    <li><a href="#" title=""><img src="{{ asset(path ~ img.getName) }}" alt="Banner" width="779" height="210"/></a></li>
+    {% endfor %}
+        </ul>
+    </article>
+{% endif%}

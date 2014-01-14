@@ -1,0 +1,66 @@
+{% extends 'SMFrontBundle::layout.news.detail.html.twig' %}
+{% block title %}{{ entity.getName|raw }}{% endblock %}
+{% block body%}
+<div class="block">
+    <div class="title-2">
+      <div class="inner">
+        <h2><span><span>{{ 'Detail Information'|trans({}, 'SMFrontBundle') }}</span></span></h2>
+      </div>
+    </div>
+    <div class="highlight">
+      <article>
+        <div class="carousel">
+          <div class="preview wi-frame wi-frame-3">
+            <ul class="slides">
+                {% if entity.news.image  != '' %}
+                    <li><img src="{{ asset(uploadPath ~ entity.news.image) }}" alt="{{ mtxgetteaser(entity.name)|raw }}" width="420" height="277"/></li>
+                {% else %}
+                    <li><img src="{{asset('/web/front/images/no-image.jpg')}}" alt="#" width="420" height="277"/></li>
+                {% endif %}
+            </ul>
+          </div>
+        </div>                                           
+        <div class="content">
+          {% if entity is not null %}
+            <h3>{{entity.getName|raw}}</h3>
+            <div class="desc">
+                {{entity.getDescription|raw}}
+            </div>
+          {% endif %}
+
+        </div>
+      </article>
+    </div><!-- end highlight -->
+
+<!-- BEGIN RELATION PRODUCT -->
+    <div class="others-specialty">
+    <h3><span>{{ 'Lastest News'|trans({}, 'SMFrontBundle') }}</span></h3>
+        <ul>
+          {% if newsLastest|length  > 0%}
+                {% for ent in newsLastest %}
+                <li>
+                    <a href="{{ path('sm_front_view_news_detail', { 'slug': mtxbuildurl(ent.news.id, ent.name) }) }}" title="{{ mtxgetteaser(ent.name)|raw }}">
+                        {{ mtxgetteaser(ent.name, countWordNewsTitleList)|raw }}
+                    </a>
+                </li> 
+                {% endfor %}
+            {% endif %}
+        </ul>
+    </div>
+
+    <div class="others-specialty">
+    <h3><span>{{ 'Oldest News'|trans({}, 'SMFrontBundle') }}</span></h3>
+        <ul>
+            {% if newsOldest|length  > 0%}
+                {% for ent in newsOldest %}
+                    <li>
+                        <a href="{{ path('sm_front_view_news_detail', { 'slug': mtxbuildurl(ent.news.id, ent.name) }) }}" title="{{ mtxgetteaser(ent.name)|raw }}">
+                            {{ mtxgetteaser(ent.name, countWordNewsTitleList)|raw }}
+                        </a>
+                    </li>
+                {% endfor %}
+            {% endif %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

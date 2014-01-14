@@ -1,0 +1,60 @@
+<div class="send-comment">
+  <div class="heading">
+      <h3>{{ 'Comments'|trans({}, 'SMFrontBundle') }}</h3>
+    <div class="social">
+      <span>{{ 'Share'|trans({}, 'SMFrontBundle') }}:</span>
+      <ul>
+        <li><a href="#" title="Facebook" class="wi-icon wi-icon-7">Facebook</a></li>
+        <li><a href="#" title="Google Plus" class="wi-icon wi-icon-8">Google Plus</a></li>
+        <li><a href="#" title="Twitter" class="wi-icon wi-icon-9">Twitter</a></li>
+      </ul>
+    </div>
+  </div>
+  <form id="commentForm" class="comment-frm" action="{{path('sm_front_new_comment')}}" method="post">
+    <ul>
+        
+      <li>
+        <label for="cmt-title">{{ 'Title'|trans({}, 'SMFrontBundle') }}</label>
+        <span class="input-1">
+            <input type="text" id="title" name="title" />
+            <input type="hidden" id="product" name="product" value="{{ productId }}"/>
+        </span>
+<!--        <div class="rating">
+          <span>Đánh giá của bạn:</span>
+          <ul>
+            <li><a href="#" title="" class="wi-icon wi-icon-12"></a></li>
+            <li>
+              <a href="#" title="" class="wi-icon wi-icon-13"></a>
+              <a href="#" title="" class="wi-icon wi-icon-13"></a>
+              <a href="#" title="" class="wi-icon wi-icon-13"></a>
+              <a href="#" title="" class="wi-icon wi-icon-13"></a>
+              <a href="#" title="" class="wi-icon wi-icon-13"></a>
+            </li>
+          </ul>
+        </div>-->
+      </li>
+      <li>
+          <label for="cmt-title">{{ 'Name'|trans({}, 'SMFrontBundle') }}</label>
+          <span class="input-1" style="width: 50%;">
+              <input type="text" id="name" name="name" size="30" style="width: 50%;"/>
+          </span>
+      </li>
+<!--      <li>
+          <label for="cmt-title">Email</label>
+          <span class="input-1" style="width: 50%;">
+              <input type="text" id="cmt-title" name="email" size="30" style="width: 50%;"/>
+          </span>
+      </li>-->
+      <li>
+        <label for="message">{{ 'Comment'|trans({}, 'SMFrontBundle') }}:</label>
+        <span class="textarea-1">
+            <textarea id="content" name="content"></textarea>
+        </span>
+      </li>
+      <li>
+        <button type="button" class="btn-send" id="btnSendComment" name="send-btn" title="{{ 'Send Comment'|trans({}, 'SMFrontBundle') }}"></button>
+        <div id="notice-ajax" style="display: none; float: inside;"><img src="/web/front/images/loading.gif" width="20" height="20">{{ 'Loading'|trans({}, 'SMFrontBundle') }}</div>
+      </li>
+    </ul>
+  </form>
+</div>

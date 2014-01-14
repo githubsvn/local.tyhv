@@ -1,0 +1,26 @@
+<div class="block news-block">
+<h2 class="title-1">{{ 'News & Events'|trans({}, 'SMFrontBundle') }}</h2>
+<ul>
+    {% if entities|length  > 0%}
+        {% for ent in entities %}
+            <li>
+                <a href="{{ path('sm_front_view_news_detail', { 'slug': mtxbuildurl(ent.id, ent.name) }) }}" title="{{ mtxgetteaser(ent.name)|raw }}">
+                  <span class="img-thumb">
+                      <span>
+                        {% if ent.news.image != '' %}
+                            <img title="{{ mtxgetteaser(ent.name, countWordNewsTitle)|raw }}" alt="{{ mtxgetteaser(ent.name, countWordNewsTitle)|raw }}" 
+                                 src="{{asset(uploadPath ~ ent.news.image)}}" width="57" height="49">
+                        {% else %}
+                            <img src="{{asset('/web/front/images/no-image.jpg')}}" alt="#" width="57" height="57"/>
+                        {% endif %}
+                      </span>
+                  </span>
+                  <div class="content">
+                    <p>{{ mtxgetteaser(ent.name, countWordNewsTitle)|raw }}</p>
+                  </div>
+                </a>
+              </li>
+        {% endfor %}
+    {% endif %}            
+</ul>
+</div>

@@ -1,0 +1,52 @@
+{% extends 'SMFrontBundle::layout.home.html.twig' %}
+{% block title %}{{ 'File'|trans({}, "SMFrontBundle") }}{% endblock %}
+{% block body%}
+<div class="newsCategory defaultTitle"><h1>{{ 'File'|trans({}, "SMFrontBundle") }}</h1></div>
+<div class="defaultContent newsList">
+{% if entities|length > 0%}
+    {% for ent in entities %}
+        <table cellspacing="0" cellpadding="0" class="newsList_Item">
+            <tbody>
+                <tr>
+                    <td class="newsList_Image" style="padding-top: 10px; text-align: left;">
+                        <a href="{{ path('sm_front_file_download', { 'slug': mtxbuildurl(ent.id, ent.name) }) }}" title="{{ ent.name|raw }}">
+                            {{ ent.getName }}
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <hr class="newsList_Seperator">
+    {% endfor %}
+{% else %}
+    <div>{{ 'No news was be found'|trans({}, 'SMFrontBundle') }}</div>
+{% endif %}
+    
+
+{% if totalPage > 0%}
+    <div align="center" style="padding-bottom: 10px; padding-top: 10px;" class="PageNavigation">
+        <a href="{{ path('sm_front_file_view_all', {'page': previousPage}) }}" id="cphMain_ctl00_ctl00_ctl00_PageBottom_rptPaging_hplPaging_0" title="<<"><<</a>
+        {% set start = startPageOfCurrentRange + perPage - 1%}
+        {% set classActive = ''%}
+        {% set style = ''%}
+
+        {% for i in startPageOfCurrentRange..start %}
+            {% if i == currentPage %}
+                {% set classActive = 'active'%}
+                {% set style = 'background-color:gray;color:white;'%}
+            {% else %}
+                {% set classActive = ''%}
+                {% set style = ''%}
+            {% endif %}
+            
+            {% if i <= totalPage %}
+                <a style="{{style}}" class="{{classActive}}" href="{{ path('sm_front_file_view_all', {'page': i}) }}" id="cphMain_ctl00_ctl00_ctl00_PageBottom_rptPaging_hplPaging_{{i}}">{{i}}</a>
+            {% endif %}
+        {% endfor %}
+        <a href="{{ path('sm_front_file_view_all', {'page': nextPage}) }}" id="cphMain_ctl00_ctl00_ctl00_PageBottom_rptPaging_hplPaging_{{totalPage}}" title=">>">>></a>
+    </div>
+    {% endif %}
+    
+</div>
+
+{% endblock %}

@@ -1,0 +1,71 @@
+sm_front_homepage:
+    pattern:  /
+    defaults: { _controller: SMFrontBundle:Default:index }
+sm_front_view_product_cat:
+  pattern:  /product/view-branch/{page}/{slug}
+  defaults: { _controller: SMFrontBundle:Product:viewCat, page : 1 }
+  requirements:
+        page:  \d+
+
+sm_front_view_product_detail:
+  pattern:  /product/detail/{slug}
+  defaults: { _controller: SMFrontBundle:Product:detail }  
+sm_front_product_order:
+  pattern:  /product/order
+  defaults: { _controller: SMFrontBundle:Product:order }
+sm_front_search_product:
+  pattern: /product/search/{page}
+  defaults: { _controller: SMFrontBundle:Product:search, page : 1 }
+  requirements:
+        page:  \d+
+        
+sm_front_view_news_cat:
+  pattern:  /news/view-cat/{page}/{slug}
+  defaults: { _controller: SMFrontBundle:News:viewCat, page : 1 }  
+
+sm_front_view_news_detail:
+  pattern:  /news/detail/{slug}
+  defaults: { _controller: SMFrontBundle:News:detail }    
+
+sm_front_view_page_detail:
+  pattern:  /page/detail/{slug}
+  defaults: { _controller: SMFrontBundle:Page:detail }  
+
+sm_front_lang:
+    pattern:  /switch-lang/{lang}
+    defaults: { _controller: SMFrontBundle:Default:changeLanguage }
+    
+sm_front_contact_show:
+    pattern:  /contact/show
+    defaults: { _controller: SMFrontBundle:Default:showContact }
+    
+sm_front_file_view_all:
+    pattern:  /file/view-all/{page}
+    defaults: { _controller: SMFrontBundle:File:viewAll, page : 1 }
+sm_front_file_download:
+    pattern:  /file/download/{slug}
+    defaults: { _controller: SMFrontBundle:File:download }    
+    
+sm_front_company_view_all:
+    pattern: /company/view-all/{page}
+    defaults: { _controller: SMFrontBundle:Company:viewAll, page : 1}
+sm_front_company_detail:
+    pattern: /company/detail/{slug}
+    defaults: { _controller: SMFrontBundle:Company:detail}
+
+sm_front_new_comment:
+    pattern: /default/new-comment
+    defaults: { _controller: SMFrontBundle:Default:newCommment }
+    requirements: { _method: post }
+sm_front_list_comment:
+    pattern: /default/list-comment/{page}
+    defaults: { _controller: SMFrontBundle:Default:listComment, page : 1}    
+    
+sm_front_send_email:
+    pattern: /default/send-email
+    defaults: { _controller: SMFrontBundle:Default:sendEmail }
+    requirements: { _method: post }
+    
+sm_front_item_view_all:
+    pattern: /item/view-all/{page}
+    defaults: { _controller: SMFrontBundle:Item:viewAll, page : 1}
