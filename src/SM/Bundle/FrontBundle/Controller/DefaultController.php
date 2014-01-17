@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Request;
 use SM\Bundle\AdminBundle\Repository\MenuRepository;
 use SM\Bundle\AdminBundle\Utilities\Utilities;
 use SM\Bundle\AdminBundle\Utilities\Helper;
+use SM\Bundle\AdminBundle\Utilities\CounterHelper;
 use SM\Bundle\AdminBundle\Entity\Comment;
 use SM\Bundle\AdminBundle\Form\CommentType;
 use Doctrine\ORM\EntityRepository;
@@ -21,11 +22,15 @@ class DefaultController extends Controller
     private $thumbPath;
     private $host;
 
+    private $counter;
     /**
      * 
      */
     public function __construct()
     {
+        //to count user visiting website
+        $this->counter = new CounterHelper();
+        
         $container = \SM\Bundle\AdminBundle\SMAdminBundle::getContainer();
         $dirRoot = Utilities::getRootDir();
         $this->uploadDir = $dirRoot . $container->getParameter('upload');
@@ -105,7 +110,8 @@ class DefaultController extends Controller
      */
     public function counterAction()
     {
-        return $this->render('SMFrontBundle:Default:counter.html.twig', array('count' => 999));
+        
+        return $this->render('SMFrontBundle:Default:counter.html.twig', array('counter' => $this->counter));
     }
 
     public function advertisementAction()

@@ -1,4 +1,30 @@
 <div class="block access-block">
       <h2 class="title-1">Lượng truy cập</h2>
       <img src="/web/front/images/img-access.png" alt="" />
+      <table>
+          <tr>
+              <td>Onine user</td>
+              <td>{{counter.getUserOnline}}</td>
+          </tr>
+          <tr>
+              <td>Total today</td>
+              <td>{{counter.getTotalToday}}</td>
+          </tr>
+          <tr>
+              <td>Total yesterday</td>
+              <td>{{counter.getTotalYesterday}}</td>
+          </tr>
+          <tr>
+              <td>Total this month</td>
+              <td>{{counter.getTotalMonth}}</td>
+          </tr>
+          <tr>
+              <td>Total pre month</td>
+              <td>{{counter.getTotalMonPre}}</td>
+          </tr>
+          <tr>
+              <td>Total</td>
+              <td>{{counter.getTotal}}</td>
+          </tr>
+      </table>
     </div>

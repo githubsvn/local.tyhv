@@ -257,6 +257,10 @@ $catalogueVi = new MessageCatalogue('vi', array (
     'Send' => 'Gửi',
     'Search Results' => 'Kết quả tìm kiếm',
     'No result was found' => 'Không tìm thấy sản phẩm nào',
+    'Market price' => 'Giá cả thị trường',
+    'Item' => 'Mặt hàng',
+    'Old price' => 'Giá cũ',
+    'New price' => 'Giá mới',
   ),
 ));
 $catalogue->addFallbackCatalogue($catalogueVi);

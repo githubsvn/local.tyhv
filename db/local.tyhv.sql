@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.4.5
+-- version 3.5.1
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 16, 2014 at 02:33 PM
--- Server version: 5.5.16
--- PHP Version: 5.3.8
+-- Generation Time: Jan 17, 2014 at 09:51 AM
+-- Server version: 5.5.24-log
+-- PHP Version: 5.3.13
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -432,7 +432,7 @@ CREATE TABLE IF NOT EXISTS `mtx_config` (
   `value` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `description` longtext COLLATE utf8_unicode_ci,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=16 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=17 ;
 
 --
 -- Dumping data for table `mtx_config`
@@ -453,7 +453,31 @@ INSERT INTO `mtx_config` (`id`, `name`, `value`, `description`) VALUES
 (12, 'per_quantity_page_view_category', '10', ''),
 (13, 'per_new_product_item', '6', 'Số lượng sản phẩm mới'),
 (14, 'per_product_item_homepage', '10', 'Số lượng sản phẩm hiện thị trên trang chủ'),
-(15, 'per_company_item_homepage', '9', 'Số lượng logo công ty trên trang chủ');
+(15, 'per_company_item_homepage', '9', 'Số lượng logo công ty trên trang chủ'),
+(16, 'minuteToCounterVisitor', '15', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mtx_counter`
+--
+
+CREATE TABLE IF NOT EXISTS `mtx_counter` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `ip` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `time_visit` varchar(11) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `date_visit` varchar(11) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=12 ;
+
+--
+-- Dumping data for table `mtx_counter`
+--
+
+INSERT INTO `mtx_counter` (`id`, `ip`, `time_visit`, `date_visit`) VALUES
+(9, '127.0.0.1', '584', '17/1/2014'),
+(10, '192.168.106.61', '586', '17/1/2014'),
+(11, '192.168.106.66', '587', '17/1/2014');
 
 -- --------------------------------------------------------
 
