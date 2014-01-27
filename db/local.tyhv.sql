@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.1
+-- version 3.4.5
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 17, 2014 at 09:51 AM
--- Server version: 5.5.24-log
--- PHP Version: 5.3.13
+-- Generation Time: Jan 27, 2014 at 03:32 AM
+-- Server version: 5.5.16
+-- PHP Version: 5.3.8
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -468,7 +468,7 @@ CREATE TABLE IF NOT EXISTS `mtx_counter` (
   `time_visit` varchar(11) COLLATE utf8_unicode_ci DEFAULT NULL,
   `date_visit` varchar(11) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=12 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=13 ;
 
 --
 -- Dumping data for table `mtx_counter`
@@ -477,7 +477,8 @@ CREATE TABLE IF NOT EXISTS `mtx_counter` (
 INSERT INTO `mtx_counter` (`id`, `ip`, `time_visit`, `date_visit`) VALUES
 (9, '127.0.0.1', '584', '17/1/2014'),
 (10, '192.168.106.61', '586', '17/1/2014'),
-(11, '192.168.106.66', '587', '17/1/2014');
+(11, '192.168.106.66', '587', '17/1/2014'),
+(12, '127.0.0.1', '940', '18/1/2014');
 
 -- --------------------------------------------------------
 
