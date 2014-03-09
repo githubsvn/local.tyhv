@@ -48,5 +48,13 @@ jQuery(document).ready(function($) {
         $('html,body').scrollTop(0);
     });
     
+//    $(".playlist").click(function(){
+//        var selectVideo = $(this).children("span").children().clone();
+//        var html = selectVideo.html();
+//        alert(html);
+//        var newObj = $(html).html();
+//        alert(newObj);
+//        //alert(newObj.html());
+//    });
     
 });

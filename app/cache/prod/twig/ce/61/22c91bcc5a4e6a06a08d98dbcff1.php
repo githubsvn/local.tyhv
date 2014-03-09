@@ -10,7 +10,6 @@ class __TwigTemplate_ce6122c91bcc5a4e6a06a08d98dbcff1 extends Twig_Template
         $this->parent = false;
 
         $this->blocks = array(
-            'title' => array($this, 'block_title'),
             'body' => array($this, 'block_body'),
         );
     }
@@ -25,49 +24,42 @@ class __TwigTemplate_ce6122c91bcc5a4e6a06a08d98dbcff1 extends Twig_Template
 <html lang=\"en\" class=\"no-js\">
   <!--<![endif]-->
   <head>
-    <meta charset=\"utf-8\">
-    <title>";
+    ";
+        // line 8
+        echo $this->env->getExtension('actions')->renderAction("SMFrontBundle:Default:meta", array(), array());
         // line 9
-        $this->displayBlock('title', $context, $blocks);
-        echo "</title>
-    <meta name=\"description\" content=\"\">
-    <meta name=\"keywords\" content=\"\">
-    <meta name=\"robots\" content=\"index, follow\">
-    <meta name=\"author\" content=\"\">
-    <meta name=\"viewport\" content=\"width=1300\">
-    <link rel=\"shortcut icon\" href=\"";
-        // line 15
+        echo "    <link rel=\"shortcut icon\" href=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("web/front/images/favicon.ico"), "html", null, true);
         echo "\" type=\"image/x-icon\">
     <link rel=\"apple-touch-icon\" sizes=\"57x57\" href=\"";
-        // line 16
+        // line 10
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("web/front/images/apple-touch-icon-57x57.png"), "html", null, true);
         echo "\">
     <link rel=\"apple-touch-icon\" sizes=\"72x72\" href=\"";
-        // line 17
+        // line 11
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("web/front/images/apple-touch-icon-72x72.png"), "html", null, true);
         echo "\">
     <link rel=\"apple-touch-icon\" sizes=\"114x114\" href=\"";
-        // line 18
+        // line 12
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("web/front/images/apple-touch-icon-114x114.png"), "html", null, true);
         echo "\">
     <link rel=\"apple-touch-icon\" sizes=\"144x144\" href=\"";
-        // line 19
+        // line 13
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("web/front/images/apple-touch-icon-144x144.png"), "html", null, true);
         echo "\">
     <!-- build:css css/style.min.css-->
     <link rel=\"stylesheet\" href=\"";
-        // line 21
+        // line 15
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("web/front/css/style.css"), "html", null, true);
         echo "\">
     <link rel=\"stylesheet\" href=\"";
-        // line 22
+        // line 16
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("web/front/css/custom.css"), "html", null, true);
         echo "\">
     <!-- endbuild-->
     <!-- build:js js/modernizr.min.js-->
     <script src=\"";
-        // line 25
+        // line 19
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("web/front/js/modernizr.js"), "html", null, true);
         echo "\"></script>
     <!-- endbuild-->
@@ -79,9 +71,9 @@ class __TwigTemplate_ce6122c91bcc5a4e6a06a08d98dbcff1 extends Twig_Template
           <header id=\"header\">
             <!-- BEGIN HEADER -->
             ";
-        // line 34
+        // line 28
         echo $this->env->getExtension('actions')->renderAction("SMFrontBundle:Default:header", array(), array());
-        // line 35
+        // line 29
         echo "            <!-- END HEADER -->
           </header>
           <div class=\"inner\">
@@ -89,46 +81,46 @@ class __TwigTemplate_ce6122c91bcc5a4e6a06a08d98dbcff1 extends Twig_Template
               <aside class=\"sidebar-left\">
                 <!-- BEGIN MENU LEFT -->
                 ";
-        // line 41
+        // line 35
         echo $this->env->getExtension('actions')->renderAction("SMFrontBundle:Default:leftMenu", array(), array());
-        // line 42
+        // line 36
         echo "                <!-- END MENU LEFT -->
 
                 <!-- BEGIN GIA CA THI TRUONG -->
                 ";
-        // line 45
+        // line 39
         echo $this->env->getExtension('actions')->renderAction("SMFrontBundle:Default:pricesMarket", array(), array());
-        // line 46
+        // line 40
         echo "                <!-- END GIA CA THI TRUONG -->
 
                 <!-- BEGIN SAN PHAM KHUYEN MAI-->
                 ";
-        // line 49
+        // line 43
         echo $this->env->getExtension('actions')->renderAction("SMFrontBundle:Default:saleProduct", array(), array());
-        // line 50
+        // line 44
         echo "                <!-- END SAN PHAM KHUYEN MAI-->
 
                 <div class=\"block contact-block\">
                   <!-- BEGIN SUPPORT-->
                   ";
-        // line 54
+        // line 48
         echo $this->env->getExtension('actions')->renderAction("SMFrontBundle:Default:support", array(), array());
-        // line 55
+        // line 49
         echo "                  <!-- END SUPPORT-->
 
                   <!-- BEGIN REGISTER TO GET PRODUCT -->
                   ";
-        // line 58
+        // line 52
         echo $this->env->getExtension('actions')->renderAction("SMFrontBundle:Default:registerGetProduct", array(), array());
-        // line 59
+        // line 53
         echo "                  <!-- END REGISTER TO GET PRODUCT -->
                 </div>
 
                 <!-- BEGIN COUNTER -->
                 ";
-        // line 63
+        // line 57
         echo $this->env->getExtension('actions')->renderAction("SMFrontBundle:Default:counter", array(), array());
-        // line 64
+        // line 58
         echo "                <!-- END COUNTER -->
               </aside>
   
@@ -136,9 +128,9 @@ class __TwigTemplate_ce6122c91bcc5a4e6a06a08d98dbcff1 extends Twig_Template
                 <section id=\"main\">
                     <!-- BEGIN BODY -->
                     ";
-        // line 70
+        // line 64
         $this->displayBlock('body', $context, $blocks);
-        // line 71
+        // line 65
         echo "                    <!-- END BODY -->
                 </section>
               </section>
@@ -147,56 +139,59 @@ class __TwigTemplate_ce6122c91bcc5a4e6a06a08d98dbcff1 extends Twig_Template
         </div>
         
         ";
-        // line 78
+        // line 72
         echo $this->env->getExtension('actions')->renderAction("SMFrontBundle:Default:feedback", array(), array());
-        // line 79
+        // line 73
         echo "        
         <!-- BEGIN FOOTER -->
         ";
-        // line 81
+        // line 75
         echo $this->env->getExtension('actions')->renderAction("SMFrontBundle:Default:footer", array(), array());
-        // line 82
+        // line 76
         echo "        <!-- END FOOTER -->
       </div>
     </div>
-    
-      <!-- build:js js/libs.min.js-->
+    ";
+        // line 79
+        echo $this->env->getExtension('actions')->renderAction("SMFrontBundle:Default:leftAds", array(), array());
+        // line 80
+        echo "      <!-- build:js js/libs.min.js-->
     <script src=\"";
-        // line 87
+        // line 81
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("web/front/js/libs.js"), "html", null, true);
         echo "\"></script>
     <!-- endbuild-->
     <!-- build:js js/l10n.min.js-->
     <script src=\"";
-        // line 90
+        // line 84
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("web/front/js/l10n.js"), "html", null, true);
         echo "\"></script>
     <!-- endbuild-->
     <!-- build:js js/plugins.min.js-->
     <script src=\"";
-        // line 93
+        // line 87
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("web/front/js/plugins.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 94
+        // line 88
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("web/front/js/jquery.mousewheel.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 95
+        // line 89
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("web/front/js/jquery.flexslider.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 96
+        // line 90
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("web/front/js/bootstrap.js"), "html", null, true);
         echo "\"></script>
     <!-- endbuild-->
     <!-- build:js js/start.min.js-->
     <script src=\"";
-        // line 99
+        // line 93
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("web/front/js/start.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 100
+        // line 94
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("web/front/js/custom.js"), "html", null, true);
         echo "\"></script>
     <!-- endbuild-->
@@ -204,13 +199,7 @@ class __TwigTemplate_ce6122c91bcc5a4e6a06a08d98dbcff1 extends Twig_Template
 </html>";
     }
 
-    // line 9
-    public function block_title($context, array $blocks = array())
-    {
-        echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("News", array(), "SMFrontBundle"), "html", null, true);
-    }
-
-    // line 70
+    // line 64
     public function block_body($context, array $blocks = array())
     {
     }
@@ -227,6 +216,6 @@ class __TwigTemplate_ce6122c91bcc5a4e6a06a08d98dbcff1 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  214 => 70,  208 => 9,  200 => 100,  196 => 99,  190 => 96,  186 => 95,  182 => 94,  178 => 93,  172 => 90,  166 => 87,  159 => 82,  157 => 81,  153 => 79,  151 => 78,  142 => 71,  140 => 70,  132 => 64,  130 => 63,  124 => 59,  122 => 58,  117 => 55,  115 => 54,  109 => 50,  107 => 49,  102 => 46,  100 => 45,  95 => 42,  93 => 41,  85 => 35,  83 => 34,  71 => 25,  65 => 22,  61 => 21,  52 => 18,  48 => 17,  44 => 16,  40 => 15,  31 => 9,  21 => 1,  105 => 40,  96 => 33,  90 => 30,  84 => 27,  78 => 25,  76 => 24,  70 => 20,  64 => 18,  56 => 19,  54 => 15,  43 => 7,  38 => 4,  35 => 3,  29 => 2,);
+        return array (  203 => 64,  195 => 94,  191 => 93,  185 => 90,  181 => 89,  177 => 88,  167 => 84,  161 => 81,  158 => 80,  156 => 79,  149 => 75,  145 => 73,  143 => 72,  134 => 65,  132 => 64,  124 => 58,  122 => 57,  116 => 53,  109 => 49,  107 => 48,  101 => 44,  94 => 40,  92 => 39,  87 => 36,  85 => 35,  77 => 29,  75 => 28,  63 => 19,  57 => 16,  53 => 15,  48 => 13,  44 => 12,  40 => 11,  36 => 10,  31 => 9,  20 => 1,  173 => 87,  170 => 62,  160 => 58,  154 => 57,  151 => 76,  146 => 55,  144 => 54,  139 => 52,  133 => 48,  130 => 47,  120 => 43,  114 => 52,  111 => 41,  106 => 40,  104 => 39,  99 => 43,  90 => 30,  84 => 27,  78 => 25,  76 => 24,  70 => 20,  64 => 18,  56 => 16,  54 => 15,  43 => 7,  38 => 4,  35 => 3,  29 => 8,);
     }
 }

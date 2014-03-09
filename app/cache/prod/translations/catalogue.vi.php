@@ -198,6 +198,11 @@ $catalogue = new MessageCatalogue('vi', array (
     'Item' => 'Mặt hàng',
     'Old price' => 'Giá cũ',
     'New price' => 'Giá mới',
+    'Add' => 'Địa chỉ',
+    'Phone' => 'Phone',
+    'Fax' => 'Fax',
+    'Email' => 'Email',
+    'Follow us' => 'Follow us',
   ),
 ));
 

@@ -155,9 +155,21 @@ class DefaultController extends Controller
      */
     public function footerAction()
     {
-        $infos = array();
+        $footerAdd = Utilities::getConfig('footer_add');
+        $phone = Utilities::getConfig('phone');
+        $fax = Utilities::getConfig('fax');
+        $infoEmail = Utilities::getConfig('info_email');
+        $facebookPage = Utilities::getConfig('facebook_page');
+        $twitterPage = Utilities::getConfig('twitter_page');
+        $youtubePage = Utilities::getConfig('youtube_page');
         return $this->render('SMFrontBundle:Default:footer.html.twig', array(
-                    'infos' => $infos
+            'footerAdd' => $footerAdd,
+            'phone' => $phone,
+            'fax' => $fax,
+            'infoEmail' => $infoEmail,
+            'facebookPage' => $facebookPage,
+            'twitterPage' => $twitterPage,
+            'youtubePage' => $youtubePage,
         ));
     }
 
@@ -670,6 +682,39 @@ class DefaultController extends Controller
             'metaDes' => $metaDes,
             'metaKeywords' => $metaKeywords,
             'metaContent' => $metaContent,
+        ));
+    }
+    
+    public function footerMenuAction()
+    {
+        $lang = $this->getDefaultLang();
+        $currentUrl = $this->getRequest()->getUri();
+        $menus = array();
+        $repMenu = $this->getDoctrine()
+                ->getRepository('SMAdminBundle:Menu');
+
+        $mnuPosBottom = $this->container->getParameter('menu_position_bottom');
+        $menuBottom = $repMenu->getOptionParent($mnuPosBottom, $lang);
+        unset($menuBottom[0]); //unset for menu Lua Chon
+        $menuBottom = $this->removeHostUrl($menuBottom);
+
+        $urlHost = $this->container->getParameter('host');
+        $currentUrl = str_replace($urlHost, '', $currentUrl);
+        //$currentUrl = rtrim("/", $currentUrl);
+        return $this->render('SMFrontBundle:Default:footer-menu.html.twig', array(
+                    'menuBottom' => $menuBottom,
+                    'currentUrl' => $currentUrl,
+                    'urlHost' => $urlHost
+        ));
+    }
+    
+    public function leftAdsAction()
+    {
+        $leftAdsUrl = Utilities::getConfig('left_ads_url');
+        $rightAdsUrl = Utilities::getConfig('right_ads_url');
+        return $this->render('SMFrontBundle:Default:left-ads.html.twig', array(
+            'leftAdsUrl' => $leftAdsUrl,
+            'rightAdsUrl' => $rightAdsUrl,
         ));
     }
 }

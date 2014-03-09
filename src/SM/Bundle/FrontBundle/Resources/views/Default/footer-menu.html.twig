@@ -1,0 +1,15 @@
+{% set i = 0 %}
+{% for mnu in menuBottom %}
+
+    {% set i = i + 1 %}
+    {% set last = "" %}
+    {% if menuBottom|length ==  i %}
+        {% set last = "last" %}
+    {% endif %}
+
+    <li class="{{ mtxactivemenu(mnu.url, currentUrl) }} {{ last }}">
+        <a href="{{ urlHost ~ mnu.url }}" title="{{ mnu.name }}">
+            <span><span>{{ mnu.name }}</span></span>
+        </a>
+    </li>
+{% endfor %}

@@ -196,43 +196,48 @@ class __TwigTemplate_b3007bf3e12b66d8f048a579c4c9e7a4 extends Twig_Template
       </div>
     </div>
       
+    ";
+        // line 109
+        echo $this->env->getExtension('actions')->renderAction("SMFrontBundle:Default:leftAds", array(), array());
+        // line 110
+        echo "    
     <!-- build:js js/libs.min.js-->
     <script src=\"";
-        // line 110
+        // line 112
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("web/front/js/libs.js"), "html", null, true);
         echo "\"></script>
     <!-- endbuild-->
     <!-- build:js js/l10n.min.js-->
     <script src=\"";
-        // line 113
+        // line 115
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("web/front/js/l10n.js"), "html", null, true);
         echo "\"></script>
     <!-- endbuild-->
     <!-- build:js js/plugins.min.js-->
     <script src=\"";
-        // line 116
+        // line 118
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("web/front/js/plugins.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 117
+        // line 119
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("web/front/js/jquery.mousewheel.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 118
+        // line 120
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("web/front/js/jquery.flexslider.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 119
+        // line 121
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("web/front/js/bootstrap.js"), "html", null, true);
         echo "\"></script>
     <!-- endbuild-->
     <!-- build:js js/start.min.js-->
     <script src=\"";
-        // line 122
+        // line 124
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("web/front/js/start.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 123
+        // line 125
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("web/front/js/custom.js"), "html", null, true);
         echo "\"></script>
     <!-- endbuild-->
@@ -257,6 +262,6 @@ class __TwigTemplate_b3007bf3e12b66d8f048a579c4c9e7a4 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  244 => 71,  236 => 123,  232 => 122,  226 => 119,  222 => 118,  218 => 117,  214 => 116,  208 => 113,  202 => 110,  194 => 104,  192 => 103,  188 => 101,  186 => 100,  176 => 92,  174 => 91,  169 => 88,  167 => 87,  162 => 84,  160 => 83,  151 => 76,  149 => 75,  144 => 72,  142 => 71,  136 => 67,  134 => 66,  125 => 59,  123 => 58,  117 => 54,  115 => 53,  110 => 50,  108 => 49,  102 => 45,  100 => 44,  95 => 41,  93 => 40,  88 => 37,  86 => 36,  77 => 29,  75 => 28,  63 => 19,  57 => 16,  53 => 15,  48 => 13,  44 => 12,  40 => 11,  36 => 10,  31 => 9,  29 => 8,  20 => 1,);
+        return array (  249 => 71,  241 => 125,  237 => 124,  231 => 121,  227 => 120,  223 => 119,  219 => 118,  213 => 115,  207 => 112,  203 => 110,  201 => 109,  194 => 104,  192 => 103,  188 => 101,  186 => 100,  176 => 92,  174 => 91,  169 => 88,  167 => 87,  162 => 84,  160 => 83,  151 => 76,  149 => 75,  144 => 72,  142 => 71,  136 => 67,  134 => 66,  125 => 59,  123 => 58,  117 => 54,  115 => 53,  110 => 50,  108 => 49,  102 => 45,  100 => 44,  95 => 41,  93 => 40,  88 => 37,  86 => 36,  77 => 29,  75 => 28,  63 => 19,  57 => 16,  53 => 15,  48 => 13,  44 => 12,  40 => 11,  36 => 10,  31 => 9,  29 => 8,  20 => 1,);
     }
 }
