@@ -15,6 +15,7 @@
                 <th>{{ 'Id'|trans({}, "SMAdminBundle") }}</th>
                 <th>{{ 'Name'|trans({}, "SMAdminBundle") }}</th>
                 <th>{{ 'Value'|trans({}, "SMAdminBundle") }}</th>
+                <th>{{ 'Description'|trans({}, "SMAdminBundle") }}</th>
                 <th>{{ 'Action'|trans({}, "SMAdminBundle") }}</th>
             </tr>
         </thead>
@@ -25,6 +26,7 @@
                 <td>{{ entity.id }}</td>
                 <td> {{ entity.name }} </td>
                 <td> {{ entity.value }} </td>
+                <td> {{ entity.description}} </td>
                 <td>
                     <a href="{{ path('admin_config_edit', { 'id': entity.id }) }}"><i class="icon-pencil"></i>{{ 'Edit'|trans({}, "SMAdminBundle") }}</a>
                     <a href="#" rel="{{ path('admin_config_delete', { 'id': entity.getId }) }}" class="delete"><i class="icon-remove"></i>{{ 'Delete'|trans({}, "SMAdminBundle") }}</a>

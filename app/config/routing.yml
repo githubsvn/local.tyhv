@@ -83,6 +83,10 @@ mtx_admin_file:
   resource: "@SMAdminBundle/Resources/config/routing/file.yml"
   prefix:   /admin/file
 
+mtx_admin_video:
+  resource: "@SMAdminBundle/Resources/config/routing/video.yml"
+  prefix:   /admin/video
+
 mtx_admin_itemtype:
   resource: "@SMAdminBundle/Resources/config/routing/itemtype.yml"
   prefix:   /admin/itemtype

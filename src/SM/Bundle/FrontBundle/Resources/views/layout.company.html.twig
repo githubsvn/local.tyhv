@@ -5,13 +5,7 @@
 <html lang="en" class="no-js">
   <!--<![endif]-->
   <head>
-    <meta charset="utf-8">
-    <title>{% block title %}{{ 'Logo Company'|trans({}, 'SMFrontBundle') }}{% endblock %}</title>
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="">
-    <meta name="viewport" content="width=1300">
+    {% render 'SMFrontBundle:Default:meta' %}
     <link rel="shortcut icon" href="{{ asset('web/front/images/favicon.ico') }}" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('web/front/images/apple-touch-icon-57x57.png') }}">
     <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('web/front/images/apple-touch-icon-72x72.png') }}">

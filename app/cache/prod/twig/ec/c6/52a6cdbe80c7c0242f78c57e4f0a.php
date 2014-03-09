@@ -19,51 +19,54 @@ class __TwigTemplate_ecc652a6cdbe80c7c0242f78c57e4f0a extends Twig_Template
         echo "<div class=\"block access-block\">
       <h2 class=\"title-1\">Lượng truy cập</h2>
       <img src=\"/web/front/images/img-access.png\" alt=\"\" />
+\t  <!--
       <table>
           <tr>
               <td>Onine user</td>
               <td>";
-        // line 7
+        // line 8
         echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "counter"), "getUserOnline"), "html", null, true);
         echo "</td>
           </tr>
           <tr>
               <td>Total today</td>
               <td>";
-        // line 11
+        // line 12
         echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "counter"), "getTotalToday"), "html", null, true);
         echo "</td>
           </tr>
           <tr>
               <td>Total yesterday</td>
               <td>";
-        // line 15
+        // line 16
         echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "counter"), "getTotalYesterday"), "html", null, true);
         echo "</td>
           </tr>
           <tr>
               <td>Total this month</td>
               <td>";
-        // line 19
+        // line 20
         echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "counter"), "getTotalMonth"), "html", null, true);
         echo "</td>
           </tr>
           <tr>
               <td>Total pre month</td>
               <td>";
-        // line 23
+        // line 24
         echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "counter"), "getTotalMonPre"), "html", null, true);
         echo "</td>
           </tr>
           <tr>
               <td>Total</td>
               <td>";
-        // line 27
+        // line 28
         echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "counter"), "getTotal"), "html", null, true);
         echo "</td>
           </tr>
       </table>
-    </div>";
+\t  -->
+    </div>
+\t";
     }
 
     public function getTemplateName()
@@ -78,6 +81,6 @@ class __TwigTemplate_ecc652a6cdbe80c7c0242f78c57e4f0a extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  62 => 27,  55 => 23,  48 => 19,  41 => 15,  34 => 11,  27 => 7,  19 => 1,);
+        return array (  63 => 28,  56 => 24,  49 => 20,  42 => 16,  35 => 12,  28 => 8,  19 => 1,);
     }
 }

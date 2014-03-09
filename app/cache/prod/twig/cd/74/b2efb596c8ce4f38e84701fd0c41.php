@@ -66,43 +66,51 @@ class __TwigTemplate_cd74b2efb596c8ce4f38e84701fd0c41 extends Twig_Template
         echo "</th>
                 <th>";
         // line 18
+        echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Description", array(), "SMAdminBundle"), "html", null, true);
+        echo "</th>
+                <th>";
+        // line 19
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Action", array(), "SMAdminBundle"), "html", null, true);
         echo "</th>
             </tr>
         </thead>
         <tbody>
         ";
-        // line 22
+        // line 23
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($this->getContext($context, "entities"));
         foreach ($context['_seq'] as $context["_key"] => $context["entity"]) {
-            // line 23
+            // line 24
             echo "            <tr>
                 <td style=\"text-align: center;\"><input type=\"checkbox\" value=\"";
-            // line 24
+            // line 25
             echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "entity"), "getId"), "html", null, true);
             echo "\" name=\"checklist[]\" class=\"chkItem\"/> </td>
                 <td>";
-            // line 25
+            // line 26
             echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "entity"), "id"), "html", null, true);
             echo "</td>
                 <td> ";
-            // line 26
+            // line 27
             echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "entity"), "name"), "html", null, true);
             echo " </td>
                 <td> ";
-            // line 27
+            // line 28
             echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "entity"), "value"), "html", null, true);
+            echo " </td>
+                <td> ";
+            // line 29
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "entity"), "description"), "html", null, true);
             echo " </td>
                 <td>
                     <a href=\"";
-            // line 29
+            // line 31
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("admin_config_edit", array("id" => $this->getAttribute($this->getContext($context, "entity"), "id"))), "html", null, true);
             echo "\"><i class=\"icon-pencil\"></i>";
             echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Edit", array(), "SMAdminBundle"), "html", null, true);
             echo "</a>
                     <a href=\"#\" rel=\"";
-            // line 30
+            // line 32
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("admin_config_delete", array("id" => $this->getAttribute($this->getContext($context, "entity"), "getId"))), "html", null, true);
             echo "\" class=\"delete\"><i class=\"icon-remove\"></i>";
             echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Delete", array(), "SMAdminBundle"), "html", null, true);
@@ -114,7 +122,7 @@ class __TwigTemplate_cd74b2efb596c8ce4f38e84701fd0c41 extends Twig_Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 34
+        // line 36
         echo "        </tbody>
     </table>
 </form>
@@ -133,6 +141,6 @@ class __TwigTemplate_cd74b2efb596c8ce4f38e84701fd0c41 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  118 => 34,  106 => 30,  100 => 29,  95 => 27,  91 => 26,  87 => 25,  83 => 24,  80 => 23,  76 => 22,  69 => 18,  65 => 17,  61 => 16,  57 => 15,  44 => 7,  38 => 6,  31 => 3,  28 => 2,);
+        return array (  126 => 36,  114 => 32,  108 => 31,  103 => 29,  99 => 28,  95 => 27,  91 => 26,  87 => 25,  84 => 24,  80 => 23,  73 => 19,  69 => 18,  65 => 17,  61 => 16,  57 => 15,  44 => 7,  38 => 6,  31 => 3,  28 => 2,);
     }
 }

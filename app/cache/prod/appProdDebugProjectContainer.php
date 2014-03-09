@@ -204,11 +204,11 @@ class appProdDebugProjectContainer extends Container
      * This service is shared.
      * This method always returns the same instance of the service.
      *
-     * @return EntityManager52d8d9ed7ba37_546a8d27f194334ee012bfe64f629947b07e4919\__CG__\Doctrine\ORM\EntityManager A EntityManager52d8d9ed7ba37_546a8d27f194334ee012bfe64f629947b07e4919\__CG__\Doctrine\ORM\EntityManager instance.
+     * @return EntityManager531b499c2a662_546a8d27f194334ee012bfe64f629947b07e4919\__CG__\Doctrine\ORM\EntityManager A EntityManager531b499c2a662_546a8d27f194334ee012bfe64f629947b07e4919\__CG__\Doctrine\ORM\EntityManager instance.
      */
     protected function getDoctrine_Orm_DefaultEntityManagerService()
     {
-        require_once 'D:/www/local.tyhv/app/cache/prod/jms_diextra/doctrine/EntityManager_52d8d9ed7ba37.php';
+        require_once 'D:/www/local.tyhv/app/cache/prod/jms_diextra/doctrine/EntityManager_531b499c2a662.php';
 
         $a = new \Doctrine\Common\Cache\ArrayCache();
         $a->setNamespace('sf2orm_default_303840587a2ca3d8d50f3abe1a3410d1');
@@ -238,7 +238,7 @@ class appProdDebugProjectContainer extends Container
         $f = call_user_func(array('Doctrine\\ORM\\EntityManager', 'create'), $this->get('doctrine.dbal.default_connection'), $e);
         $this->get('doctrine.orm.default_manager_configurator')->configure($f);
 
-        return $this->services['doctrine.orm.default_entity_manager'] = new \EntityManager52d8d9ed7ba37_546a8d27f194334ee012bfe64f629947b07e4919\__CG__\Doctrine\ORM\EntityManager($f, $this);
+        return $this->services['doctrine.orm.default_entity_manager'] = new \EntityManager531b499c2a662_546a8d27f194334ee012bfe64f629947b07e4919\__CG__\Doctrine\ORM\EntityManager($f, $this);
     }
 
     /**
@@ -1723,7 +1723,7 @@ class appProdDebugProjectContainer extends Container
         $o = new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($b, $g, new \Symfony\Component\Security\Http\Session\SessionAuthenticationStrategy('migrate'), $k, 'secured_area', $n, new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationFailureHandler($f, $k, array('login_path' => '/login', 'failure_path' => NULL, 'failure_forward' => false), $a), array('check_path' => '/login_check', 'use_forward' => false, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'intention' => 'authenticate', 'post_only' => true), $a, $d);
         $o->setRememberMeServices($l);
 
-        return $this->services['security.firewall.map.context.secured_area'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($j, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => $c), 'secured_area', $a, $d), 2 => $m, 3 => $o, 4 => new \Symfony\Component\Security\Http\Firewall\RememberMeListener($b, $l, $g, $a, $d), 5 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '52d8d9ed0d142', $a), 6 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $j, $g, $a)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), $k, 'secured_area', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($f, $k, '/login', false), NULL, NULL, $a));
+        return $this->services['security.firewall.map.context.secured_area'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($j, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => $c), 'secured_area', $a, $d), 2 => $m, 3 => $o, 4 => new \Symfony\Component\Security\Http\Firewall\RememberMeListener($b, $l, $g, $a, $d), 5 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '531b499a70203', $a), 6 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $j, $g, $a)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), $k, 'secured_area', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($f, $k, '/login', false), NULL, NULL, $a));
     }
 
     /**
@@ -2883,7 +2883,7 @@ class appProdDebugProjectContainer extends Container
     /**
      * Gets the doctrine.orm.entity_manager service alias.
      *
-     * @return EntityManager52d8d9ed7ba37_546a8d27f194334ee012bfe64f629947b07e4919\__CG__\Doctrine\ORM\EntityManager An instance of the doctrine.orm.default_entity_manager service
+     * @return EntityManager531b499c2a662_546a8d27f194334ee012bfe64f629947b07e4919\__CG__\Doctrine\ORM\EntityManager An instance of the doctrine.orm.default_entity_manager service
      */
     protected function getDoctrine_Orm_EntityManagerService()
     {
@@ -3059,7 +3059,7 @@ class appProdDebugProjectContainer extends Container
     {
         $a = new \Symfony\Component\Security\Core\User\UserChecker();
 
-        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($this->get('security.user.provider.concrete.main'), $a, 'secured_area', $this->get('security.encoder_factory'), true), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\RememberMeAuthenticationProvider($a, 'd00245c7bda39aa016baa57370bfebc9b11deda3', 'secured_area'), 2 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('52d8d9ed0d142')), true);
+        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($this->get('security.user.provider.concrete.main'), $a, 'secured_area', $this->get('security.encoder_factory'), true), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\RememberMeAuthenticationProvider($a, 'd00245c7bda39aa016baa57370bfebc9b11deda3', 'secured_area'), 2 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('531b499a70203')), true);
 
         $instance->setEventDispatcher($this->get('event_dispatcher'));
 
@@ -3610,7 +3610,7 @@ class appProdDebugProjectContainer extends Container
 
             ),
             'assetic.java.bin' => 'C:\\Windows\\system32\\java.EXE',
-            'assetic.node.bin' => 'C:\\Program Files\\nodejs\\\\node.EXE',
+            'assetic.node.bin' => '/usr/bin/node',
             'assetic.ruby.bin' => '/usr/bin/ruby',
             'assetic.sass.bin' => '/usr/bin/sass',
             'assetic.filter.cssrewrite.class' => 'Assetic\\Filter\\CssRewriteFilter',
@@ -3704,8 +3704,8 @@ class appProdDebugProjectContainer extends Container
             ),
             'jms_di_extra.cache_dir' => 'D:/www/local.tyhv/app/cache/prod/jms_diextra',
             'jms_di_extra.doctrine_integration' => true,
-            'jms_di_extra.doctrine_integration.entity_manager.file' => 'D:/www/local.tyhv/app/cache/prod/jms_diextra/doctrine/EntityManager_52d8d9ed7ba37.php',
-            'jms_di_extra.doctrine_integration.entity_manager.class' => 'EntityManager52d8d9ed7ba37_546a8d27f194334ee012bfe64f629947b07e4919\\__CG__\\Doctrine\\ORM\\EntityManager',
+            'jms_di_extra.doctrine_integration.entity_manager.file' => 'D:/www/local.tyhv/app/cache/prod/jms_diextra/doctrine/EntityManager_531b499c2a662.php',
+            'jms_di_extra.doctrine_integration.entity_manager.class' => 'EntityManager531b499c2a662_546a8d27f194334ee012bfe64f629947b07e4919\\__CG__\\Doctrine\\ORM\\EntityManager',
             'security.secured_services' => array(
 
             ),
@@ -3813,6 +3813,16 @@ class appProdDebugProjectContainer extends Container
                         ),
                     ),
                     7 => array(
+                        'class' => 'SM\\Bundle\\AdminBundle\\Entity\\Video',
+                        'group' => 'MEDIA',
+                        'label' => 'QL Video',
+                        'acl' => true,
+                        'action' => array(
+                            0 => 'admin_video_new',
+                            1 => 'admin_video',
+                        ),
+                    ),
+                    8 => array(
                         'class' => 'SM\\Bundle\\AdminBundle\\Entity\\CompanyType',
                         'group' => 'CÔNG TY',
                         'label' => 'QL Loại Hình CTY',
@@ -3822,7 +3832,7 @@ class appProdDebugProjectContainer extends Container
                             1 => 'admin_companytype',
                         ),
                     ),
-                    8 => array(
+                    9 => array(
                         'class' => 'SM\\Bundle\\AdminBundle\\Entity\\Company',
                         'group' => 'CÔNG TY',
                         'label' => 'QL Công Ty',
@@ -3832,7 +3842,7 @@ class appProdDebugProjectContainer extends Container
                             1 => 'admin_company',
                         ),
                     ),
-                    9 => array(
+                    10 => array(
                         'class' => 'SM\\Bundle\\AdminBundle\\Entity\\Branch',
                         'group' => 'SẢN PHẨM',
                         'label' => 'QL Ngành Hàng',
@@ -3842,7 +3852,7 @@ class appProdDebugProjectContainer extends Container
                             1 => 'admin_branch',
                         ),
                     ),
-                    10 => array(
+                    11 => array(
                         'class' => 'SM\\Bundle\\AdminBundle\\Entity\\Products',
                         'group' => 'SẢN PHẨM',
                         'label' => 'QL Sản Phẩm',
@@ -3852,7 +3862,7 @@ class appProdDebugProjectContainer extends Container
                             1 => 'admin_products',
                         ),
                     ),
-                    11 => array(
+                    12 => array(
                         'class' => 'SM\\Bundle\\AdminBundle\\Entity\\Category',
                         'group' => 'TIN TỨC',
                         'label' => 'QL Chuyên Mục',
@@ -3862,7 +3872,7 @@ class appProdDebugProjectContainer extends Container
                             1 => 'admin_category',
                         ),
                     ),
-                    12 => array(
+                    13 => array(
                         'class' => 'SM\\Bundle\\AdminBundle\\Entity\\News',
                         'group' => 'TIN TỨC',
                         'label' => 'QL Tin tức',
@@ -3872,7 +3882,7 @@ class appProdDebugProjectContainer extends Container
                             1 => 'admin_news',
                         ),
                     ),
-                    13 => array(
+                    14 => array(
                         'class' => 'SM\\Bundle\\AdminBundle\\Entity\\Page',
                         'group' => 'TIN TỨC',
                         'label' => 'QL Trang tỉnh',
@@ -3882,7 +3892,7 @@ class appProdDebugProjectContainer extends Container
                             1 => 'admin_page',
                         ),
                     ),
-                    14 => array(
+                    15 => array(
                         'class' => 'SM\\Bundle\\AdminBundle\\Entity\\ItemType',
                         'group' => 'GIÁ CẢ THỊ TRƯỜNG',
                         'label' => 'QL Nhóm',
@@ -3892,7 +3902,7 @@ class appProdDebugProjectContainer extends Container
                             1 => 'admin_itemtype',
                         ),
                     ),
-                    15 => array(
+                    16 => array(
                         'class' => 'SM\\Bundle\\AdminBundle\\Entity\\Item',
                         'group' => 'GIÁ CẢ THỊ TRƯỜNG',
                         'label' => 'QL Mặt Hàng',

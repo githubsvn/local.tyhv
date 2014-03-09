@@ -1,0 +1,38 @@
+admin_video:
+    pattern:  /{page}/{lang}
+    defaults: { _controller: "SMAdminBundle:Video:index", page : 1, lang : null }
+    requirements:
+        page:  \d+
+        lang:  \d+
+        
+admin_video_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "SMAdminBundle:Video:show" }
+
+admin_video_new:
+    pattern:  /new
+    defaults: { _controller: "SMAdminBundle:Video:new" }
+
+admin_video_create:
+    pattern:  /create
+    defaults: { _controller: "SMAdminBundle:Video:create" }
+    requirements: { _method: post }
+
+admin_video_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "SMAdminBundle:Video:edit" }
+
+admin_video_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "SMAdminBundle:Video:update" }
+    requirements: { _method: post }
+
+admin_video_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "SMAdminBundle:Video:delete" }
+    requirements: { _method: post|get }
+
+admin_video_delete_all:
+    pattern:  /deleteall
+    defaults: { _controller: "SMAdminBundle:Video:deleteAll" }
+    requirements: { _method: post }   

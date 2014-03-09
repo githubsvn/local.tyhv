@@ -660,4 +660,16 @@ class DefaultController extends Controller
         return $this->render('SMFrontBundle:Default:feedback.html.twig', array(
         ));
     }
+    
+    public function metaAction()
+    {
+        $metaDes = Utilities::getConfig('meta_description');
+        $metaKeywords = Utilities::getConfig('meta_keywords');
+        $metaContent = Utilities::getConfig('meta_content');
+        return $this->render('SMFrontBundle:Default:meta.html.twig', array(
+            'metaDes' => $metaDes,
+            'metaKeywords' => $metaKeywords,
+            'metaContent' => $metaContent,
+        ));
+    }
 }

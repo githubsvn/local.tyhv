@@ -1312,6 +1312,73 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
 
         }
 
+        if (0 === strpos($pathinfo, '/admin/video')) {
+            // admin_video
+            if (preg_match('#^/admin/video(?:/(?P<page>\\d+)(?:/(?P<lang>\\d+))?)?$#s', $pathinfo, $matches)) {
+                return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'SM\\Bundle\\AdminBundle\\Controller\\VideoController::indexAction',  'page' => '1',  'lang' => NULL,)), array('_route' => 'admin_video'));
+            }
+
+            // admin_video_show
+            if (preg_match('#^/admin/video/(?P<id>[^/]+)/show$#s', $pathinfo, $matches)) {
+                return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'SM\\Bundle\\AdminBundle\\Controller\\VideoController::showAction',)), array('_route' => 'admin_video_show'));
+            }
+
+            // admin_video_new
+            if ($pathinfo === '/admin/video/new') {
+                return array (  '_controller' => 'SM\\Bundle\\AdminBundle\\Controller\\VideoController::newAction',  '_route' => 'admin_video_new',);
+            }
+
+            // admin_video_create
+            if ($pathinfo === '/admin/video/create') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_admin_video_create;
+                }
+
+                return array (  '_controller' => 'SM\\Bundle\\AdminBundle\\Controller\\VideoController::createAction',  '_route' => 'admin_video_create',);
+            }
+            not_admin_video_create:
+
+            // admin_video_edit
+            if (preg_match('#^/admin/video/(?P<id>[^/]+)/edit$#s', $pathinfo, $matches)) {
+                return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'SM\\Bundle\\AdminBundle\\Controller\\VideoController::editAction',)), array('_route' => 'admin_video_edit'));
+            }
+
+            // admin_video_update
+            if (preg_match('#^/admin/video/(?P<id>[^/]+)/update$#s', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_admin_video_update;
+                }
+
+                return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'SM\\Bundle\\AdminBundle\\Controller\\VideoController::updateAction',)), array('_route' => 'admin_video_update'));
+            }
+            not_admin_video_update:
+
+            // admin_video_delete
+            if (preg_match('#^/admin/video/(?P<id>[^/]+)/delete$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('POST', 'GET', 'HEAD'));
+                    goto not_admin_video_delete;
+                }
+
+                return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'SM\\Bundle\\AdminBundle\\Controller\\VideoController::deleteAction',)), array('_route' => 'admin_video_delete'));
+            }
+            not_admin_video_delete:
+
+            // admin_video_delete_all
+            if ($pathinfo === '/admin/video/deleteall') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_admin_video_delete_all;
+                }
+
+                return array (  '_controller' => 'SM\\Bundle\\AdminBundle\\Controller\\VideoController::deleteAllAction',  '_route' => 'admin_video_delete_all',);
+            }
+            not_admin_video_delete_all:
+
+        }
+
         if (0 === strpos($pathinfo, '/admin/itemtype')) {
             // admin_itemtype
             if (preg_match('#^/admin/itemtype(?:/(?P<page>\\d+)(?:/(?P<lang>\\d+))?)?$#s', $pathinfo, $matches)) {
