@@ -16,38 +16,36 @@ class __TwigTemplate_09d335be72ab745c521eaab17275829d extends Twig_Template
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 1
-        echo "<div class=\"video-block\">
+        echo "<!--<div class=\"video-block\">
     <iframe width=\"208\" height=\"153\" src=\"http://www.youtube.com/embed/u2IDsSL0OHg?wmode=transparent\"></iframe>
-</div>
+</div>-->
 
-<!--<div class=\"block video-block-list\">
-    <ul>
+<div class=\"video-block-list yt_holder\">
+    <div id=\"ytvideo\"></div>
+    <ul class=\"demo1\">
         <li>
-            <a class=\"playlist\" title=\"Video 1\" href=\"#\">
-                <span class=\"img-thumb\">
-                    <span>
-                        <iframe width=\"57\" height=\"57\" src=\"http://www.youtube.com/embed/u2IDsSL0OHg?wmode=transparent\"></iframe>
-                    </span>
-                </span>
-                <div class=\"content\">
-                    <p>Video 1</p>
-                </div>
+            <a href=\"http://www.youtube.com/watch?v=QBBWKvY-VDc\" title=\"Video 1Video 1Video 1Video 1\">
+              <div class=\"content\">
+                <p>Video 1Video 1Video 1Video 1</p>
+              </div>
             </a>
         </li>
         <li>
-            <a class=\"playlist\" title=\"Video 2\" href=\"#\">
-                <span class=\"img-thumb\">
-                    <span>
-                        <iframe width=\"57\" height=\"57\" src=\"http://www.youtube.com/embed/u2IDsSL0OHg?wmode=transparent\"></iframe>
-                    </span>
-                </span>
-                <div class=\"content\">
-                    <p>Video 2</p>
-                </div>
+            <a href=\"http://www.youtube.com/watch?v=ZXMQqLnRhRI\" title=\"Video 1Video 1Video 1Video 1\">
+              <div class=\"content\">
+                <p>Video 1Video 1Video 1Video 1</p>
+              </div>
+            </a>
+        </li>
+        <li>
+            <a href=\"http://www.youtube.com/watch?v=Wvo-g_JvURI\" title=\"Video 1Video 1Video 1Video 1\">
+              <div class=\"content\">
+                <p>Video 1Video 1Video 1Video 1</p>
+              </div>
             </a>
         </li>
     </ul>
-</div>-->";
+</div>";
     }
 
     public function getTemplateName()

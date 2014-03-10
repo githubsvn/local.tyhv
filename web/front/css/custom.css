@@ -17,10 +17,9 @@
 }
 
 .video-block-list{ border: none;}
-.video-block-list ul {margin: 0 8px 12px;}
-.video-block-list li {margin-top: 16px;}
-.video-block-list .img-thumb {float: left; margin: 0 7px 0 0; padding: 0;}
-.video-block-list .img-thumb span {width: 57px; height: 49px;}
-.video-block-list a {overflow: hidden; display: block; font-size: 12px; color: #666;}
-.video-block-list a:hover {color: #b30000;}
-.video-block-list a:hover .img-thumb {opacity: 0.8;}
+.video-block-list ul li {overflow: hidden; display: block; padding: 1px;}
+.video-block-list ul li a {overflow: hidden; display: block; font-size: 12px; color: #666;}
+.video-block-list ul li a:hover {color: #b30000;}
+.video-block-list ul li a:hover img {opacity: 0.8;}
+.video-block-list ul li a img {width: 57px; height: 49px;}
+

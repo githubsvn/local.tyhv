@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 27, 2014 at 03:32 AM
+-- Generation Time: Mar 10, 2014 at 01:37 PM
 -- Server version: 5.5.16
 -- PHP Version: 5.3.8
 
@@ -432,7 +432,7 @@ CREATE TABLE IF NOT EXISTS `mtx_config` (
   `value` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `description` longtext COLLATE utf8_unicode_ci,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=17 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=29 ;
 
 --
 -- Dumping data for table `mtx_config`
@@ -454,7 +454,19 @@ INSERT INTO `mtx_config` (`id`, `name`, `value`, `description`) VALUES
 (13, 'per_new_product_item', '6', 'Số lượng sản phẩm mới'),
 (14, 'per_product_item_homepage', '10', 'Số lượng sản phẩm hiện thị trên trang chủ'),
 (15, 'per_company_item_homepage', '9', 'Số lượng logo công ty trên trang chủ'),
-(16, 'minuteToCounterVisitor', '15', NULL);
+(16, 'minuteToCounterVisitor', '15', NULL),
+(17, 'meta_description', 'Toi Yeu Hang Viet', NULL),
+(18, 'meta_keywords', 'Toi Yeu Hang Viet', NULL),
+(19, 'meta_content', 'Toi Yeu Hang Viet', NULL),
+(20, 'footer_add', 'Tòa nhà ETown 2, lầu 6, phòng 6.5 - số 364 Cộng Hòa, Tân Bình, TP HCM', 'Địa chỉ công ty được hiện thị dưới footer.'),
+(21, 'phone', '(08) 38 125 999', 'Số điện thoại công ty được hiện thị phía dưới footer'),
+(22, 'fax', '(08) 38 125 998', 'Số fax công ty được hiện thị phía dưới footer.'),
+(23, 'info_email', 'info@toiyeuvietnam.com', 'Email liên hệ của công ty được hiện thị dưới footer.'),
+(24, 'facebook_page', '#', NULL),
+(25, 'twitter_page', '#', NULL),
+(26, 'youtube_page', '#', NULL),
+(27, 'left_ads_url', '#', 'url cho banner quảng cáo bên trái'),
+(28, 'right_ads_url', '#', 'url cho banner quảng cáo bên phải');
 
 -- --------------------------------------------------------
 
@@ -468,7 +480,7 @@ CREATE TABLE IF NOT EXISTS `mtx_counter` (
   `time_visit` varchar(11) COLLATE utf8_unicode_ci DEFAULT NULL,
   `date_visit` varchar(11) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=26 ;
 
 --
 -- Dumping data for table `mtx_counter`
@@ -478,7 +490,20 @@ INSERT INTO `mtx_counter` (`id`, `ip`, `time_visit`, `date_visit`) VALUES
 (9, '127.0.0.1', '584', '17/1/2014'),
 (10, '192.168.106.61', '586', '17/1/2014'),
 (11, '192.168.106.66', '587', '17/1/2014'),
-(12, '127.0.0.1', '940', '18/1/2014');
+(12, '127.0.0.1', '940', '18/1/2014'),
+(13, '127.0.0.1', '694', '4/3/2014'),
+(14, '127.0.0.1', '890', '8/3/2014'),
+(15, '127.0.0.1', '907', '8/3/2014'),
+(16, '127.0.0.1', '947', '8/3/2014'),
+(17, '127.0.0.1', '964', '8/3/2014'),
+(18, '127.0.0.1', '284', '9/3/2014'),
+(19, '127.0.0.1', '305', '9/3/2014'),
+(20, '127.0.0.1', '321', '9/3/2014'),
+(21, '127.0.0.1', '338', '9/3/2014'),
+(22, '127.0.0.1', '354', '9/3/2014'),
+(23, '127.0.0.1', '390', '9/3/2014'),
+(24, '127.0.0.1', '415', '9/3/2014'),
+(25, '127.0.0.1', '812', '10/3/2014');
 
 -- --------------------------------------------------------
 
@@ -829,7 +854,7 @@ CREATE TABLE IF NOT EXISTS `mtx_menu` (
   KEY `IDX_3798AC02727ACA70` (`parent_id`),
   KEY `IDX_3798AC025EE01E44` (`created_id`),
   KEY `IDX_3798AC02960CC7F3` (`updated_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=12 ;
 
 --
 -- Dumping data for table `mtx_menu`
@@ -842,7 +867,11 @@ INSERT INTO `mtx_menu` (`id`, `parent_id`, `created_id`, `updated_id`, `lft`, `r
 (4, NULL, 1, 1, 7, 8, 1, '2013-11-24 04:42:38', '2013-11-24 04:42:38', '/product/view-branch/1/dac-san-vung-mien-5.html', 3, 5, 1),
 (5, NULL, 1, 1, 9, 10, 1, '2013-11-24 04:43:42', '2013-11-24 04:43:42', '/news/view-cat/1/dich-vu-3.html', 6, 3, 1),
 (6, NULL, 1, 1, 11, 12, 1, '2013-11-24 04:44:44', '2013-11-24 04:44:44', 'http://local.tyhv/company/view-all', 10, NULL, 1),
-(7, NULL, 1, 1, 13, 14, 1, '2013-11-24 04:45:46', '2013-11-24 04:45:46', '/news/view-cat/1/tu-van-tieu-dung-4.html', 6, 4, 1);
+(7, NULL, 1, 1, 13, 14, 1, '2013-11-24 04:45:46', '2013-11-24 04:45:46', '/news/view-cat/1/tu-van-tieu-dung-4.html', 6, 4, 1),
+(8, NULL, 1, 1, 15, 16, 1, '2014-03-09 06:00:41', '2014-03-09 06:00:41', '/page/detail/gioi-thieu-1.html', 8, 1, 5),
+(9, NULL, 1, 1, 17, 18, 1, '2014-03-09 06:01:51', '2014-03-09 06:01:51', '/page/detail/tam-nhin-su-menh-2.html', 8, 2, 5),
+(10, NULL, 1, 1, 19, 20, 1, '2014-03-09 06:03:01', '2014-03-09 06:03:01', '/page/detail/cau-hoi-thuong-gap-3.html', 8, 3, 5),
+(11, NULL, 1, 1, 21, 22, 1, '2014-03-09 06:04:26', '2014-03-09 06:04:26', '/page/detail/lien-he-4.html', 8, 4, 5);
 
 -- --------------------------------------------------------
 
@@ -859,7 +888,7 @@ CREATE TABLE IF NOT EXISTS `mtx_menu_language` (
   PRIMARY KEY (`id`),
   KEY `IDX_EC57E1DECCD7E912` (`menu_id`),
   KEY `IDX_EC57E1DE82F1BAF4` (`language_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `mtx_menu_language`
@@ -871,7 +900,11 @@ INSERT INTO `mtx_menu_language` (`id`, `menu_id`, `language_id`, `name`, `alias`
 (3, 4, 1, 'Đặc Sản Vùng Miền', NULL),
 (4, 5, 1, 'Dịch Vụ', NULL),
 (5, 6, 1, 'Doanh Nghiệp', NULL),
-(6, 7, 1, 'Tư Vấn Tiêu Dùng', NULL);
+(6, 7, 1, 'Tư Vấn Tiêu Dùng', NULL),
+(7, 8, 1, 'Giới thiệu', NULL),
+(8, 9, 1, 'Tầm nhìn sứ mệnh', NULL),
+(9, 10, 1, 'Câu hỏi thường gặp', NULL),
+(10, 11, 1, 'Liên hệ', NULL);
 
 -- --------------------------------------------------------
 
@@ -992,7 +1025,17 @@ CREATE TABLE IF NOT EXISTS `mtx_page` (
   PRIMARY KEY (`id`),
   KEY `IDX_5E9720B15EE01E44` (`created_id`),
   KEY `IDX_5E9720B1960CC7F3` (`updated_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `mtx_page`
+--
+
+INSERT INTO `mtx_page` (`id`, `created_id`, `updated_id`, `status`, `created_at`, `updated_at`, `image`) VALUES
+(1, 1, 1, 1, '2014-03-09 05:55:54', '2014-03-09 05:55:54', NULL),
+(2, 1, 1, 1, '2014-03-09 05:56:37', '2014-03-09 05:56:37', NULL),
+(3, 1, 1, 1, '2014-03-09 05:57:34', '2014-03-09 05:57:34', NULL),
+(4, 1, 1, 1, '2014-03-09 05:58:16', '2014-03-09 05:58:16', NULL);
 
 -- --------------------------------------------------------
 
@@ -1010,7 +1053,17 @@ CREATE TABLE IF NOT EXISTS `mtx_page_language` (
   PRIMARY KEY (`id`),
   KEY `IDX_4099A36882F1BAF4` (`language_id`),
   KEY `IDX_4099A368C4663E4` (`page_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `mtx_page_language`
+--
+
+INSERT INTO `mtx_page_language` (`id`, `language_id`, `page_id`, `name`, `intro`, `description`) VALUES
+(1, 1, 1, 'Giới Thiệu', '<p>Giới thiệu cty</p>', '<p>Giới thiệu cty</p>'),
+(2, 1, 2, 'Tầm Nhìn Sứ Mệnh', '<p>Tầm Nh&igrave;n Sứ Mệnh</p>', '<p>Tầm Nh&igrave;n Sứ Mệnh</p>'),
+(3, 1, 3, 'Câu Hỏi Thường Gặp', '<p>C&acirc;u Hỏi Thường Gặp</p>', '<p>C&acirc;u Hỏi Thường Gặp</p>'),
+(4, 1, 4, 'Liên Hệ', '<p>Li&ecirc;n Hệ</p>', '<p>Li&ecirc;n Hệ</p>');
 
 -- --------------------------------------------------------
 
@@ -1255,6 +1308,55 @@ CREATE TABLE IF NOT EXISTS `mtx_user_role` (
 
 INSERT INTO `mtx_user_role` (`user_id`, `role_id`) VALUES
 (1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mtx_video`
+--
+
+CREATE TABLE IF NOT EXISTS `mtx_video` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `created_id` int(11) DEFAULT NULL,
+  `updated_id` int(11) DEFAULT NULL,
+  `status` tinyint(1) DEFAULT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL,
+  `url` longtext COLLATE utf8_unicode_ci,
+  PRIMARY KEY (`id`),
+  KEY `IDX_FB85E4685EE01E44` (`created_id`),
+  KEY `IDX_FB85E468960CC7F3` (`updated_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `mtx_video`
+--
+
+INSERT INTO `mtx_video` (`id`, `created_id`, `updated_id`, `status`, `created_at`, `updated_at`, `url`) VALUES
+(4, 1, 1, 1, '2014-03-08 16:50:04', '2014-03-08 16:50:04', 'http://youtube.com');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mtx_video_language`
+--
+
+CREATE TABLE IF NOT EXISTS `mtx_video_language` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `language_id` int(11) DEFAULT NULL,
+  `video_id` int(11) DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `IDX_BF41107D82F1BAF4` (`language_id`),
+  KEY `IDX_BF41107D29C1004E` (`video_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `mtx_video_language`
+--
+
+INSERT INTO `mtx_video_language` (`id`, `language_id`, `video_id`, `name`) VALUES
+(4, 1, 4, 'Video 4');
 
 --
 -- Constraints for dumped tables
@@ -1522,6 +1624,20 @@ ALTER TABLE `mtx_user_group`
 ALTER TABLE `mtx_user_role`
   ADD CONSTRAINT `FK_A6F8FA57A76ED395` FOREIGN KEY (`user_id`) REFERENCES `mtx_user` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `FK_A6F8FA57D60322AC` FOREIGN KEY (`role_id`) REFERENCES `mtx_role` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `mtx_video`
+--
+ALTER TABLE `mtx_video`
+  ADD CONSTRAINT `FK_FB85E4685EE01E44` FOREIGN KEY (`created_id`) REFERENCES `mtx_user` (`id`),
+  ADD CONSTRAINT `FK_FB85E468960CC7F3` FOREIGN KEY (`updated_id`) REFERENCES `mtx_user` (`id`);
+
+--
+-- Constraints for table `mtx_video_language`
+--
+ALTER TABLE `mtx_video_language`
+  ADD CONSTRAINT `FK_BF41107D29C1004E` FOREIGN KEY (`video_id`) REFERENCES `mtx_video` (`id`),
+  ADD CONSTRAINT `FK_BF41107D82F1BAF4` FOREIGN KEY (`language_id`) REFERENCES `mtx_language` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
