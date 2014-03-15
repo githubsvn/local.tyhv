@@ -14,14 +14,14 @@
       <div class="preview wi-frame wi-frame-3">
         <ul class="slides">
             {% if entity.product.thumb  > 0%}
-                <li><img src="{{ asset(uploadPath ~ entity.product.thumb) }}" alt="{{ mtxgetteaser(entity.name)|raw }}" width="420" height="277"/></li>
+                <li class="slide"><a href="{{ asset(uploadPath ~ entity.product.thumb) }}"><img src="{{ asset(uploadPath ~ entity.product.thumb) }}" alt="{{ mtxgetteaser(entity.name)|raw }}" width="420" height="277"/></a></li>
             {% else %}
                 <li><img src="{{asset('/web/front/images/no-image.jpg')}}" alt="#" width="420" height="277"/></li>
             {% endif %}
             {% if medias|length  > 0%}
                 {% for img in medias %}
                     {% if img is not null %}
-                        <li><img src="{{ asset(uploadPath ~ img.name) }}" alt="{{ mtxgetteaser(entity.name)|raw }}" width="420" height="277"/></li>
+                        <li class="slide"><a href="{{ asset(uploadPath ~ img.name) }}"><img src="{{ asset(uploadPath ~ img.name) }}" alt="{{ mtxgetteaser(entity.name)|raw }}" width="420" height="277"/></a></li>
                     {% else %}
                         <li><img src="{{asset('/web/front/images/no-image.jpg')}}" alt="#" width="420" height="277"/></li>
                     {% endif %}

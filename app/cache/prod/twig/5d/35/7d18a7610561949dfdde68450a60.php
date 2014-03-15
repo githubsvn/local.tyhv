@@ -184,14 +184,28 @@ class __TwigTemplate_5d357d18a7610561949dfdde68450a60 extends Twig_Template
         // line 90
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("web/front/js/bootstrap.js"), "html", null, true);
         echo "\"></script>
+    
+    <script src=\"";
+        // line 92
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("web/front/fullsizable/js/jquery.fullsizable.js"), "html", null, true);
+        echo "\"></script>
+    <link rel=\"stylesheet\" href=\"";
+        // line 93
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("web/front/fullsizable/css/fullsizable.css"), "html", null, true);
+        echo "\">
+    <script src=\"";
+        // line 94
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("web/front/js/product-detail.js"), "html", null, true);
+        echo "\"></script>
+    
     <!-- endbuild-->
     <!-- build:js js/start.min.js-->
     <script src=\"";
-        // line 93
+        // line 98
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("web/front/js/start.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 94
+        // line 99
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("web/front/js/custom.js"), "html", null, true);
         echo "\"></script>
     <!-- endbuild-->
@@ -216,6 +230,6 @@ class __TwigTemplate_5d357d18a7610561949dfdde68450a60 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  203 => 64,  195 => 94,  191 => 93,  185 => 90,  181 => 89,  177 => 88,  173 => 87,  167 => 84,  161 => 81,  158 => 80,  156 => 79,  151 => 76,  149 => 75,  145 => 73,  143 => 72,  134 => 65,  132 => 64,  124 => 58,  122 => 57,  116 => 53,  114 => 52,  109 => 49,  107 => 48,  101 => 44,  99 => 43,  94 => 40,  92 => 39,  87 => 36,  85 => 35,  77 => 29,  75 => 28,  63 => 19,  57 => 16,  53 => 15,  48 => 13,  44 => 12,  40 => 11,  36 => 10,  31 => 9,  29 => 8,  20 => 1,);
+        return array (  217 => 64,  209 => 99,  205 => 98,  198 => 94,  194 => 93,  190 => 92,  185 => 90,  181 => 89,  177 => 88,  173 => 87,  167 => 84,  161 => 81,  158 => 80,  156 => 79,  151 => 76,  149 => 75,  145 => 73,  143 => 72,  134 => 65,  132 => 64,  124 => 58,  122 => 57,  116 => 53,  114 => 52,  109 => 49,  107 => 48,  101 => 44,  99 => 43,  94 => 40,  92 => 39,  87 => 36,  85 => 35,  77 => 29,  75 => 28,  63 => 19,  57 => 16,  53 => 15,  48 => 13,  44 => 12,  40 => 11,  36 => 10,  31 => 9,  29 => 8,  20 => 1,);
     }
 }

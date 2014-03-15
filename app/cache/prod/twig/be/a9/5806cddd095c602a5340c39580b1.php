@@ -54,11 +54,13 @@ class __TwigTemplate_bea95806cddd095c602a5340c39580b1 extends Twig_Template
         // line 16
         if (($this->getAttribute($this->getAttribute($this->getContext($context, "entity"), "product"), "thumb") > 0)) {
             // line 17
-            echo "                <li><img src=\"";
+            echo "                <li class=\"slide\"><a href=\"";
+            echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl(($this->getContext($context, "uploadPath") . $this->getAttribute($this->getAttribute($this->getContext($context, "entity"), "product"), "thumb"))), "html", null, true);
+            echo "\"><img src=\"";
             echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl(($this->getContext($context, "uploadPath") . $this->getAttribute($this->getAttribute($this->getContext($context, "entity"), "product"), "thumb"))), "html", null, true);
             echo "\" alt=\"";
             echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute($this->getContext($context, "entity"), "name"));
-            echo "\" width=\"420\" height=\"277\"/></li>
+            echo "\" width=\"420\" height=\"277\"/></a></li>
             ";
         } else {
             // line 19
@@ -79,11 +81,13 @@ class __TwigTemplate_bea95806cddd095c602a5340c39580b1 extends Twig_Template
                 echo "                    ";
                 if ((!(null === $this->getContext($context, "img")))) {
                     // line 24
-                    echo "                        <li><img src=\"";
+                    echo "                        <li class=\"slide\"><a href=\"";
+                    echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl(($this->getContext($context, "uploadPath") . $this->getAttribute($this->getContext($context, "img"), "name"))), "html", null, true);
+                    echo "\"><img src=\"";
                     echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl(($this->getContext($context, "uploadPath") . $this->getAttribute($this->getContext($context, "img"), "name"))), "html", null, true);
                     echo "\" alt=\"";
                     echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute($this->getContext($context, "entity"), "name"));
-                    echo "\" width=\"420\" height=\"277\"/></li>
+                    echo "\" width=\"420\" height=\"277\"/></a></li>
                     ";
                 } else {
                     // line 26
@@ -300,6 +304,6 @@ class __TwigTemplate_bea95806cddd095c602a5340c39580b1 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  283 => 98,  280 => 97,  273 => 95,  267 => 92,  260 => 90,  252 => 88,  246 => 85,  239 => 83,  231 => 81,  229 => 80,  226 => 79,  221 => 78,  219 => 77,  205 => 72,  201 => 71,  194 => 66,  192 => 65,  190 => 64,  183 => 59,  177 => 56,  171 => 54,  169 => 53,  163 => 49,  160 => 48,  154 => 47,  148 => 45,  140 => 43,  137 => 42,  132 => 41,  130 => 40,  127 => 39,  121 => 37,  113 => 35,  111 => 34,  105 => 30,  102 => 29,  96 => 28,  90 => 26,  82 => 24,  79 => 23,  74 => 22,  71 => 21,  65 => 19,  57 => 17,  55 => 16,  43 => 7,  38 => 4,  35 => 3,  29 => 2,);
+        return array (  287 => 98,  284 => 97,  277 => 95,  271 => 92,  264 => 90,  256 => 88,  250 => 85,  243 => 83,  235 => 81,  233 => 80,  230 => 79,  225 => 78,  223 => 77,  209 => 72,  205 => 71,  198 => 66,  196 => 65,  194 => 64,  187 => 59,  181 => 56,  175 => 54,  173 => 53,  167 => 49,  164 => 48,  158 => 47,  152 => 45,  144 => 43,  141 => 42,  136 => 41,  134 => 40,  131 => 39,  125 => 37,  117 => 35,  115 => 34,  109 => 30,  106 => 29,  100 => 28,  94 => 26,  84 => 24,  81 => 23,  76 => 22,  73 => 21,  67 => 19,  57 => 17,  55 => 16,  43 => 7,  38 => 4,  35 => 3,  29 => 2,);
     }
 }

@@ -47,15 +47,5 @@ jQuery(document).ready(function($) {
     $("#feedback").bind('click', function(){
         $('html,body').scrollTop(0);
     });
-    $("ul.demo1").ytplaylist({addThumbs:true, autoPlay: false, holderId: 'ytvideo', playerWidth : '208', playerHeight: '153'});
-    
-//    $(".playlist").click(function(){
-//        var selectVideo = $(this).children("span").children().clone();
-//        var html = selectVideo.html();
-//        alert(html);
-//        var newObj = $(html).html();
-//        alert(newObj);
-//        //alert(newObj.html());
-//    });
     
 });

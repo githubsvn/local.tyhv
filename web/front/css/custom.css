@@ -23,3 +23,55 @@
 .video-block-list ul li a:hover img {opacity: 0.8;}
 .video-block-list ul li a img {width: 57px; height: 49px;}
 
+li.flex-active-slide a {
+    float: left;
+}
+
+#fullsized_go_prev, #fullsized_go_next {
+    display: block;
+    height: 126px;
+    position: absolute;
+    top: 40%;
+    width: 32px;
+}
+#fullsized_go_prev {
+    background: url("../images/pre.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    left: 0;
+}
+#fullsized_go_prev:hover {
+    background-position: 0 126px;
+}
+#fullsized_go_next {
+    background: url("../images/next.png") repeat scroll 32px 0 rgba(0, 0, 0, 0);
+    right: 0;
+}
+#fullsized_go_next:hover {
+    background-position: 32px 126px;
+}
+#fullsized_close, #fullsized_fullscreen {
+    display: block;
+    height: 32px;
+    position: absolute;
+    top: 0;
+    width: 32px;
+}
+#fullsized_close {
+    background-image: url("../images/close.png");
+    right: 0;
+}
+#fullsized_close:hover {
+    background-position: 0 32px;
+}
+#fullsized_fullscreen {
+    background-image: url("../images/top.png");
+    right: 40px;
+}
+#fullsized_fullscreen:hover {
+    background-position: 0 -32px;
+}
+:-moz-full-screen #fullsized_fullscreen {
+    background-position: 0 -64px;
+}
+:-moz-full-screen #fullsized_fullscreen:hover {
+    background-position: 0 -96px;
+}
