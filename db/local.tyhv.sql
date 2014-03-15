@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 10, 2014 at 01:37 PM
+-- Generation Time: Mar 15, 2014 at 05:33 AM
 -- Server version: 5.5.16
 -- PHP Version: 5.3.8
 
@@ -432,7 +432,7 @@ CREATE TABLE IF NOT EXISTS `mtx_config` (
   `value` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `description` longtext COLLATE utf8_unicode_ci,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=29 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=30 ;
 
 --
 -- Dumping data for table `mtx_config`
@@ -466,7 +466,8 @@ INSERT INTO `mtx_config` (`id`, `name`, `value`, `description`) VALUES
 (25, 'twitter_page', '#', NULL),
 (26, 'youtube_page', '#', NULL),
 (27, 'left_ads_url', '#', 'url cho banner quảng cáo bên trái'),
-(28, 'right_ads_url', '#', 'url cho banner quảng cáo bên phải');
+(28, 'right_ads_url', '#', 'url cho banner quảng cáo bên phải'),
+(29, 'per_video_item', '3', 'So item video hien thi tren trang chu');
 
 -- --------------------------------------------------------
 
@@ -480,7 +481,7 @@ CREATE TABLE IF NOT EXISTS `mtx_counter` (
   `time_visit` varchar(11) COLLATE utf8_unicode_ci DEFAULT NULL,
   `date_visit` varchar(11) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=26 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=35 ;
 
 --
 -- Dumping data for table `mtx_counter`
@@ -503,7 +504,16 @@ INSERT INTO `mtx_counter` (`id`, `ip`, `time_visit`, `date_visit`) VALUES
 (22, '127.0.0.1', '354', '9/3/2014'),
 (23, '127.0.0.1', '390', '9/3/2014'),
 (24, '127.0.0.1', '415', '9/3/2014'),
-(25, '127.0.0.1', '812', '10/3/2014');
+(25, '127.0.0.1', '812', '10/3/2014'),
+(26, '127.0.0.1', '859', '10/3/2014'),
+(27, '127.0.0.1', '875', '10/3/2014'),
+(28, '127.0.0.1', '891', '10/3/2014'),
+(29, '127.0.0.1', '907', '10/3/2014'),
+(30, '127.0.0.1', '923', '10/3/2014'),
+(31, '127.0.0.1', '823', '14/3/2014'),
+(32, '127.0.0.1', '849', '14/3/2014'),
+(33, '127.0.0.1', '879', '14/3/2014'),
+(34, '127.0.0.1', '327', '15/3/2014');
 
 -- --------------------------------------------------------
 
@@ -1326,14 +1336,16 @@ CREATE TABLE IF NOT EXISTS `mtx_video` (
   PRIMARY KEY (`id`),
   KEY `IDX_FB85E4685EE01E44` (`created_id`),
   KEY `IDX_FB85E468960CC7F3` (`updated_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `mtx_video`
 --
 
 INSERT INTO `mtx_video` (`id`, `created_id`, `updated_id`, `status`, `created_at`, `updated_at`, `url`) VALUES
-(4, 1, 1, 1, '2014-03-08 16:50:04', '2014-03-08 16:50:04', 'http://youtube.com');
+(4, 1, 1, 1, '2014-03-08 16:50:04', '2014-03-08 16:50:04', 'http://www.youtube.com/watch?v=QBBWKvY-VDc'),
+(5, 1, 1, 1, '2014-03-14 14:03:24', '2014-03-14 14:03:24', 'http://www.youtube.com/watch?v=ZXMQqLnRhRI'),
+(6, 1, 1, 1, '2014-03-14 14:04:06', '2014-03-14 14:04:06', 'http://www.youtube.com/watch?v=Wvo-g_JvURI');
 
 -- --------------------------------------------------------
 
@@ -1349,14 +1361,16 @@ CREATE TABLE IF NOT EXISTS `mtx_video_language` (
   PRIMARY KEY (`id`),
   KEY `IDX_BF41107D82F1BAF4` (`language_id`),
   KEY `IDX_BF41107D29C1004E` (`video_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `mtx_video_language`
 --
 
 INSERT INTO `mtx_video_language` (`id`, `language_id`, `video_id`, `name`) VALUES
-(4, 1, 4, 'Video 4');
+(4, 1, 4, 'Video 4'),
+(5, 1, 5, 'video 3'),
+(6, 1, 6, 'Video 2');
 
 --
 -- Constraints for dumped tables

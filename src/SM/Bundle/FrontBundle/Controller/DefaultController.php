@@ -99,7 +99,18 @@ class DefaultController extends Controller
 
     public function videoAction()
     {
+        $lang = $this->getDefaultLang();
+
+        $perNewsHotItemPage = Utilities::getConfig('per_video_item');
+        $entities = $this->getDoctrine()
+                ->getRepository("SMAdminBundle:VideoLanguage")
+                ->getHotVideo($lang, $perNewsHotItemPage, 0);
+
+        $countWordNewsTitle = $this->container->getParameter('countWordNewsTitle');
+
         return $this->render('SMFrontBundle:Default:video.html.twig', array(
+            'entities' => $entities,
+            'countWordNewsTitle' => $countWordNewsTitle
         ));
     }
 

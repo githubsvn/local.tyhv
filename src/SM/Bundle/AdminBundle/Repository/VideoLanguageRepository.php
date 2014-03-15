@@ -172,5 +172,49 @@ class VideoLanguageRepository extends EntityRepository
         
         return 0;
     }
+    
+    /**
+     *
+     * @param type $langId
+     * @param type $limit
+     * @param type $offset
+     * @param type $orders
+     * @return array 
+     */
+    public function getHotVideo($langId, $limit = null, $offset = null, $orders = '')
+    {
+        $rst = array();
+        if (!empty($langId)) {
+            $qb = $this->createQueryBuilder('vl');
 
+            $qb->select('vl, v')
+                    ->join('vl.video', 'v')
+                    ->where('vl.language=:langId')
+                    ->andWhere('v.status=1');
+
+            if (!empty($limit)) {
+                $qb->setMaxResults($limit);
+            }
+
+            if (!empty($offset)) {
+                $qb->setFirstResult($offset);
+            }
+            $qb->setParameter('langId', $langId);
+
+            if (!empty($orders)) {
+                $qb->orderBy($orders);
+            } else if (is_array($orders) && count($orders) > 0) {
+                foreach ($orders as $k => $v) {
+                    $qb->orderBy($k, $v);
+                }
+            } else {
+                $qb->orderBy('v.updated_at', 'DESC');
+            }
+
+            //echo $qb->getQuery()->getSQL();die;
+            return $qb->getQuery()->getResult();
+        }
+
+        return $rst;
+    }
 }

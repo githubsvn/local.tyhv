@@ -151,8 +151,11 @@ class __TwigTemplate_5d357d18a7610561949dfdde68450a60 extends Twig_Template
         echo "        <!-- END FOOTER -->
       </div>
     </div>
-    
-      <!-- build:js js/libs.min.js-->
+    ";
+        // line 79
+        echo $this->env->getExtension('actions')->renderAction("SMFrontBundle:Default:leftAds", array(), array());
+        // line 80
+        echo "      <!-- build:js js/libs.min.js-->
     <script src=\"";
         // line 81
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("web/front/js/libs.js"), "html", null, true);
@@ -213,6 +216,6 @@ class __TwigTemplate_5d357d18a7610561949dfdde68450a60 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  200 => 64,  192 => 94,  188 => 93,  182 => 90,  178 => 89,  174 => 88,  170 => 87,  164 => 84,  158 => 81,  151 => 76,  149 => 75,  145 => 73,  143 => 72,  134 => 65,  132 => 64,  124 => 58,  122 => 57,  116 => 53,  114 => 52,  109 => 49,  107 => 48,  101 => 44,  99 => 43,  94 => 40,  92 => 39,  87 => 36,  85 => 35,  77 => 29,  75 => 28,  63 => 19,  57 => 16,  53 => 15,  48 => 13,  44 => 12,  40 => 11,  36 => 10,  31 => 9,  29 => 8,  20 => 1,);
+        return array (  203 => 64,  195 => 94,  191 => 93,  185 => 90,  181 => 89,  177 => 88,  173 => 87,  167 => 84,  161 => 81,  158 => 80,  156 => 79,  151 => 76,  149 => 75,  145 => 73,  143 => 72,  134 => 65,  132 => 64,  124 => 58,  122 => 57,  116 => 53,  114 => 52,  109 => 49,  107 => 48,  101 => 44,  99 => 43,  94 => 40,  92 => 39,  87 => 36,  85 => 35,  77 => 29,  75 => 28,  63 => 19,  57 => 16,  53 => 15,  48 => 13,  44 => 12,  40 => 11,  36 => 10,  31 => 9,  29 => 8,  20 => 1,);
     }
 }

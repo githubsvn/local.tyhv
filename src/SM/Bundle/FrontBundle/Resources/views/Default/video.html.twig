@@ -5,20 +5,14 @@
 <div class="video-block-list yt_holder">
     <div id="ytvideo"></div>
     <ul class="demo1">
-        <li>
-            <a href="http://www.youtube.com/watch?v=QBBWKvY-VDc" title="Video 1Video 1Video 1Video 1">
-                Video 1Video 1Video 1Video 1
-            </a>
-        </li>
-        <li>
-            <a href="http://www.youtube.com/watch?v=ZXMQqLnRhRI" title="Video 1Video 1Video 1Video 1">
-                Video 1Video 1Video 1Video 1
-            </a>
-        </li>
-        <li>
-            <a href="http://www.youtube.com/watch?v=Wvo-g_JvURI" title="Video 1Video 1Video 1Video 1">
-                Video 1Video 1Video 1Video 1
-            </a>
-        </li>
+        {% if entities|length  > 0%}
+        {% for ent in entities %}
+            <li>
+                <a href="{{ent.video.url}}" title="{{ mtxgetteaser(ent.name, countWordNewsTitle)|raw }}">
+                    {{ mtxgetteaser(ent.name, countWordNewsTitle)|raw }}
+                </a>
+              </li>
+        {% endfor %}
+    {% endif %}       
     </ul>
 </div>
