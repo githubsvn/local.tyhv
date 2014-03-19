@@ -181,8 +181,11 @@ class __TwigTemplate_d8cf42b2a3574299a965a2e0594931ae extends Twig_Template
         echo "        <!-- END FOOTER -->
       </div>
     </div>
-    
-    <!-- build:js js/libs.min.js-->
+    ";
+        // line 97
+        echo $this->env->getExtension('actions')->renderAction("SMFrontBundle:Default:leftAds", array(), array());
+        // line 98
+        echo "    <!-- build:js js/libs.min.js-->
     <script src=\"";
         // line 99
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("web/front/js/libs.js"), "html", null, true);
@@ -221,6 +224,14 @@ class __TwigTemplate_d8cf42b2a3574299a965a2e0594931ae extends Twig_Template
         // line 112
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("web/front/js/custom.js"), "html", null, true);
         echo "\"></script>
+    <script src=\"";
+        // line 113
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("web/front/js/jquery.youtubeplaylist.js"), "html", null, true);
+        echo "\"></script>
+    <script src=\"";
+        // line 114
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("web/front/js/home.js"), "html", null, true);
+        echo "\"></script>
     <!-- endbuild-->
   </body>
 </html>";
@@ -243,6 +254,6 @@ class __TwigTemplate_d8cf42b2a3574299a965a2e0594931ae extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  230 => 64,  222 => 112,  218 => 111,  212 => 108,  208 => 107,  204 => 106,  200 => 105,  194 => 102,  188 => 99,  181 => 94,  179 => 93,  175 => 91,  173 => 90,  164 => 83,  162 => 82,  157 => 79,  155 => 78,  150 => 75,  148 => 74,  141 => 69,  139 => 68,  134 => 65,  132 => 64,  124 => 58,  122 => 57,  116 => 53,  114 => 52,  109 => 49,  107 => 48,  101 => 44,  99 => 43,  94 => 40,  92 => 39,  87 => 36,  85 => 35,  77 => 29,  75 => 28,  63 => 19,  57 => 16,  53 => 15,  48 => 13,  44 => 12,  40 => 11,  36 => 10,  31 => 9,  29 => 8,  20 => 1,);
+        return array (  241 => 64,  229 => 113,  225 => 112,  221 => 111,  215 => 108,  211 => 107,  207 => 106,  203 => 105,  191 => 99,  188 => 98,  186 => 97,  179 => 93,  173 => 90,  164 => 83,  162 => 82,  157 => 79,  155 => 78,  150 => 75,  148 => 74,  141 => 69,  139 => 68,  134 => 65,  132 => 64,  116 => 53,  109 => 49,  107 => 48,  101 => 44,  99 => 43,  94 => 40,  92 => 39,  87 => 36,  85 => 35,  75 => 28,  57 => 16,  48 => 13,  44 => 12,  40 => 11,  36 => 10,  31 => 9,  20 => 1,  308 => 110,  300 => 106,  294 => 105,  284 => 103,  282 => 102,  279 => 101,  276 => 100,  273 => 99,  270 => 98,  267 => 97,  264 => 96,  259 => 95,  256 => 94,  253 => 93,  251 => 92,  247 => 91,  238 => 89,  235 => 88,  233 => 114,  228 => 84,  222 => 82,  219 => 81,  212 => 79,  204 => 74,  197 => 102,  192 => 70,  185 => 66,  181 => 94,  175 => 91,  169 => 60,  161 => 55,  154 => 53,  147 => 51,  140 => 47,  136 => 46,  130 => 45,  124 => 58,  122 => 57,  119 => 39,  114 => 52,  112 => 37,  106 => 33,  95 => 27,  91 => 26,  82 => 24,  77 => 29,  71 => 19,  63 => 19,  61 => 16,  56 => 14,  53 => 15,  51 => 12,  43 => 7,  38 => 4,  35 => 3,  29 => 8,);
     }
 }

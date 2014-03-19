@@ -16,7 +16,7 @@ class __TwigTemplate_5a1e03db73fd9205b4d7fd5ba060c263 extends Twig_Template
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 1
-        if ((twig_length_filter($this->env, $this->getContext($context, "entities")) > 0)) {
+        if ((twig_length_filter($this->env, (isset($context["entities"]) ? $context["entities"] : $this->getContext($context, "entities"))) > 0)) {
             // line 2
             echo "    <div class=\"price-block\">
         <h2 class=\"title-1\">";
@@ -27,19 +27,19 @@ class __TwigTemplate_5a1e03db73fd9205b4d7fd5ba060c263 extends Twig_Template
             ";
             // line 5
             $context['_parent'] = (array) $context;
-            $context['_seq'] = twig_ensure_traversable($this->getContext($context, "entities"));
+            $context['_seq'] = twig_ensure_traversable((isset($context["entities"]) ? $context["entities"] : $this->getContext($context, "entities")));
             foreach ($context['_seq'] as $context["_key"] => $context["ent"]) {
                 // line 6
                 echo "                ";
-                $context["itemType"] = $this->getAttribute($this->getContext($context, "ent"), "itemtypes", array(), "array");
+                $context["itemType"] = $this->getAttribute((isset($context["ent"]) ? $context["ent"] : $this->getContext($context, "ent")), "itemtypes", array(), "array");
                 // line 7
                 echo "                ";
-                $context["items"] = $this->getAttribute($this->getContext($context, "ent"), "items", array(), "array");
+                $context["items"] = $this->getAttribute((isset($context["ent"]) ? $context["ent"] : $this->getContext($context, "ent")), "items", array(), "array");
                 // line 8
                 echo "                <table style=\"width: 209px;\">
                     <caption>";
                 // line 9
-                echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "itemType"), "name"), "html", null, true);
+                echo twig_escape_filter($this->env, $this->getAttribute((isset($context["itemType"]) ? $context["itemType"] : $this->getContext($context, "itemType")), "name"), "html", null, true);
                 echo " </caption>
                     <tr>
                         <th>";
@@ -57,27 +57,27 @@ class __TwigTemplate_5a1e03db73fd9205b4d7fd5ba060c263 extends Twig_Template
                     </tr>
                     ";
                 // line 15
-                if ((twig_length_filter($this->env, $this->getContext($context, "items")) > 0)) {
+                if ((twig_length_filter($this->env, (isset($context["items"]) ? $context["items"] : $this->getContext($context, "items"))) > 0)) {
                     // line 16
                     echo "                        ";
                     $context["i"] = 0;
                     // line 17
                     echo "                        ";
                     $context['_parent'] = (array) $context;
-                    $context['_seq'] = twig_ensure_traversable($this->getContext($context, "items"));
+                    $context['_seq'] = twig_ensure_traversable((isset($context["items"]) ? $context["items"] : $this->getContext($context, "items")));
                     foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
                         // line 18
                         echo "                            ";
                         $context["class"] = "style-1";
                         // line 19
                         echo "                            ";
-                        $context["c"] = ($this->getContext($context, "i") % 2);
+                        $context["c"] = ((isset($context["i"]) ? $context["i"] : $this->getContext($context, "i")) % 2);
                         // line 20
                         echo "                            ";
-                        $context["i"] = ($this->getContext($context, "i") + 1);
+                        $context["i"] = ((isset($context["i"]) ? $context["i"] : $this->getContext($context, "i")) + 1);
                         // line 21
                         echo "                            ";
-                        if (($this->getContext($context, "c") == 0)) {
+                        if (((isset($context["c"]) ? $context["c"] : $this->getContext($context, "c")) == 0)) {
                             // line 22
                             echo "                                ";
                             $context["class"] = "";
@@ -86,19 +86,19 @@ class __TwigTemplate_5a1e03db73fd9205b4d7fd5ba060c263 extends Twig_Template
                         }
                         // line 24
                         echo "                            <tr class=\"";
-                        echo twig_escape_filter($this->env, $this->getContext($context, "class"), "html", null, true);
+                        echo twig_escape_filter($this->env, (isset($context["class"]) ? $context["class"] : $this->getContext($context, "class")), "html", null, true);
                         echo "\">
                                 <td>";
                         // line 25
-                        echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "item"), "name"), "html", null, true);
+                        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["item"]) ? $context["item"] : $this->getContext($context, "item")), "name"), "html", null, true);
                         echo "</td>
                                 <td>";
                         // line 26
-                        echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "item"), "price"), "html", null, true);
+                        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["item"]) ? $context["item"] : $this->getContext($context, "item")), "price"), "html", null, true);
                         echo "</td>
                                 <td>";
                         // line 27
-                        echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "item"), "oldprice"), "html", null, true);
+                        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["item"]) ? $context["item"] : $this->getContext($context, "item")), "oldprice"), "html", null, true);
                         echo "</td>
                             </tr>
                         ";
@@ -143,6 +143,6 @@ class __TwigTemplate_5a1e03db73fd9205b4d7fd5ba060c263 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  123 => 34,  120 => 33,  113 => 31,  110 => 30,  101 => 27,  97 => 26,  88 => 24,  85 => 23,  79 => 21,  76 => 20,  73 => 19,  65 => 17,  42 => 9,  36 => 7,  24 => 3,  21 => 2,  63 => 12,  40 => 8,  37 => 7,  34 => 6,  29 => 5,  27 => 4,  22 => 2,  72 => 18,  62 => 16,  56 => 13,  44 => 10,  38 => 8,  33 => 6,  25 => 4,  23 => 3,  68 => 23,  66 => 22,  58 => 17,  54 => 10,  50 => 12,  41 => 9,  35 => 7,  26 => 4,  19 => 1,  251 => 77,  243 => 129,  239 => 128,  233 => 125,  229 => 124,  225 => 123,  221 => 122,  215 => 119,  209 => 116,  201 => 110,  199 => 109,  195 => 107,  193 => 106,  183 => 98,  181 => 97,  176 => 94,  174 => 93,  169 => 90,  167 => 89,  158 => 82,  156 => 81,  151 => 78,  149 => 77,  143 => 73,  141 => 72,  132 => 65,  130 => 64,  124 => 60,  122 => 59,  117 => 56,  115 => 55,  109 => 51,  107 => 50,  102 => 47,  100 => 46,  95 => 43,  93 => 25,  84 => 35,  82 => 22,  70 => 18,  64 => 22,  60 => 15,  55 => 13,  51 => 12,  47 => 11,  43 => 16,  39 => 8,  30 => 5,  20 => 1,  31 => 3,  28 => 5,);
+        return array (  120 => 33,  113 => 31,  101 => 27,  97 => 26,  85 => 23,  82 => 22,  79 => 21,  76 => 20,  73 => 19,  70 => 18,  65 => 17,  55 => 13,  51 => 12,  42 => 9,  24 => 3,  21 => 2,  60 => 15,  37 => 7,  34 => 6,  22 => 2,  72 => 18,  62 => 16,  56 => 13,  47 => 11,  38 => 8,  33 => 6,  30 => 5,  25 => 4,  68 => 23,  66 => 22,  58 => 17,  54 => 10,  50 => 12,  41 => 9,  35 => 7,  26 => 4,  19 => 1,  39 => 8,  27 => 4,  23 => 3,  257 => 71,  249 => 127,  245 => 126,  241 => 125,  237 => 124,  231 => 121,  227 => 120,  223 => 119,  219 => 118,  213 => 115,  207 => 112,  203 => 110,  201 => 109,  194 => 104,  192 => 103,  188 => 101,  186 => 100,  176 => 92,  174 => 91,  169 => 88,  167 => 87,  162 => 84,  160 => 83,  151 => 76,  149 => 75,  144 => 72,  142 => 71,  136 => 67,  134 => 66,  125 => 59,  123 => 34,  117 => 54,  115 => 53,  110 => 30,  108 => 49,  102 => 45,  100 => 44,  95 => 41,  93 => 25,  88 => 24,  86 => 36,  77 => 29,  75 => 28,  63 => 12,  57 => 16,  53 => 15,  48 => 13,  44 => 10,  40 => 8,  36 => 7,  29 => 5,  20 => 1,  31 => 4,  28 => 5,);
     }
 }

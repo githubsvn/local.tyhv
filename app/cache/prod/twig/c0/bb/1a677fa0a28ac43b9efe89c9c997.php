@@ -34,24 +34,24 @@ class __TwigTemplate_c0bb1a677fa0a28ac43b9efe89c9c997 extends Twig_Template
     <div class=\"highlight\">
       ";
         // line 9
-        if ((!(null === $this->getContext($context, "topEnt")))) {
+        if ((!(null === (isset($context["topEnt"]) ? $context["topEnt"] : $this->getContext($context, "topEnt"))))) {
             // line 10
             echo "            <article>
             <a href=\"";
             // line 11
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("sm_front_view_product_detail", array("slug" => $this->env->getExtension('mtx.twig.build_url')->buildUrl($this->getAttribute($this->getAttribute($this->getContext($context, "topEnt"), "product"), "id"), $this->getAttribute($this->getContext($context, "topEnt"), "name")))), "html", null, true);
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("sm_front_view_product_detail", array("slug" => $this->env->getExtension('mtx.twig.build_url')->buildUrl($this->getAttribute($this->getAttribute((isset($context["topEnt"]) ? $context["topEnt"] : $this->getContext($context, "topEnt")), "product"), "id"), $this->getAttribute((isset($context["topEnt"]) ? $context["topEnt"] : $this->getContext($context, "topEnt")), "name")))), "html", null, true);
             echo "\" title=\"";
-            echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute($this->getContext($context, "topEnt"), "name"), $this->getContext($context, "countWordProductTitle"));
+            echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute((isset($context["topEnt"]) ? $context["topEnt"] : $this->getContext($context, "topEnt")), "name"), (isset($context["countWordProductTitle"]) ? $context["countWordProductTitle"] : $this->getContext($context, "countWordProductTitle")));
             echo "\" class=\"img-thumb\">
                 <span>
                 ";
             // line 13
-            if (($this->getAttribute($this->getAttribute($this->getContext($context, "topEnt"), "product"), "thumb") > 0)) {
+            if (($this->getAttribute($this->getAttribute((isset($context["topEnt"]) ? $context["topEnt"] : $this->getContext($context, "topEnt")), "product"), "thumb") > 0)) {
                 // line 14
                 echo "                        <img src=\"";
-                echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl(($this->getContext($context, "uploadPath") . $this->getAttribute($this->getAttribute($this->getContext($context, "topEnt"), "product"), "thumb"))), "html", null, true);
+                echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl(((isset($context["uploadPath"]) ? $context["uploadPath"] : $this->getContext($context, "uploadPath")) . $this->getAttribute($this->getAttribute((isset($context["topEnt"]) ? $context["topEnt"] : $this->getContext($context, "topEnt")), "product"), "thumb"))), "html", null, true);
                 echo "\" alt=\"";
-                echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute($this->getContext($context, "topEnt"), "name"), $this->getContext($context, "countWordProductTitle"));
+                echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute((isset($context["topEnt"]) ? $context["topEnt"] : $this->getContext($context, "topEnt")), "name"), (isset($context["countWordProductTitle"]) ? $context["countWordProductTitle"] : $this->getContext($context, "countWordProductTitle")));
                 echo "\" width=\"250\" height=\"196\"/>
                     ";
             } else {
@@ -67,20 +67,20 @@ class __TwigTemplate_c0bb1a677fa0a28ac43b9efe89c9c997 extends Twig_Template
             <div class=\"content\">
               <h3><a href=\"";
             // line 21
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("sm_front_view_product_detail", array("slug" => $this->env->getExtension('mtx.twig.build_url')->buildUrl($this->getAttribute($this->getAttribute($this->getContext($context, "topEnt"), "product"), "id"), $this->getAttribute($this->getContext($context, "topEnt"), "name")))), "html", null, true);
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("sm_front_view_product_detail", array("slug" => $this->env->getExtension('mtx.twig.build_url')->buildUrl($this->getAttribute($this->getAttribute((isset($context["topEnt"]) ? $context["topEnt"] : $this->getContext($context, "topEnt")), "product"), "id"), $this->getAttribute((isset($context["topEnt"]) ? $context["topEnt"] : $this->getContext($context, "topEnt")), "name")))), "html", null, true);
             echo "\" title=\"";
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "topEnt"), "name"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["topEnt"]) ? $context["topEnt"] : $this->getContext($context, "topEnt")), "name"), "html", null, true);
             echo "\">";
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "topEnt"), "name"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["topEnt"]) ? $context["topEnt"] : $this->getContext($context, "topEnt")), "name"), "html", null, true);
             echo "</a></h3>
               <div class=\"desc\">
                 <p>";
             // line 23
-            echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute($this->getContext($context, "topEnt"), "description"));
+            echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute((isset($context["topEnt"]) ? $context["topEnt"] : $this->getContext($context, "topEnt")), "description"));
             echo "
         <!--            <a href=\"";
             // line 24
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("sm_front_view_product_detail", array("slug" => $this->env->getExtension('mtx.twig.build_url')->buildUrl($this->getAttribute($this->getAttribute($this->getContext($context, "topEnt"), "product"), "id"), $this->getAttribute($this->getContext($context, "topEnt"), "name")))), "html", null, true);
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("sm_front_view_product_detail", array("slug" => $this->env->getExtension('mtx.twig.build_url')->buildUrl($this->getAttribute($this->getAttribute((isset($context["topEnt"]) ? $context["topEnt"] : $this->getContext($context, "topEnt")), "product"), "id"), $this->getAttribute((isset($context["topEnt"]) ? $context["topEnt"] : $this->getContext($context, "topEnt")), "name")))), "html", null, true);
             echo "\" title=\"";
             echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("View more", array(), "SMFrontBundle"), "html", null, true);
             echo "\">[...]</a>-->
@@ -96,17 +96,17 @@ class __TwigTemplate_c0bb1a677fa0a28ac43b9efe89c9c997 extends Twig_Template
       <ul>
           ";
         // line 33
-        if ((twig_length_filter($this->env, $this->getContext($context, "entities")) > 0)) {
+        if ((twig_length_filter($this->env, (isset($context["entities"]) ? $context["entities"] : $this->getContext($context, "entities"))) > 0)) {
             // line 34
             echo "            ";
             $context['_parent'] = (array) $context;
-            $context['_seq'] = twig_ensure_traversable($this->getContext($context, "entities"));
+            $context['_seq'] = twig_ensure_traversable((isset($context["entities"]) ? $context["entities"] : $this->getContext($context, "entities")));
             foreach ($context['_seq'] as $context["_key"] => $context["ent"]) {
                 // line 35
                 echo "                <li>
                     ";
                 // line 36
-                if (($this->getAttribute($this->getAttribute($this->getContext($context, "ent"), "product"), "thumb") > 0)) {
+                if (($this->getAttribute($this->getAttribute((isset($context["ent"]) ? $context["ent"] : $this->getContext($context, "ent")), "product"), "thumb") > 0)) {
                     // line 37
                     echo "                    <a href=\"javascript:void(0);\" 
                         class=\"img-thumb\"
@@ -114,38 +114,38 @@ class __TwigTemplate_c0bb1a677fa0a28ac43b9efe89c9c997 extends Twig_Template
                         data-toggle=\"popover\"
                         data-content=\"<img src='";
                     // line 41
-                    echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl(($this->getContext($context, "uploadPath") . $this->getAttribute($this->getAttribute($this->getContext($context, "ent"), "product"), "thumb"))), "html", null, true);
+                    echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl(((isset($context["uploadPath"]) ? $context["uploadPath"] : $this->getContext($context, "uploadPath")) . $this->getAttribute($this->getAttribute((isset($context["ent"]) ? $context["ent"] : $this->getContext($context, "ent")), "product"), "thumb"))), "html", null, true);
                     echo "' alt='";
-                    echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute($this->getContext($context, "ent"), "name"));
+                    echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute((isset($context["ent"]) ? $context["ent"] : $this->getContext($context, "ent")), "name"));
                     echo "' width='370px'/>
                          <span class='title'>";
                     // line 42
-                    echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute($this->getContext($context, "ent"), "name"));
+                    echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute((isset($context["ent"]) ? $context["ent"] : $this->getContext($context, "ent")), "name"));
                     echo "</span>
                          <div class='content'>";
                     // line 43
-                    echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute($this->getContext($context, "ent"), "description"));
+                    echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute((isset($context["ent"]) ? $context["ent"] : $this->getContext($context, "ent")), "description"));
                     echo "
                          </div>
                          <a class='close-btn' href='javascript:void(0);'></a>\">
                          <span>
                              <img src=\"";
                     // line 47
-                    echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl(($this->getContext($context, "uploadPath") . $this->getAttribute($this->getAttribute($this->getContext($context, "ent"), "product"), "thumb"))), "html", null, true);
+                    echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl(((isset($context["uploadPath"]) ? $context["uploadPath"] : $this->getContext($context, "uploadPath")) . $this->getAttribute($this->getAttribute((isset($context["ent"]) ? $context["ent"] : $this->getContext($context, "ent")), "product"), "thumb"))), "html", null, true);
                     echo "\" alt=\"";
-                    echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute($this->getContext($context, "ent"), "name"), $this->getContext($context, "countWordProductTitle"));
+                    echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute((isset($context["ent"]) ? $context["ent"] : $this->getContext($context, "ent")), "name"), (isset($context["countWordProductTitle"]) ? $context["countWordProductTitle"] : $this->getContext($context, "countWordProductTitle")));
                     echo "\"/>
                          </span>
                         <a href=\"";
                     // line 49
-                    echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("sm_front_view_product_detail", array("slug" => $this->env->getExtension('mtx.twig.build_url')->buildUrl($this->getAttribute($this->getAttribute($this->getContext($context, "ent"), "product"), "id"), $this->getAttribute($this->getContext($context, "ent"), "name")))), "html", null, true);
+                    echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("sm_front_view_product_detail", array("slug" => $this->env->getExtension('mtx.twig.build_url')->buildUrl($this->getAttribute($this->getAttribute((isset($context["ent"]) ? $context["ent"] : $this->getContext($context, "ent")), "product"), "id"), $this->getAttribute((isset($context["ent"]) ? $context["ent"] : $this->getContext($context, "ent")), "name")))), "html", null, true);
                     echo "\" title=\"";
-                    echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute($this->getContext($context, "ent"), "name"));
+                    echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute((isset($context["ent"]) ? $context["ent"] : $this->getContext($context, "ent")), "name"));
                     echo "\">
                             <strong class=\"title\">
                                 ";
                     // line 51
-                    echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute($this->getContext($context, "ent"), "name"), $this->getContext($context, "countWordProductTitle"));
+                    echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute((isset($context["ent"]) ? $context["ent"] : $this->getContext($context, "ent")), "name"), (isset($context["countWordProductTitle"]) ? $context["countWordProductTitle"] : $this->getContext($context, "countWordProductTitle")));
                     echo "
                             </strong>
                         </a>
@@ -161,15 +161,15 @@ class __TwigTemplate_c0bb1a677fa0a28ac43b9efe89c9c997 extends Twig_Template
                     // line 60
                     echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("/web/front/images/no-image.jpg"), "html", null, true);
                     echo "' alt='";
-                    echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute($this->getContext($context, "ent"), "name"));
+                    echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute((isset($context["ent"]) ? $context["ent"] : $this->getContext($context, "ent")), "name"));
                     echo "' width='370px'/>
                          <span class='title'>";
                     // line 61
-                    echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute($this->getContext($context, "ent"), "name"));
+                    echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute((isset($context["ent"]) ? $context["ent"] : $this->getContext($context, "ent")), "name"));
                     echo "</span>
                          <div class='content'>";
                     // line 62
-                    echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute($this->getContext($context, "ent"), "description"));
+                    echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute((isset($context["ent"]) ? $context["ent"] : $this->getContext($context, "ent")), "description"));
                     echo "
                          </div>
                          <a class='close-btn' href='javascript:void(0);'></a>\">
@@ -181,14 +181,14 @@ class __TwigTemplate_c0bb1a677fa0a28ac43b9efe89c9c997 extends Twig_Template
                          </span>
                             <a href=\"";
                     // line 68
-                    echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("sm_front_view_product_detail", array("slug" => $this->env->getExtension('mtx.twig.build_url')->buildUrl($this->getAttribute($this->getAttribute($this->getContext($context, "ent"), "product"), "id"), $this->getAttribute($this->getContext($context, "ent"), "name")))), "html", null, true);
+                    echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("sm_front_view_product_detail", array("slug" => $this->env->getExtension('mtx.twig.build_url')->buildUrl($this->getAttribute($this->getAttribute((isset($context["ent"]) ? $context["ent"] : $this->getContext($context, "ent")), "product"), "id"), $this->getAttribute((isset($context["ent"]) ? $context["ent"] : $this->getContext($context, "ent")), "name")))), "html", null, true);
                     echo "\" title=\"";
-                    echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute($this->getContext($context, "ent"), "name"));
+                    echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute((isset($context["ent"]) ? $context["ent"] : $this->getContext($context, "ent")), "name"));
                     echo "\">
                                <strong class=\"title\">
                                    ";
                     // line 70
-                    echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute($this->getContext($context, "ent"), "name"), $this->getContext($context, "countWordProductTitle"));
+                    echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute((isset($context["ent"]) ? $context["ent"] : $this->getContext($context, "ent")), "name"), (isset($context["countWordProductTitle"]) ? $context["countWordProductTitle"] : $this->getContext($context, "countWordProductTitle")));
                     echo "
                                </strong>
                             </a>
@@ -224,6 +224,6 @@ class __TwigTemplate_c0bb1a677fa0a28ac43b9efe89c9c997 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  209 => 78,  206 => 77,  199 => 75,  191 => 70,  184 => 68,  179 => 66,  172 => 62,  168 => 61,  162 => 60,  156 => 56,  148 => 51,  141 => 49,  134 => 47,  127 => 43,  123 => 42,  117 => 41,  111 => 37,  109 => 36,  106 => 35,  101 => 34,  99 => 33,  94 => 30,  83 => 24,  79 => 23,  70 => 21,  65 => 18,  59 => 16,  51 => 14,  49 => 13,  42 => 11,  39 => 10,  37 => 9,  28 => 5,  24 => 4,  19 => 1,);
+        return array (  209 => 78,  206 => 77,  199 => 75,  191 => 70,  184 => 68,  179 => 66,  172 => 62,  168 => 61,  156 => 56,  148 => 51,  141 => 49,  127 => 43,  111 => 37,  109 => 36,  106 => 35,  99 => 33,  94 => 30,  83 => 24,  59 => 16,  49 => 13,  43 => 10,  61 => 13,  120 => 33,  113 => 31,  101 => 34,  97 => 26,  85 => 23,  82 => 22,  79 => 23,  76 => 20,  73 => 19,  70 => 21,  65 => 18,  55 => 13,  51 => 14,  42 => 11,  24 => 4,  21 => 2,  60 => 15,  37 => 9,  34 => 6,  22 => 2,  72 => 18,  62 => 16,  56 => 24,  47 => 11,  38 => 7,  33 => 6,  30 => 5,  25 => 4,  68 => 23,  66 => 22,  58 => 17,  54 => 10,  50 => 10,  41 => 9,  35 => 12,  26 => 4,  19 => 1,  39 => 10,  27 => 4,  23 => 3,  257 => 71,  249 => 127,  245 => 126,  241 => 125,  237 => 124,  231 => 121,  227 => 120,  223 => 119,  219 => 118,  213 => 115,  207 => 112,  203 => 110,  201 => 109,  194 => 104,  192 => 103,  188 => 101,  186 => 100,  176 => 92,  174 => 91,  169 => 88,  167 => 87,  162 => 60,  160 => 83,  151 => 76,  149 => 75,  144 => 72,  142 => 71,  136 => 67,  134 => 47,  125 => 59,  123 => 42,  117 => 41,  115 => 53,  110 => 30,  108 => 49,  102 => 45,  100 => 44,  95 => 41,  93 => 25,  88 => 24,  86 => 36,  77 => 29,  75 => 28,  63 => 28,  57 => 16,  53 => 15,  48 => 13,  44 => 10,  40 => 7,  36 => 7,  29 => 5,  20 => 1,  31 => 4,  28 => 5,);
     }
 }

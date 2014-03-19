@@ -40,7 +40,15 @@
           </div><!-- end footer-top -->
           <div class="footer-bottom">
             <div class="inner">
-              <div class="counter">Visitors counter:<img src="/web/front/images/img-counter.png" alt="" /></div>
+              <div class="counter">
+                  <span>Visitors counter:</span>
+                    <p>
+                      {% for num in arrCounter %}
+                        <span class="number number-{{num}}">{{num}}</span>
+                      {% endfor %}
+                    </p>
+              </div>
+              
               <div class="copyright">© 2012 Toi Yeu Viet Nam. All rights reserved</div>
             </div>
           </div>

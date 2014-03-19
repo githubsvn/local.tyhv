@@ -91,19 +91,19 @@ class __TwigTemplate_e202a4495fd9f6029b4d0056e032e144 extends Twig_Template
         $this->displayBlock('grouplabel', $context, $blocks);
         // line 85
         echo "                    ";
-        if (((array_key_exists("_breadcrumb", $context) && (!twig_test_empty($this->getContext($context, "_breadcrumb")))) || array_key_exists("action", $context))) {
+        if (((array_key_exists("_breadcrumb", $context) && (!twig_test_empty((isset($context["_breadcrumb"]) ? $context["_breadcrumb"] : $this->getContext($context, "_breadcrumb"))))) || array_key_exists("action", $context))) {
             // line 86
             echo "                        <ul class=\"breadcrumb\">
                             ";
             // line 87
-            if (twig_test_empty($this->getContext($context, "_breadcrumb"))) {
+            if (twig_test_empty((isset($context["_breadcrumb"]) ? $context["_breadcrumb"] : $this->getContext($context, "_breadcrumb")))) {
                 // line 88
                 echo "                                ";
                 if (array_key_exists("action", $context)) {
                     // line 89
                     echo "                                    ";
                     $context['_parent'] = (array) $context;
-                    $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getContext($context, "admin"), "breadcrumbs", array(0 => $this->getContext($context, "action")), "method"));
+                    $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["admin"]) ? $context["admin"] : $this->getContext($context, "admin")), "breadcrumbs", array(0 => (isset($context["action"]) ? $context["action"] : $this->getContext($context, "action"))), "method"));
                     $context['loop'] = array(
                       'parent' => $context['_parent'],
                       'index0' => 0,
@@ -120,18 +120,18 @@ class __TwigTemplate_e202a4495fd9f6029b4d0056e032e144 extends Twig_Template
                     foreach ($context['_seq'] as $context["label"] => $context["uri"]) {
                         // line 90
                         echo "                                        ";
-                        if ((!$this->getAttribute($this->getContext($context, "loop"), "last"))) {
+                        if ((!$this->getAttribute((isset($context["loop"]) ? $context["loop"] : $this->getContext($context, "loop")), "last"))) {
                             // line 91
                             echo "                                            <li><a href=\"";
-                            echo twig_escape_filter($this->env, $this->getContext($context, "uri"), "html", null, true);
+                            echo twig_escape_filter($this->env, (isset($context["uri"]) ? $context["uri"] : $this->getContext($context, "uri")), "html", null, true);
                             echo "\">";
-                            echo twig_escape_filter($this->env, $this->getContext($context, "label"), "html", null, true);
+                            echo twig_escape_filter($this->env, (isset($context["label"]) ? $context["label"] : $this->getContext($context, "label")), "html", null, true);
                             echo "</a><span class=\"divider\">/</span></li>
                                         ";
                         } else {
                             // line 93
                             echo "                                            <li class=\"active\">";
-                            echo twig_escape_filter($this->env, $this->getContext($context, "label"), "html", null, true);
+                            echo twig_escape_filter($this->env, (isset($context["label"]) ? $context["label"] : $this->getContext($context, "label")), "html", null, true);
                             echo "</li>
                                         ";
                         }
@@ -157,7 +157,7 @@ class __TwigTemplate_e202a4495fd9f6029b4d0056e032e144 extends Twig_Template
             } else {
                 // line 98
                 echo "                                ";
-                echo $this->getContext($context, "_breadcrumb");
+                echo (isset($context["_breadcrumb"]) ? $context["_breadcrumb"] : $this->getContext($context, "_breadcrumb"));
                 echo "
                             ";
             }
@@ -310,16 +310,16 @@ class __TwigTemplate_e202a4495fd9f6029b4d0056e032e144 extends Twig_Template
                         <a class=\"btn btn-primary dropdown-toggle\" data-toggle=\"dropdown\" href=\"javascript:void(0)\">
                             <i class=\"icon-user icon-white\"></i>";
         // line 57
-        if ($this->getAttribute($this->getContext($context, "app", true), "user", array(), "any", true, true)) {
+        if ($this->getAttribute((isset($context["app"]) ? $context["app"] : null), "user", array(), "any", true, true)) {
             echo " ";
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getContext($context, "app"), "user"), "fullname"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user"), "fullname"), "html", null, true);
             echo " ";
         }
         echo "<span class=\"caret\"></span> </a>
                         <ul class=\"dropdown-menu\">
                             <li><a href=\"";
         // line 59
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getUrl("admin_user_edit", array("id" => $this->getAttribute($this->getAttribute($this->getContext($context, "app"), "user"), "id"))), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getUrl("admin_user_edit", array("id" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user"), "id"))), "html", null, true);
         echo "\">";
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Profile", array(), "SMAdminBundle"), "html", null, true);
         echo "</a></li>
@@ -346,7 +346,7 @@ class __TwigTemplate_e202a4495fd9f6029b4d0056e032e144 extends Twig_Template
     {
         // line 68
         echo "                            ";
-        if (($this->getAttribute($this->getAttribute($this->getContext($context, "app"), "security"), "token") && $this->env->getExtension('security')->isGranted("ROLE_ADMIN"))) {
+        if (($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "security"), "token") && $this->env->getExtension('security')->isGranted("ROLE_ADMIN"))) {
             // line 69
             echo "                                ";
             echo $this->env->getExtension('actions')->renderAction("SMAdminBundle:Default:menu", array(), array());
@@ -371,7 +371,7 @@ class __TwigTemplate_e202a4495fd9f6029b4d0056e032e144 extends Twig_Template
         if (array_key_exists("_grouplabel", $context)) {
             // line 82
             echo "                        <h1>";
-            echo twig_escape_filter($this->env, $this->getContext($context, "_grouplabel"), "html", null, true);
+            echo twig_escape_filter($this->env, (isset($context["_grouplabel"]) ? $context["_grouplabel"] : $this->getContext($context, "_grouplabel")), "html", null, true);
             echo "</h1>
                         ";
         }
@@ -389,25 +389,25 @@ class __TwigTemplate_e202a4495fd9f6029b4d0056e032e144 extends Twig_Template
         foreach ($context['_seq'] as $context["_key"] => $context["notice_level"]) {
             // line 106
             echo "                            ";
-            $context["session_var"] = ("sm_flash_" . $this->getContext($context, "notice_level"));
+            $context["session_var"] = ("sm_flash_" . (isset($context["notice_level"]) ? $context["notice_level"] : $this->getContext($context, "notice_level")));
             // line 107
             echo "                            ";
-            $context["session_flashbag"] = $this->getAttribute($this->getAttribute($this->getAttribute($this->getContext($context, "app"), "session"), "flashbag"), "get", array(0 => $this->getContext($context, "session_var")), "method");
+            $context["session_flashbag"] = $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session"), "flashbag"), "get", array(0 => (isset($context["session_var"]) ? $context["session_var"] : $this->getContext($context, "session_var"))), "method");
             // line 108
             echo "                            ";
-            if ($this->getContext($context, "session_flashbag")) {
+            if ((isset($context["session_flashbag"]) ? $context["session_flashbag"] : $this->getContext($context, "session_flashbag"))) {
                 // line 109
                 echo "                                ";
                 $context['_parent'] = (array) $context;
-                $context['_seq'] = twig_ensure_traversable($this->getContext($context, "session_flashbag"));
+                $context['_seq'] = twig_ensure_traversable((isset($context["session_flashbag"]) ? $context["session_flashbag"] : $this->getContext($context, "session_flashbag")));
                 foreach ($context['_seq'] as $context["_key"] => $context["flash"]) {
                     // line 110
                     echo "                                <div class=\"alert ";
-                    echo twig_escape_filter($this->env, ("alert-" . $this->getContext($context, "notice_level")), "html", null, true);
+                    echo twig_escape_filter($this->env, ("alert-" . (isset($context["notice_level"]) ? $context["notice_level"] : $this->getContext($context, "notice_level"))), "html", null, true);
                     echo "\">
                                     ";
                     // line 111
-                    echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans($this->getContext($context, "flash"), array(), "SMAdminBundle"), "html", null, true);
+                    echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans((isset($context["flash"]) ? $context["flash"] : $this->getContext($context, "flash")), array(), "SMAdminBundle"), "html", null, true);
                     echo "
                                 </div>
                                 ";

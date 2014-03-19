@@ -173,6 +173,11 @@ class DefaultController extends Controller
         $facebookPage = Utilities::getConfig('facebook_page');
         $twitterPage = Utilities::getConfig('twitter_page');
         $youtubePage = Utilities::getConfig('youtube_page');
+        $total = $this->counter->getTotal() . '';
+        $arrCounter = array();
+        for ($i = 0; $i < (strlen($total)); $i ++) {
+            $arrCounter[] = $total[$i];
+        }
         return $this->render('SMFrontBundle:Default:footer.html.twig', array(
             'footerAdd' => $footerAdd,
             'phone' => $phone,
@@ -181,6 +186,7 @@ class DefaultController extends Controller
             'facebookPage' => $facebookPage,
             'twitterPage' => $twitterPage,
             'youtubePage' => $youtubePage,
+            'arrCounter' => $arrCounter
         ));
     }
 

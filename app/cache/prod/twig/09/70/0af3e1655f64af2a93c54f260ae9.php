@@ -17,30 +17,30 @@ class __TwigTemplate_09700af3e1655f64af2a93c54f260ae9 extends Twig_Template
     {
         // line 1
         $context['_parent'] = (array) $context;
-        $context['_seq'] = twig_ensure_traversable($this->getContext($context, "groups"));
+        $context['_seq'] = twig_ensure_traversable((isset($context["groups"]) ? $context["groups"] : $this->getContext($context, "groups")));
         foreach ($context['_seq'] as $context["gkey"] => $context["group"]) {
             // line 2
             echo "    ";
-            if ((twig_length_filter($this->env, $this->getContext($context, "group")) > 0)) {
+            if ((twig_length_filter($this->env, (isset($context["group"]) ? $context["group"] : $this->getContext($context, "group"))) > 0)) {
                 // line 3
                 echo "    <li class=\"dropdown\">
         <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">";
                 // line 4
-                echo twig_escape_filter($this->env, $this->getContext($context, "gkey"), "html", null, true);
+                echo twig_escape_filter($this->env, (isset($context["gkey"]) ? $context["gkey"] : $this->getContext($context, "gkey")), "html", null, true);
                 echo "<span class=\"caret\"></span></a>
         <ul class=\"dropdown-menu\">
             ";
                 // line 6
                 $context['_parent'] = (array) $context;
-                $context['_seq'] = twig_ensure_traversable($this->getContext($context, "group"));
+                $context['_seq'] = twig_ensure_traversable((isset($context["group"]) ? $context["group"] : $this->getContext($context, "group")));
                 foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
                     // line 7
                     echo "            <li>
                 <a href=\"";
                     // line 8
-                    echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath($this->getAttribute($this->getAttribute($this->getContext($context, "item"), "action"), 1, array(), "array")), "html", null, true);
+                    echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath($this->getAttribute($this->getAttribute((isset($context["item"]) ? $context["item"] : $this->getContext($context, "item")), "action"), 1, array(), "array")), "html", null, true);
                     echo "\">";
-                    echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans($this->getAttribute($this->getContext($context, "item"), "label"), array(), "SMAdminBundle"), "html", null, true);
+                    echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans($this->getAttribute((isset($context["item"]) ? $context["item"] : $this->getContext($context, "item")), "label"), array(), "SMAdminBundle"), "html", null, true);
                     echo "</a>
             </li>
             ";

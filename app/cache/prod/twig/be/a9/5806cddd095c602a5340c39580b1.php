@@ -28,7 +28,7 @@ class __TwigTemplate_bea95806cddd095c602a5340c39580b1 extends Twig_Template
     // line 2
     public function block_title($context, array $blocks = array())
     {
-        echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "entity"), "name"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "name"), "html", null, true);
     }
 
     // line 3
@@ -52,14 +52,14 @@ class __TwigTemplate_bea95806cddd095c602a5340c39580b1 extends Twig_Template
         <ul class=\"slides\">
             ";
         // line 16
-        if (($this->getAttribute($this->getAttribute($this->getContext($context, "entity"), "product"), "thumb") > 0)) {
+        if (($this->getAttribute($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "product"), "thumb") > 0)) {
             // line 17
             echo "                <li class=\"slide\"><a href=\"";
-            echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl(($this->getContext($context, "uploadPath") . $this->getAttribute($this->getAttribute($this->getContext($context, "entity"), "product"), "thumb"))), "html", null, true);
+            echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl(((isset($context["uploadPath"]) ? $context["uploadPath"] : $this->getContext($context, "uploadPath")) . $this->getAttribute($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "product"), "thumb"))), "html", null, true);
             echo "\"><img src=\"";
-            echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl(($this->getContext($context, "uploadPath") . $this->getAttribute($this->getAttribute($this->getContext($context, "entity"), "product"), "thumb"))), "html", null, true);
+            echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl(((isset($context["uploadPath"]) ? $context["uploadPath"] : $this->getContext($context, "uploadPath")) . $this->getAttribute($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "product"), "thumb"))), "html", null, true);
             echo "\" alt=\"";
-            echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute($this->getContext($context, "entity"), "name"));
+            echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "name"));
             echo "\" width=\"420\" height=\"277\"/></a></li>
             ";
         } else {
@@ -71,22 +71,22 @@ class __TwigTemplate_bea95806cddd095c602a5340c39580b1 extends Twig_Template
         }
         // line 21
         echo "            ";
-        if ((twig_length_filter($this->env, $this->getContext($context, "medias")) > 0)) {
+        if ((twig_length_filter($this->env, (isset($context["medias"]) ? $context["medias"] : $this->getContext($context, "medias"))) > 0)) {
             // line 22
             echo "                ";
             $context['_parent'] = (array) $context;
-            $context['_seq'] = twig_ensure_traversable($this->getContext($context, "medias"));
+            $context['_seq'] = twig_ensure_traversable((isset($context["medias"]) ? $context["medias"] : $this->getContext($context, "medias")));
             foreach ($context['_seq'] as $context["_key"] => $context["img"]) {
                 // line 23
                 echo "                    ";
-                if ((!(null === $this->getContext($context, "img")))) {
+                if ((!(null === (isset($context["img"]) ? $context["img"] : $this->getContext($context, "img"))))) {
                     // line 24
                     echo "                        <li class=\"slide\"><a href=\"";
-                    echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl(($this->getContext($context, "uploadPath") . $this->getAttribute($this->getContext($context, "img"), "name"))), "html", null, true);
+                    echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl(((isset($context["uploadPath"]) ? $context["uploadPath"] : $this->getContext($context, "uploadPath")) . $this->getAttribute((isset($context["img"]) ? $context["img"] : $this->getContext($context, "img")), "name"))), "html", null, true);
                     echo "\"><img src=\"";
-                    echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl(($this->getContext($context, "uploadPath") . $this->getAttribute($this->getContext($context, "img"), "name"))), "html", null, true);
+                    echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl(((isset($context["uploadPath"]) ? $context["uploadPath"] : $this->getContext($context, "uploadPath")) . $this->getAttribute((isset($context["img"]) ? $context["img"] : $this->getContext($context, "img")), "name"))), "html", null, true);
                     echo "\" alt=\"";
-                    echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute($this->getContext($context, "entity"), "name"));
+                    echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "name"));
                     echo "\" width=\"420\" height=\"277\"/></a></li>
                     ";
                 } else {
@@ -112,12 +112,12 @@ class __TwigTemplate_bea95806cddd095c602a5340c39580b1 extends Twig_Template
         <ul class=\"slides\">
             ";
         // line 34
-        if (($this->getAttribute($this->getAttribute($this->getContext($context, "entity"), "product"), "thumb") > 0)) {
+        if (($this->getAttribute($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "product"), "thumb") > 0)) {
             // line 35
             echo "                <li><img src=\"";
-            echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl(($this->getContext($context, "uploadPath") . $this->getAttribute($this->getAttribute($this->getContext($context, "entity"), "product"), "thumb"))), "html", null, true);
+            echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl(((isset($context["uploadPath"]) ? $context["uploadPath"] : $this->getContext($context, "uploadPath")) . $this->getAttribute($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "product"), "thumb"))), "html", null, true);
             echo "\" alt=\"";
-            echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute($this->getContext($context, "entity"), "name"));
+            echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "name"));
             echo "\" width=\"104\" height=\"64\"/></li>
             ";
         } else {
@@ -131,20 +131,20 @@ class __TwigTemplate_bea95806cddd095c602a5340c39580b1 extends Twig_Template
         echo "            
             ";
         // line 40
-        if ((twig_length_filter($this->env, $this->getContext($context, "medias")) > 0)) {
+        if ((twig_length_filter($this->env, (isset($context["medias"]) ? $context["medias"] : $this->getContext($context, "medias"))) > 0)) {
             // line 41
             echo "                ";
             $context['_parent'] = (array) $context;
-            $context['_seq'] = twig_ensure_traversable($this->getContext($context, "medias"));
+            $context['_seq'] = twig_ensure_traversable((isset($context["medias"]) ? $context["medias"] : $this->getContext($context, "medias")));
             foreach ($context['_seq'] as $context["_key"] => $context["img"]) {
                 // line 42
                 echo "                    ";
-                if ((!(null === $this->getContext($context, "img")))) {
+                if ((!(null === (isset($context["img"]) ? $context["img"] : $this->getContext($context, "img"))))) {
                     // line 43
                     echo "                        <li><img src=\"";
-                    echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl(($this->getContext($context, "uploadPath") . $this->getAttribute($this->getContext($context, "img"), "name"))), "html", null, true);
+                    echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl(((isset($context["uploadPath"]) ? $context["uploadPath"] : $this->getContext($context, "uploadPath")) . $this->getAttribute((isset($context["img"]) ? $context["img"] : $this->getContext($context, "img")), "name"))), "html", null, true);
                     echo "\" alt=\"";
-                    echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute($this->getContext($context, "entity"), "name"));
+                    echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "name"));
                     echo "\" width=\"104\" height=\"64\"/></li>
                     ";
                 } else {
@@ -170,15 +170,15 @@ class __TwigTemplate_bea95806cddd095c602a5340c39580b1 extends Twig_Template
     <div class=\"content\">
       ";
         // line 53
-        if ((!(null === $this->getContext($context, "entity")))) {
+        if ((!(null === (isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity"))))) {
             // line 54
             echo "        <h3>";
-            echo $this->getAttribute($this->getContext($context, "entity"), "getName");
+            echo $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "getName");
             echo "</h3>
         <div class=\"desc\">
             ";
             // line 56
-            echo $this->getAttribute($this->getContext($context, "entity"), "getDescription");
+            echo $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "getDescription");
             echo "
         </div>
       ";
@@ -206,9 +206,9 @@ class __TwigTemplate_bea95806cddd095c602a5340c39580b1 extends Twig_Template
         echo "</span></span></h2>
         <a href=\"";
         // line 72
-        echo twig_escape_filter($this->env, $this->getContext($context, "urlHost"), "html", null, true);
+        echo twig_escape_filter($this->env, (isset($context["urlHost"]) ? $context["urlHost"] : $this->getContext($context, "urlHost")), "html", null, true);
         echo "/product/view-branch/1/";
-        echo twig_escape_filter($this->env, $this->env->getExtension('mtx.twig.build_url')->buildUrl($this->getAttribute($this->getContext($context, "branch"), "id"), $this->getAttribute($this->getAttribute($this->getContext($context, "branch"), "getCurrentLanguage"), "getName")), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('mtx.twig.build_url')->buildUrl($this->getAttribute((isset($context["branch"]) ? $context["branch"] : $this->getContext($context, "branch")), "id"), $this->getAttribute($this->getAttribute((isset($context["branch"]) ? $context["branch"] : $this->getContext($context, "branch")), "getCurrentLanguage"), "getName")), "html", null, true);
         echo "\" title=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("View more", array(), "SMFrontBundle"), "html", null, true);
         echo "\" class=\"readmore\">";
@@ -220,55 +220,55 @@ class __TwigTemplate_bea95806cddd095c602a5340c39580b1 extends Twig_Template
       <ul>
           ";
         // line 77
-        if ((twig_length_filter($this->env, $this->getContext($context, "productsRelative")) > 0)) {
+        if ((twig_length_filter($this->env, (isset($context["productsRelative"]) ? $context["productsRelative"] : $this->getContext($context, "productsRelative"))) > 0)) {
             // line 78
             echo "            ";
             $context['_parent'] = (array) $context;
-            $context['_seq'] = twig_ensure_traversable($this->getContext($context, "productsRelative"));
+            $context['_seq'] = twig_ensure_traversable((isset($context["productsRelative"]) ? $context["productsRelative"] : $this->getContext($context, "productsRelative")));
             foreach ($context['_seq'] as $context["_key"] => $context["ent"]) {
                 // line 79
                 echo "                <li>
                     ";
                 // line 80
-                if (($this->getAttribute($this->getAttribute($this->getContext($context, "ent"), "product"), "thumb") != "")) {
+                if (($this->getAttribute($this->getAttribute((isset($context["ent"]) ? $context["ent"] : $this->getContext($context, "ent")), "product"), "thumb") != "")) {
                     // line 81
                     echo "                        <a href=\"";
-                    echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("sm_front_view_product_detail", array("slug" => $this->env->getExtension('mtx.twig.build_url')->buildUrl($this->getAttribute($this->getAttribute($this->getContext($context, "ent"), "product"), "id"), $this->getAttribute($this->getContext($context, "ent"), "name")))), "html", null, true);
+                    echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("sm_front_view_product_detail", array("slug" => $this->env->getExtension('mtx.twig.build_url')->buildUrl($this->getAttribute($this->getAttribute((isset($context["ent"]) ? $context["ent"] : $this->getContext($context, "ent")), "product"), "id"), $this->getAttribute((isset($context["ent"]) ? $context["ent"] : $this->getContext($context, "ent")), "name")))), "html", null, true);
                     echo "\" title=\"";
-                    echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute($this->getContext($context, "ent"), "name"));
+                    echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute((isset($context["ent"]) ? $context["ent"] : $this->getContext($context, "ent")), "name"));
                     echo "\"\">
                             <span class=\"wi-frame wi-frame-2\"><span><span>
                                 <img src=\"";
                     // line 83
-                    echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl(($this->getContext($context, "uploadPath") . $this->getAttribute($this->getAttribute($this->getContext($context, "ent"), "product"), "thumb"))), "html", null, true);
+                    echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl(((isset($context["uploadPath"]) ? $context["uploadPath"] : $this->getContext($context, "uploadPath")) . $this->getAttribute($this->getAttribute((isset($context["ent"]) ? $context["ent"] : $this->getContext($context, "ent")), "product"), "thumb"))), "html", null, true);
                     echo "\" alt=\"";
-                    echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute($this->getContext($context, "ent"), "name"), $this->getContext($context, "countWordProductTitle"));
+                    echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute((isset($context["ent"]) ? $context["ent"] : $this->getContext($context, "ent")), "name"), (isset($context["countWordProductTitle"]) ? $context["countWordProductTitle"] : $this->getContext($context, "countWordProductTitle")));
                     echo "\"/>
                             </span></span></span>
                             <h3>";
                     // line 85
-                    echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute($this->getContext($context, "ent"), "name"), $this->getContext($context, "countWordProductTitle"));
+                    echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute((isset($context["ent"]) ? $context["ent"] : $this->getContext($context, "ent")), "name"), (isset($context["countWordProductTitle"]) ? $context["countWordProductTitle"] : $this->getContext($context, "countWordProductTitle")));
                     echo "</h3>
                         </a>
                     ";
                 } else {
                     // line 88
                     echo "                        <a href=\"";
-                    echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("sm_front_view_product_detail", array("slug" => $this->env->getExtension('mtx.twig.build_url')->buildUrl($this->getAttribute($this->getAttribute($this->getContext($context, "ent"), "product"), "id"), $this->getAttribute($this->getContext($context, "ent"), "name")))), "html", null, true);
+                    echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("sm_front_view_product_detail", array("slug" => $this->env->getExtension('mtx.twig.build_url')->buildUrl($this->getAttribute($this->getAttribute((isset($context["ent"]) ? $context["ent"] : $this->getContext($context, "ent")), "product"), "id"), $this->getAttribute((isset($context["ent"]) ? $context["ent"] : $this->getContext($context, "ent")), "name")))), "html", null, true);
                     echo "\" title=\"";
-                    echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute($this->getContext($context, "ent"), "name"));
+                    echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute((isset($context["ent"]) ? $context["ent"] : $this->getContext($context, "ent")), "name"));
                     echo "\">
                             <span class=\"wi-frame wi-frame-2\"><span><span>
                                 <img src=\"";
                     // line 90
                     echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("/web/front/images/no-image.jpg"), "html", null, true);
                     echo "\" width=\"157\" height=\"104\" alt=\"";
-                    echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute($this->getContext($context, "ent"), "name"), $this->getContext($context, "countWordProductTitle"));
+                    echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute((isset($context["ent"]) ? $context["ent"] : $this->getContext($context, "ent")), "name"), (isset($context["countWordProductTitle"]) ? $context["countWordProductTitle"] : $this->getContext($context, "countWordProductTitle")));
                     echo "\"/>
                             </span></span></span>
                             <h3>";
                     // line 92
-                    echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute($this->getContext($context, "ent"), "name"), $this->getContext($context, "countWordProductTitle"));
+                    echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute((isset($context["ent"]) ? $context["ent"] : $this->getContext($context, "ent")), "name"), (isset($context["countWordProductTitle"]) ? $context["countWordProductTitle"] : $this->getContext($context, "countWordProductTitle")));
                     echo "</h3>
                         </a>
                     ";

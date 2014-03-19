@@ -34,13 +34,13 @@ class __TwigTemplate_7542d0e20d0145905d2bec9085ccaf28 extends Twig_Template
         // line 10
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Hot line", array(), "SMFrontBundle"), "html", null, true);
         echo ": <strong>";
-        echo twig_escape_filter($this->env, $this->getContext($context, "hotLine"), "html", null, true);
+        echo twig_escape_filter($this->env, (isset($context["hotLine"]) ? $context["hotLine"] : $this->getContext($context, "hotLine")), "html", null, true);
         echo "</strong></li>
       <li><img src=\"/web/front/images/img-phone.png\" alt=\"\" />";
         // line 11
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Advertisement", array(), "SMFrontBundle"), "html", null, true);
         echo ": <strong>";
-        echo twig_escape_filter($this->env, $this->getContext($context, "advNumber"), "html", null, true);
+        echo twig_escape_filter($this->env, (isset($context["advNumber"]) ? $context["advNumber"] : $this->getContext($context, "advNumber")), "html", null, true);
         echo "</strong></li>
     </ul><!-- end tel-block -->
 
@@ -51,7 +51,7 @@ class __TwigTemplate_7542d0e20d0145905d2bec9085ccaf28 extends Twig_Template
         echo "\" method=\"post\">
       <input type=\"text\" id=\"product_name_top\" name=\"product_name\" value=\"";
         // line 16
-        echo twig_escape_filter($this->env, $this->getContext($context, "name"), "html", null, true);
+        echo twig_escape_filter($this->env, (isset($context["name"]) ? $context["name"] : $this->getContext($context, "name")), "html", null, true);
         echo "\"/>
       <button type=\"submit\" id=\"search-btn\" name=\"search-btn\">";
         // line 17
@@ -83,6 +83,6 @@ class __TwigTemplate_7542d0e20d0145905d2bec9085ccaf28 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  68 => 23,  66 => 22,  58 => 17,  54 => 16,  50 => 15,  41 => 11,  35 => 10,  26 => 4,  19 => 1,  251 => 77,  243 => 129,  239 => 128,  233 => 125,  229 => 124,  225 => 123,  221 => 122,  215 => 119,  209 => 116,  201 => 110,  199 => 109,  195 => 107,  193 => 106,  183 => 98,  181 => 97,  176 => 94,  174 => 93,  169 => 90,  167 => 89,  158 => 82,  156 => 81,  151 => 78,  149 => 77,  143 => 73,  141 => 72,  132 => 65,  130 => 64,  124 => 60,  122 => 59,  117 => 56,  115 => 55,  109 => 51,  107 => 50,  102 => 47,  100 => 46,  95 => 43,  93 => 42,  84 => 35,  82 => 34,  70 => 25,  64 => 22,  60 => 21,  55 => 19,  51 => 18,  47 => 17,  43 => 16,  39 => 15,  30 => 9,  20 => 1,  31 => 3,  28 => 5,);
+        return array (  68 => 23,  66 => 22,  58 => 17,  54 => 16,  50 => 15,  41 => 11,  35 => 10,  26 => 4,  19 => 1,  39 => 2,  27 => 3,  23 => 2,  257 => 71,  249 => 127,  245 => 126,  241 => 125,  237 => 124,  231 => 121,  227 => 120,  223 => 119,  219 => 118,  213 => 115,  207 => 112,  203 => 110,  201 => 109,  194 => 104,  192 => 103,  188 => 101,  186 => 100,  176 => 92,  174 => 91,  169 => 88,  167 => 87,  162 => 84,  160 => 83,  151 => 76,  149 => 75,  144 => 72,  142 => 71,  136 => 67,  134 => 66,  125 => 59,  123 => 58,  117 => 54,  115 => 53,  110 => 50,  108 => 49,  102 => 45,  100 => 44,  95 => 41,  93 => 40,  88 => 37,  86 => 36,  77 => 29,  75 => 28,  63 => 19,  57 => 16,  53 => 15,  48 => 13,  44 => 12,  40 => 11,  36 => 10,  29 => 8,  20 => 1,  31 => 4,  28 => 5,);
     }
 }

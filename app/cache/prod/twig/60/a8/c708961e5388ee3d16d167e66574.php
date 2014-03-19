@@ -28,25 +28,25 @@ class __TwigTemplate_60a8c708961e5388ee3d16d167e66574 extends Twig_Template
         // line 9
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Add", array(), "SMFrontBundle"), "html", null, true);
         echo " :</strong> ";
-        echo twig_escape_filter($this->env, $this->getContext($context, "footerAdd"), "html", null, true);
+        echo twig_escape_filter($this->env, (isset($context["footerAdd"]) ? $context["footerAdd"] : $this->getContext($context, "footerAdd")), "html", null, true);
         echo "<br />
                     <strong>";
         // line 10
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Phone", array(), "SMFrontBundle"), "html", null, true);
         echo "</strong> ";
-        echo twig_escape_filter($this->env, $this->getContext($context, "phone"), "html", null, true);
+        echo twig_escape_filter($this->env, (isset($context["phone"]) ? $context["phone"] : $this->getContext($context, "phone")), "html", null, true);
         echo " - <strong>
                         ";
         // line 11
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Fax", array(), "SMFrontBundle"), "html", null, true);
         echo ":</strong> ";
-        echo twig_escape_filter($this->env, $this->getContext($context, "fax"), "html", null, true);
+        echo twig_escape_filter($this->env, (isset($context["fax"]) ? $context["fax"] : $this->getContext($context, "fax")), "html", null, true);
         echo "<br />
                     <strong>";
         // line 12
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Email", array(), "SMFrontBundle"), "html", null, true);
         echo ":</strong> ";
-        echo twig_escape_filter($this->env, $this->getContext($context, "infoEmail"), "html", null, true);
+        echo twig_escape_filter($this->env, (isset($context["infoEmail"]) ? $context["infoEmail"] : $this->getContext($context, "infoEmail")), "html", null, true);
         echo "
                   </address>
                 </li>
@@ -70,28 +70,28 @@ class __TwigTemplate_60a8c708961e5388ee3d16d167e66574 extends Twig_Template
                   <ul class=\"social\">
                     ";
         // line 27
-        if (($this->getContext($context, "facebookPage") != "")) {
+        if (((isset($context["facebookPage"]) ? $context["facebookPage"] : $this->getContext($context, "facebookPage")) != "")) {
             // line 28
             echo "                        <li><a href=\"";
-            echo twig_escape_filter($this->env, $this->getContext($context, "facebookPage"), "html", null, true);
+            echo twig_escape_filter($this->env, (isset($context["facebookPage"]) ? $context["facebookPage"] : $this->getContext($context, "facebookPage")), "html", null, true);
             echo "\" title=\"Facebook\" class=\"wi-icon wi-icon-4\">Facebook</a></li>
                     ";
         }
         // line 30
         echo "                    ";
-        if (($this->getContext($context, "twitterPage") != "")) {
+        if (((isset($context["twitterPage"]) ? $context["twitterPage"] : $this->getContext($context, "twitterPage")) != "")) {
             // line 31
             echo "                        <li><a href=\"";
-            echo twig_escape_filter($this->env, $this->getContext($context, "twitterPage"), "html", null, true);
+            echo twig_escape_filter($this->env, (isset($context["twitterPage"]) ? $context["twitterPage"] : $this->getContext($context, "twitterPage")), "html", null, true);
             echo "\" title=\"Facebook\" class=\"wi-icon wi-icon-5\">Twitter</a></li>
                     ";
         }
         // line 33
         echo "                    ";
-        if (($this->getContext($context, "youtubePage") != "")) {
+        if (((isset($context["youtubePage"]) ? $context["youtubePage"] : $this->getContext($context, "youtubePage")) != "")) {
             // line 34
             echo "                        <li><a href=\"";
-            echo twig_escape_filter($this->env, $this->getContext($context, "youtubePage"), "html", null, true);
+            echo twig_escape_filter($this->env, (isset($context["youtubePage"]) ? $context["youtubePage"] : $this->getContext($context, "youtubePage")), "html", null, true);
             echo "\" title=\"Facebook\" class=\"wi-icon wi-icon-6\">Youtube</a></li>
                     ";
         }
@@ -103,7 +103,29 @@ class __TwigTemplate_60a8c708961e5388ee3d16d167e66574 extends Twig_Template
           </div><!-- end footer-top -->
           <div class=\"footer-bottom\">
             <div class=\"inner\">
-              <div class=\"counter\">Visitors counter:<img src=\"/web/front/images/img-counter.png\" alt=\"\" /></div>
+              <div class=\"counter\">
+                  <span>Visitors counter:</span>
+                    <p>
+                      ";
+        // line 46
+        $context['_parent'] = (array) $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["arrCounter"]) ? $context["arrCounter"] : $this->getContext($context, "arrCounter")));
+        foreach ($context['_seq'] as $context["_key"] => $context["num"]) {
+            // line 47
+            echo "                        <span class=\"number number-";
+            echo twig_escape_filter($this->env, (isset($context["num"]) ? $context["num"] : $this->getContext($context, "num")), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, (isset($context["num"]) ? $context["num"] : $this->getContext($context, "num")), "html", null, true);
+            echo "</span>
+                      ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['num'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 49
+        echo "                    </p>
+              </div>
+              
               <div class=\"copyright\">© 2012 Toi Yeu Viet Nam. All rights reserved</div>
             </div>
           </div>
@@ -122,6 +144,6 @@ class __TwigTemplate_60a8c708961e5388ee3d16d167e66574 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  99 => 36,  93 => 34,  90 => 33,  84 => 31,  81 => 30,  75 => 28,  73 => 27,  68 => 25,  61 => 20,  59 => 19,  47 => 12,  41 => 11,  35 => 10,  29 => 9,  19 => 1,);
+        return array (  126 => 49,  115 => 47,  111 => 46,  99 => 36,  93 => 34,  90 => 33,  84 => 31,  81 => 30,  75 => 28,  73 => 27,  68 => 25,  61 => 20,  59 => 19,  47 => 12,  41 => 11,  35 => 10,  29 => 9,  19 => 1,);
     }
 }

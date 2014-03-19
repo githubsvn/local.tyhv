@@ -19,47 +19,47 @@ class __TwigTemplate_bd0cac5da7d661e4ee4a9ef65570b0a4 extends Twig_Template
         echo "<div class=\"block\">
     ";
         // line 2
-        if (($this->getContext($context, "count") > 0)) {
+        if (((isset($context["count"]) ? $context["count"] : $this->getContext($context, "count")) > 0)) {
             // line 3
             echo "        <h2>
             <span><small>[";
             // line 4
-            echo twig_escape_filter($this->env, (($this->getContext($context, "count") - $this->getContext($context, "position")) + 1), "html", null, true);
+            echo twig_escape_filter($this->env, (((isset($context["count"]) ? $context["count"] : $this->getContext($context, "count")) - (isset($context["position"]) ? $context["position"] : $this->getContext($context, "position"))) + 1), "html", null, true);
             echo "/";
-            echo twig_escape_filter($this->env, ($this->getContext($context, "count") + 1), "html", null, true);
+            echo twig_escape_filter($this->env, ((isset($context["count"]) ? $context["count"] : $this->getContext($context, "count")) + 1), "html", null, true);
             echo "]</small></span>
             ";
             // line 5
-            echo $this->env->getExtension('code')->abbrClass($this->getAttribute($this->getContext($context, "exception"), "class"));
+            echo $this->env->getExtension('code')->abbrClass($this->getAttribute((isset($context["exception"]) ? $context["exception"] : $this->getContext($context, "exception")), "class"));
             echo ": ";
-            echo $this->env->getExtension('code')->formatFileFromText(nl2br(twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "exception"), "message"), "html", null, true)));
+            echo $this->env->getExtension('code')->formatFileFromText(nl2br(twig_escape_filter($this->env, $this->getAttribute((isset($context["exception"]) ? $context["exception"] : $this->getContext($context, "exception")), "message"), "html", null, true)));
             echo "&nbsp;
             ";
             // line 6
             ob_start();
             // line 7
             echo "            <a href=\"#\" onclick=\"toggle('traces_";
-            echo twig_escape_filter($this->env, $this->getContext($context, "position"), "html", null, true);
+            echo twig_escape_filter($this->env, (isset($context["position"]) ? $context["position"] : $this->getContext($context, "position")), "html", null, true);
             echo "', 'traces'); switchIcons('icon_traces_";
-            echo twig_escape_filter($this->env, $this->getContext($context, "position"), "html", null, true);
+            echo twig_escape_filter($this->env, (isset($context["position"]) ? $context["position"] : $this->getContext($context, "position")), "html", null, true);
             echo "_open', 'icon_traces_";
-            echo twig_escape_filter($this->env, $this->getContext($context, "position"), "html", null, true);
+            echo twig_escape_filter($this->env, (isset($context["position"]) ? $context["position"] : $this->getContext($context, "position")), "html", null, true);
             echo "_close'); return false;\">
                 <img class=\"toggle\" id=\"icon_traces_";
             // line 8
-            echo twig_escape_filter($this->env, $this->getContext($context, "position"), "html", null, true);
+            echo twig_escape_filter($this->env, (isset($context["position"]) ? $context["position"] : $this->getContext($context, "position")), "html", null, true);
             echo "_close\" alt=\"-\" src=\"";
             echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/framework/images/blue_picto_less.gif"), "html", null, true);
             echo "\" style=\"visibility: ";
-            echo (((0 == $this->getContext($context, "count"))) ? ("visible") : ("hidden"));
+            echo (((0 == (isset($context["count"]) ? $context["count"] : $this->getContext($context, "count")))) ? ("visible") : ("hidden"));
             echo "\" />
                 <img class=\"toggle\" id=\"icon_traces_";
             // line 9
-            echo twig_escape_filter($this->env, $this->getContext($context, "position"), "html", null, true);
+            echo twig_escape_filter($this->env, (isset($context["position"]) ? $context["position"] : $this->getContext($context, "position")), "html", null, true);
             echo "_open\" alt=\"+\" src=\"";
             echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/framework/images/blue_picto_more.gif"), "html", null, true);
             echo "\" style=\"visibility: ";
-            echo (((0 == $this->getContext($context, "count"))) ? ("hidden") : ("visible"));
+            echo (((0 == (isset($context["count"]) ? $context["count"] : $this->getContext($context, "count")))) ? ("hidden") : ("visible"));
             echo "; margin-left: -18px\" />
             </a>
             ";
@@ -76,24 +76,24 @@ class __TwigTemplate_bd0cac5da7d661e4ee4a9ef65570b0a4 extends Twig_Template
         echo "
     <a id=\"traces_link_";
         // line 17
-        echo twig_escape_filter($this->env, $this->getContext($context, "position"), "html", null, true);
+        echo twig_escape_filter($this->env, (isset($context["position"]) ? $context["position"] : $this->getContext($context, "position")), "html", null, true);
         echo "\"></a>
     <ol class=\"traces list_exception\" id=\"traces_";
         // line 18
-        echo twig_escape_filter($this->env, $this->getContext($context, "position"), "html", null, true);
+        echo twig_escape_filter($this->env, (isset($context["position"]) ? $context["position"] : $this->getContext($context, "position")), "html", null, true);
         echo "\" style=\"display: ";
-        echo (((0 == $this->getContext($context, "count"))) ? ("block") : ("none"));
+        echo (((0 == (isset($context["count"]) ? $context["count"] : $this->getContext($context, "count")))) ? ("block") : ("none"));
         echo "\">
         ";
         // line 19
         $context['_parent'] = (array) $context;
-        $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getContext($context, "exception"), "trace"));
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["exception"]) ? $context["exception"] : $this->getContext($context, "exception")), "trace"));
         foreach ($context['_seq'] as $context["i"] => $context["trace"]) {
             // line 20
             echo "            <li>
                 ";
             // line 21
-            $this->env->loadTemplate("TwigBundle:Exception:trace.html.twig")->display(array("prefix" => $this->getContext($context, "position"), "i" => $this->getContext($context, "i"), "trace" => $this->getContext($context, "trace")));
+            $this->env->loadTemplate("TwigBundle:Exception:trace.html.twig")->display(array("prefix" => (isset($context["position"]) ? $context["position"] : $this->getContext($context, "position")), "i" => (isset($context["i"]) ? $context["i"] : $this->getContext($context, "i")), "trace" => (isset($context["trace"]) ? $context["trace"] : $this->getContext($context, "trace"))));
             // line 22
             echo "            </li>
         ";

@@ -32,18 +32,18 @@ class __TwigTemplate_3a91960814fc2fcd5e79308333469432 extends Twig_Template
     ";
         // line 5
         $context['_parent'] = (array) $context;
-        $context['_seq'] = twig_ensure_traversable($this->getContext($context, "groups"));
+        $context['_seq'] = twig_ensure_traversable((isset($context["groups"]) ? $context["groups"] : $this->getContext($context, "groups")));
         foreach ($context['_seq'] as $context["gkey"] => $context["group"]) {
             // line 6
             echo "        ";
-            if ((twig_length_filter($this->env, $this->getContext($context, "group")) > 0)) {
+            if ((twig_length_filter($this->env, (isset($context["group"]) ? $context["group"] : $this->getContext($context, "group"))) > 0)) {
                 // line 7
                 echo "    <table class=\"table table-bordered table-striped sonata-ba-list\">
         <thead>
             <tr>
                 <th colspan=\"3\">";
                 // line 10
-                echo twig_escape_filter($this->env, $this->getContext($context, "gkey"), "html", null, true);
+                echo twig_escape_filter($this->env, (isset($context["gkey"]) ? $context["gkey"] : $this->getContext($context, "gkey")), "html", null, true);
                 echo "</th>
             </tr>
         </thead>
@@ -51,18 +51,18 @@ class __TwigTemplate_3a91960814fc2fcd5e79308333469432 extends Twig_Template
             ";
                 // line 14
                 $context['_parent'] = (array) $context;
-                $context['_seq'] = twig_ensure_traversable($this->getContext($context, "group"));
+                $context['_seq'] = twig_ensure_traversable((isset($context["group"]) ? $context["group"] : $this->getContext($context, "group")));
                 foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
                     // line 15
                     echo "            <tr>
                 <td>";
                     // line 16
-                    echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans($this->getAttribute($this->getContext($context, "item"), "label"), array(), "SMAdminBundle"), "html", null, true);
+                    echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans($this->getAttribute((isset($context["item"]) ? $context["item"] : $this->getContext($context, "item")), "label"), array(), "SMAdminBundle"), "html", null, true);
                     echo "</td>
                 <td style=\"width: 25%; text-align: center;\">
                     <a class=\"btn\" href=\"";
                     // line 18
-                    echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath($this->getAttribute($this->getAttribute($this->getContext($context, "item"), "action"), 0, array(), "array")), "html", null, true);
+                    echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath($this->getAttribute($this->getAttribute((isset($context["item"]) ? $context["item"] : $this->getContext($context, "item")), "action"), 0, array(), "array")), "html", null, true);
                     echo "\">
                         <i class=\"icon-plus\"></i> ";
                     // line 19
@@ -73,7 +73,7 @@ class __TwigTemplate_3a91960814fc2fcd5e79308333469432 extends Twig_Template
                 <td style=\"width: 20%; text-align: center;\">
                     <a class=\"btn\" href=\"";
                     // line 23
-                    echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath($this->getAttribute($this->getAttribute($this->getContext($context, "item"), "action"), 1, array(), "array")), "html", null, true);
+                    echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath($this->getAttribute($this->getAttribute((isset($context["item"]) ? $context["item"] : $this->getContext($context, "item")), "action"), 1, array(), "array")), "html", null, true);
                     echo "\">
                         <i class=\"icon-list\"></i> ";
                     // line 24

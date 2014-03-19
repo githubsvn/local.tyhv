@@ -216,6 +216,14 @@ class __TwigTemplate_7846cd70cb1d15dec4aa15429b7fe20d extends Twig_Template
         // line 107
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("web/front/js/custom.js"), "html", null, true);
         echo "\"></script>
+    <script src=\"";
+        // line 108
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("web/front/js/jquery.youtubeplaylist.js"), "html", null, true);
+        echo "\"></script>
+    <script src=\"";
+        // line 109
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("web/front/js/home.js"), "html", null, true);
+        echo "\"></script>
     <!-- endbuild-->
   </body>
 </html>";
@@ -238,6 +246,6 @@ class __TwigTemplate_7846cd70cb1d15dec4aa15429b7fe20d extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  225 => 64,  217 => 107,  213 => 106,  207 => 103,  203 => 102,  199 => 101,  195 => 100,  189 => 97,  183 => 94,  180 => 93,  178 => 92,  173 => 89,  171 => 88,  167 => 86,  165 => 85,  156 => 78,  154 => 77,  149 => 74,  147 => 73,  142 => 70,  140 => 69,  134 => 65,  132 => 64,  124 => 58,  122 => 57,  116 => 53,  114 => 52,  109 => 49,  107 => 48,  101 => 44,  99 => 43,  94 => 40,  92 => 39,  87 => 36,  85 => 35,  77 => 29,  75 => 28,  63 => 19,  57 => 16,  53 => 15,  48 => 13,  44 => 12,  40 => 11,  36 => 10,  31 => 9,  29 => 8,  20 => 1,);
+        return array (  233 => 64,  225 => 109,  221 => 108,  217 => 107,  213 => 106,  207 => 103,  203 => 102,  199 => 101,  195 => 100,  189 => 97,  183 => 94,  180 => 93,  178 => 92,  173 => 89,  171 => 88,  167 => 86,  165 => 85,  156 => 78,  154 => 77,  149 => 74,  147 => 73,  142 => 70,  140 => 69,  134 => 65,  132 => 64,  124 => 58,  122 => 57,  116 => 53,  114 => 52,  109 => 49,  107 => 48,  101 => 44,  99 => 43,  94 => 40,  92 => 39,  87 => 36,  85 => 35,  77 => 29,  75 => 28,  63 => 19,  57 => 16,  53 => 15,  48 => 13,  44 => 12,  40 => 11,  36 => 10,  31 => 9,  29 => 8,  20 => 1,);
     }
 }

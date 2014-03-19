@@ -1,6 +1,12 @@
 <div class="block access-block">
       <h2 class="title-1">Lượng truy cập</h2>
-      <img src="/web/front/images/img-access.png" alt="" />
+      <div class="access">
+            <p><img src="{{asset('/web/front/images/icon-stat-1.png')}}" alt="" /> <strong>Hôm nay</strong><span>{{counter.getTotalToday}}</span></p>
+            <p><img src="{{asset('/web/front/images/icon-stat-2.png')}}" alt="" /> <strong>Tháng này</strong><span>{{counter.getTotalMonth}}</span></p>
+            <p><img src="{{asset('/web/front/images/icon-stat-3.png')}}" alt="" /> <strong>Thang Truoc</strong><span>{{counter.getTotalMonPre}}</span></p>
+            <p><img src="{{asset('/web/front/images/icon-stat-4.png')}}" alt="" /> <strong>Tất cả</strong><span>{{counter.getTotal}}</span></p>
+            <p>Hiện có {{counter.getUserOnline}} khách trực tuyến</p>
+      </div>
 	  <!--
       <table>
           <tr>

@@ -35,12 +35,12 @@ class __TwigTemplate_053896ee38a9521b80db8690cace34a3 extends Twig_Template
         <legend>System Login</legend>
         ";
         // line 6
-        if ($this->getContext($context, "error")) {
+        if ((isset($context["error"]) ? $context["error"] : $this->getContext($context, "error"))) {
             // line 7
             echo "            <div class=\"alert alert-error\">
                 ";
             // line 8
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "error"), "message"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["error"]) ? $context["error"] : $this->getContext($context, "error")), "message"), "html", null, true);
             echo "
             </div>
         ";
@@ -54,7 +54,7 @@ class __TwigTemplate_053896ee38a9521b80db8690cace34a3 extends Twig_Template
                     </span>
                         <input class=\"span3\" id=\"username\" type=\"text\" placeholder=\"Username\" name=\"_username\" value=\"";
         // line 17
-        echo twig_escape_filter($this->env, $this->getContext($context, "last_username"), "html", null, true);
+        echo twig_escape_filter($this->env, (isset($context["last_username"]) ? $context["last_username"] : $this->getContext($context, "last_username")), "html", null, true);
         echo "\">
                 </div>
             </div>

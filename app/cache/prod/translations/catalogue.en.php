@@ -64,7 +64,6 @@ $catalogue = new MessageCatalogue('en', array (
   ),
   'SMFrontBundle' => 
   array (
-    'News' => 'News title',
   ),
 ));
 
@@ -203,6 +202,9 @@ $catalogueVi = new MessageCatalogue('vi', array (
     'File List' => 'Danh Sách Tập Tin',
     'File Creation' => 'Thêm Mới Tập Tin',
     'File Edit' => 'Chỉnh Sửa Tập Tin',
+    'Video List' => 'Danh Sách Video',
+    'Video Creation' => 'Thêm Mới Video',
+    'Video Edit' => 'Chỉnh Sửa Video',
     'Config' => 'Tham Số',
     'Config List' => 'Danh Sách Tham Số',
     'Value' => 'Giá trị',
@@ -240,6 +242,7 @@ $catalogueVi = new MessageCatalogue('vi', array (
     'Menu Product' => 'Menu Sản Phẩm',
     'Detail Information' => 'Thông Tin Chi Tiết',
     'News' => 'Tin tức',
+    'News Title' => 'Tin tức',
     'Relation News' => 'Tin khác',
     'Lastest News' => 'Tin mới',
     'Oldest News' => 'Tin cũ',
@@ -261,6 +264,11 @@ $catalogueVi = new MessageCatalogue('vi', array (
     'Item' => 'Mặt hàng',
     'Old price' => 'Giá cũ',
     'New price' => 'Giá mới',
+    'Add' => 'Địa chỉ',
+    'Phone' => 'Phone',
+    'Fax' => 'Fax',
+    'Email' => 'Email',
+    'Follow us' => 'Follow us',
   ),
 ));
 $catalogue->addFallbackCatalogue($catalogueVi);

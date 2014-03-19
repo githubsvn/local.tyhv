@@ -28,7 +28,7 @@ class __TwigTemplate_2e89712a92c9b7e1293f16daffe813bb extends Twig_Template
     // line 2
     public function block_title($context, array $blocks = array())
     {
-        echo $this->getAttribute($this->getContext($context, "entity"), "getName");
+        echo $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "getName");
     }
 
     // line 3
@@ -51,12 +51,12 @@ class __TwigTemplate_2e89712a92c9b7e1293f16daffe813bb extends Twig_Template
             <ul class=\"slides\">
                 ";
         // line 15
-        if (($this->getAttribute($this->getAttribute($this->getContext($context, "entity"), "getCompany"), "getThumb") != "")) {
+        if (($this->getAttribute($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "getCompany"), "getThumb") != "")) {
             // line 16
             echo "                    <li><img src=\"";
-            echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl(($this->getContext($context, "uploadPath") . $this->getAttribute($this->getAttribute($this->getContext($context, "entity"), "company"), "thumb"))), "html", null, true);
+            echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl(((isset($context["uploadPath"]) ? $context["uploadPath"] : $this->getContext($context, "uploadPath")) . $this->getAttribute($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "company"), "thumb"))), "html", null, true);
             echo "\" alt=\"";
-            echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute($this->getContext($context, "entity"), "name"));
+            echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "name"));
             echo "\"/></li>
                 ";
         } else {
@@ -73,15 +73,15 @@ class __TwigTemplate_2e89712a92c9b7e1293f16daffe813bb extends Twig_Template
         <div class=\"content\">
           ";
         // line 24
-        if ((!(null === $this->getContext($context, "entity")))) {
+        if ((!(null === (isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity"))))) {
             // line 25
             echo "            <h3>";
-            echo $this->getAttribute($this->getContext($context, "entity"), "getName");
+            echo $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "getName");
             echo "</h3>
             <div class=\"desc\">
                 ";
             // line 27
-            echo $this->getAttribute($this->getContext($context, "entity"), "getDescription");
+            echo $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "getDescription");
             echo "
             </div>
           ";

@@ -605,6 +605,22 @@ body > .wrapper > .inner {background: url(../images/bgd-wrapper-2.png) no-repeat
   .banner a {display: block; height: 208px;}
   .banner img {display: block;}
 	.banner .flex-control-nav{bottom:3px}
+        /* number */
+.counter{height:25px; color:#999999; font-size:15px;}
+.counter > span, .counter > p{float:left}
+.counter > span{margin:2px 5px 0 0}
+.number{display:block; text-indent:-9999px; background:url(../images/number.png) no-repeat 0 0; width:13px; height:20px; float:left}
+	.number-0{background-position:0 0}
+	.number-1{background-position:-26px 0}
+	.number-2{background-position:-52px 0}
+	.number-3{background-position:-78px 0}
+	.number-4{background-position:-104px 0}
+	.number-5{background-position:-130px 0}
+	.number-6{background-position:-156px 0}
+	.number-7{background-position:-182px 0}
+	.number-8{background-position:-208px 0}
+	.number-9{background-position:-234px 0}
+        
 #footer {position: relative; z-index: 1; padding: 34px 0 0;}
   .footer-top > .inner,
   .footer-bottom > .inner {width: 1000px; margin: 0 auto; *zoom: 1;}
@@ -644,7 +660,6 @@ body > .wrapper > .inner {background: url(../images/bgd-wrapper-2.png) no-repeat
   .footer-bottom .counter {float: left; font-family: "FuturaStd_Book"; font-size: 12px; color: #ccc;margin: 0px 0 0 21px;}
   .footer-bottom .counter img {vertical-align: middle;margin-left: 7px;}
   .footer-bottom .copyright {float: right; font-size: 12px; color: #979797;margin: 0 13px 0 0;}
-
 
 /* page */
 .specialty-page .sidebar-left nav .title-1 {padding-left: 13px;}
@@ -989,3 +1004,10 @@ html[xmlns] .slides {display: block;}
     text-align: left;
   }
 }
+
+.access-block{}
+.access{padding:0 0 18px 15px; font-size:12px;}
+.access p{margin:9px 0 0; overflow:hidden; line-height:18px;}
+.access strong{font-weight:normal; float:left; width:87px;}
+.access img{float:left; margin:0 10px 0 0}
+.access span{text-align:right; float:left}
