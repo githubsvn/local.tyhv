@@ -19,31 +19,39 @@ class __TwigTemplate_60a8c708961e5388ee3d16d167e66574 extends Twig_Template
         echo "<footer id=\"footer\">
           <div class=\"footer-top\">
             <div class=\"inner\">
-              <a href=\"#\" title=\"Tôi yêu hàng việt\" class=\"logo\"><img src=\"/web/front/images/logo-toi-yeu-hang-viet-2.png\" alt=\"Tôi yêu hàng việt\" /></a>
+              <a href=\"";
+        // line 4
+        echo twig_escape_filter($this->env, (isset($context["logoFooterLink"]) ? $context["logoFooterLink"] : $this->getContext($context, "logoFooterLink")), "html", null, true);
+        echo "\" title=\"Tôi yêu hàng việt\" class=\"logo\">
+                  <img src=\"";
+        // line 5
+        echo twig_escape_filter($this->env, (isset($context["logoFooterImg"]) ? $context["logoFooterImg"] : $this->getContext($context, "logoFooterImg")), "html", null, true);
+        echo "\" alt=\"Tôi yêu hàng việt\" width=\"225px;\" height=\"105px;\"/>
+              </a>
               <ul>
                 <li class=\"col-1\">
                   <h3>TOI YEU VIET NAM COMPANY</h3>
                   <address>
                     <strong>";
-        // line 9
+        // line 11
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Add", array(), "SMFrontBundle"), "html", null, true);
         echo " :</strong> ";
         echo twig_escape_filter($this->env, (isset($context["footerAdd"]) ? $context["footerAdd"] : $this->getContext($context, "footerAdd")), "html", null, true);
         echo "<br />
                     <strong>";
-        // line 10
+        // line 12
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Phone", array(), "SMFrontBundle"), "html", null, true);
         echo "</strong> ";
         echo twig_escape_filter($this->env, (isset($context["phone"]) ? $context["phone"] : $this->getContext($context, "phone")), "html", null, true);
         echo " - <strong>
                         ";
-        // line 11
+        // line 13
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Fax", array(), "SMFrontBundle"), "html", null, true);
         echo ":</strong> ";
         echo twig_escape_filter($this->env, (isset($context["fax"]) ? $context["fax"] : $this->getContext($context, "fax")), "html", null, true);
         echo "<br />
                     <strong>";
-        // line 12
+        // line 14
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Email", array(), "SMFrontBundle"), "html", null, true);
         echo ":</strong> ";
         echo twig_escape_filter($this->env, (isset($context["infoEmail"]) ? $context["infoEmail"] : $this->getContext($context, "infoEmail")), "html", null, true);
@@ -55,47 +63,47 @@ class __TwigTemplate_60a8c708961e5388ee3d16d167e66574 extends Twig_Template
                   <nav>
                     <ul>
                       ";
-        // line 19
+        // line 21
         echo $this->env->getExtension('actions')->renderAction("SMFrontBundle:Default:footerMenu", array(), array());
-        // line 20
+        // line 22
         echo "                    </ul>
                   </nav>
                 </li>
                 
                 <li class=\"col-3\">
                   <h3><span>";
-        // line 25
+        // line 27
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Follow us", array(), "SMFrontBundle"), "html", null, true);
         echo "</span></h3>
                   <ul class=\"social\">
                     ";
-        // line 27
+        // line 29
         if (((isset($context["facebookPage"]) ? $context["facebookPage"] : $this->getContext($context, "facebookPage")) != "")) {
-            // line 28
+            // line 30
             echo "                        <li><a href=\"";
             echo twig_escape_filter($this->env, (isset($context["facebookPage"]) ? $context["facebookPage"] : $this->getContext($context, "facebookPage")), "html", null, true);
             echo "\" title=\"Facebook\" class=\"wi-icon wi-icon-4\">Facebook</a></li>
                     ";
         }
-        // line 30
+        // line 32
         echo "                    ";
         if (((isset($context["twitterPage"]) ? $context["twitterPage"] : $this->getContext($context, "twitterPage")) != "")) {
-            // line 31
+            // line 33
             echo "                        <li><a href=\"";
             echo twig_escape_filter($this->env, (isset($context["twitterPage"]) ? $context["twitterPage"] : $this->getContext($context, "twitterPage")), "html", null, true);
             echo "\" title=\"Facebook\" class=\"wi-icon wi-icon-5\">Twitter</a></li>
                     ";
         }
-        // line 33
+        // line 35
         echo "                    ";
         if (((isset($context["youtubePage"]) ? $context["youtubePage"] : $this->getContext($context, "youtubePage")) != "")) {
-            // line 34
+            // line 36
             echo "                        <li><a href=\"";
             echo twig_escape_filter($this->env, (isset($context["youtubePage"]) ? $context["youtubePage"] : $this->getContext($context, "youtubePage")), "html", null, true);
             echo "\" title=\"Facebook\" class=\"wi-icon wi-icon-6\">Youtube</a></li>
                     ";
         }
-        // line 36
+        // line 38
         echo "                  </ul>
                 </li>
               </ul>
@@ -107,11 +115,11 @@ class __TwigTemplate_60a8c708961e5388ee3d16d167e66574 extends Twig_Template
                   <span>Visitors counter:</span>
                     <p>
                       ";
-        // line 46
+        // line 48
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["arrCounter"]) ? $context["arrCounter"] : $this->getContext($context, "arrCounter")));
         foreach ($context['_seq'] as $context["_key"] => $context["num"]) {
-            // line 47
+            // line 49
             echo "                        <span class=\"number number-";
             echo twig_escape_filter($this->env, (isset($context["num"]) ? $context["num"] : $this->getContext($context, "num")), "html", null, true);
             echo "\">";
@@ -122,7 +130,7 @@ class __TwigTemplate_60a8c708961e5388ee3d16d167e66574 extends Twig_Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['num'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 49
+        // line 51
         echo "                    </p>
               </div>
               
@@ -144,6 +152,6 @@ class __TwigTemplate_60a8c708961e5388ee3d16d167e66574 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  126 => 49,  115 => 47,  111 => 46,  99 => 36,  93 => 34,  90 => 33,  84 => 31,  81 => 30,  75 => 28,  73 => 27,  68 => 25,  61 => 20,  59 => 19,  47 => 12,  41 => 11,  35 => 10,  29 => 9,  19 => 1,);
+        return array (  134 => 51,  123 => 49,  119 => 48,  107 => 38,  101 => 36,  98 => 35,  92 => 33,  89 => 32,  83 => 30,  81 => 29,  76 => 27,  69 => 22,  67 => 21,  55 => 14,  49 => 13,  43 => 12,  37 => 11,  28 => 5,  24 => 4,  19 => 1,);
     }
 }

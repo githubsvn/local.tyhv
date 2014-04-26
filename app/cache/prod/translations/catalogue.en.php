@@ -269,6 +269,8 @@ $catalogueVi = new MessageCatalogue('vi', array (
     'Fax' => 'Fax',
     'Email' => 'Email',
     'Follow us' => 'Follow us',
+    'Oops! An Error Occurred' => 'Website bị lỗi không xác định.',
+    'Something is broken. Please e-mail us at info@toiyeuhangviet.vn and let us know what you were doing when this error occurred. We will fix it as soon as possible. Sorry for any inconvenience caused.' => 'Đã có lỗi xãy ra. Xin vui lòng gửi e-mail cho chúng tôi tại địa chỉ info@toiyeuhangviet.vn. Chúng tôi sẽ xem xét vấn đề này. Xin lỗi vì sự bật tiện này.',
   ),
 ));
 $catalogue->addFallbackCatalogue($catalogueVi);

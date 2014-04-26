@@ -21,8 +21,9 @@ framework:
 
 # Twig Configuration
 twig:
-    debug:            "%kernel.debug%"
+    debug: "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    #exception_controller:  "SM\Bundle\FrontBundle\Controller\ExceptionController:showAction"
 
 # Assetic Configuration
 assetic:

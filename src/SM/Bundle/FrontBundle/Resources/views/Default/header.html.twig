@@ -1,5 +1,12 @@
-<h1 class="logo"><a href="/" title="Logo"><img src="/web/front/images/logo-toi-yeu-hang-viet.png" alt="{{'Toi Yeu Hang Viet'|trans({}, 'SMFrontBundle')}}" /></a></h1>
-<a href="#" title="Vietnam Airlines"><img src="/web/front/images/advertise-vietnam-airlines.png" alt="Vietnam Airlines" /></a>
+<h1 class="logo">
+    <a href="{{logoLink}}" title="Toi Yeu Hang Viet">
+        <img src="{{logoImg}}" alt="{{'Toi Yeu Hang Viet'|trans({}, 'SMFrontBundle')}}"/>
+    </a>
+</h1>
+<a href="{{bannerRightLink}}" title="">
+    <img src="{{bannerRightImg}}" alt="" />
+</a>
+
 <!-- BEGIN TOP MENU -->
     {% render 'SMFrontBundle:Default:topMenu' %}
 <!-- END TOP MENU -->

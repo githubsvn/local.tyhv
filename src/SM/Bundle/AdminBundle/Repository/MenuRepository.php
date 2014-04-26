@@ -50,11 +50,15 @@ class MenuRepository extends EntityRepository
 
         if (is_array($criteria) && count($criteria) > 0) {
             foreach ($criteria as $key => $cri) {
-                $qb->andWhere("t." . $cri['fieldName'] . " " . $cri['op'] . " " . " ?$key");
+                if ($cri['op'] == 'IS') {
+                    $qb->andWhere("t." . $cri['fieldName']. " IS NULL");
+                } else {
+                    $qb->andWhere("t." . $cri['fieldName'] . " " . $cri['op'] . " " . " ?$key");
+                }
 
                 if ($cri['op'] == 'LIKE') {
                     $qb->setParameter($key, "%" . $cri['fieldName'] . "%");
-                } else {
+                } elseif($cri['op'] != 'IS') {
                     $qb->setParameter($key, $cri['fieldValue']);
                 }
             }
@@ -594,5 +598,73 @@ class MenuRepository extends EntityRepository
 
         return $options;
     }
+    
+    public function getOnlyParentMenus($position, $lang = null)
+    {
+        $options = array();
+        $std = new \stdClass();
+        
+        if (empty($position)) {
+            return $options;
+        }
+        
+        $container = \SM\Bundle\AdminBundle\SMAdminBundle::getContainer();
+        $em = $container->get("doctrine");
+
+        $mnuPosTop = $container->getParameter('menu_position_top');
+        $mnuPosLeft = $container->getParameter('menu_position_left');
+        $mnuPosRight = $container->getParameter('menu_position_right');
+        $mnuPosBottom = $container->getParameter('menu_position_bottom');
+
+        //get list language
+        $langList = $em->getRepository("SMAdminBundle:Language")
+                ->findAll();
+
+        if (empty($lang)) {
+            foreach ($langList as $langData) {
+                $isDefault = $langData->getIsDefault();
+                if ($isDefault == 1) {
+                    $lang = $langData->getId();
+                    break;
+                }
+            }
+        }
+
+        $currentLanguage = $em->getRepository("SMAdminBundle:Language")
+                ->find($lang);
+        
+        $criteria = array();
+        $criteria[] = array('op' => '=', 'fieldName' => 'status', 'fieldValue' => 1);
+        $criteria[] = array('op' => 'IS', 'fieldName' => 'parent', 'fieldValue' => 'NULL');
+        switch ($position) {
+            case $mnuPosTop:
+                $criteria[] = array('op' => '=', 'fieldName' => 'position', 'fieldValue' => $mnuPosTop);
+                break;
+            case $mnuPosLeft:
+                $criteria[] = array('op' => '=', 'fieldName' => 'position', 'fieldValue' => $mnuPosLeft);
+                break;
+            case $mnuPosRight:
+                $criteria[] = array('op' => '=', 'fieldName' => 'position', 'fieldValue' => $mnuPosRight);
+                break;
+            case $mnuPosBottom:
+                $criteria[] = array('op' => '=', 'fieldName' => 'position', 'fieldValue' => $mnuPosBottom);
+                break;
+        }
+
+        $entities = $this->getList(null, null, $criteria, array('lft' => 'ASC'));
+        if (is_array($entities) && count($entities) > 0) {
+            foreach ($entities as $obj) {
+                $obj->setLanguage($currentLanguage);
+                $std = new \stdClass();
+                $std->name = $obj->getCurrentLanguage()->getTreeName();
+                $std->url = $obj->getUrl();
+                $std->id = $obj->getId();
+                $options[] = $std;
+            }
+        }
+
+        return $options;
+    }
+    
 
 }

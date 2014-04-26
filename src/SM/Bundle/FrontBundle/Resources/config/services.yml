@@ -21,5 +21,8 @@ services:
         class: SM\Bundle\FrontBundle\Listener\LocaleListener
         arguments: [%locale%]
         tags:
-            -  { name: kernel.event_subscriber }            
-
+            -  { name: kernel.event_subscriber }                
+    exception_listener:
+        class: SM\Bundle\FrontBundle\Listener\ExceptionListener
+        tags:
+            - { name: kernel.event_listener, event: kernel.exception, method: onKernelException }

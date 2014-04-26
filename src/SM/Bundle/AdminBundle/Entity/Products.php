@@ -28,7 +28,7 @@ class Products
     /**
      * @var float
      *
-     * @ORM\Column(name="price", type="float", nullable=true)
+     * @ORM\Column(name="price", type="integer", nullable=true)
      */
     private $price;
 
@@ -42,7 +42,7 @@ class Products
     /**
      * @var float
      *
-     * @ORM\Column(name="discount", type="float", nullable=true)
+     * @ORM\Column(name="discount", type="integer", nullable=true)
      */
     private $discount;
 

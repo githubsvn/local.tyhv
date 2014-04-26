@@ -25,6 +25,7 @@
       <div class="desc">
         <p>{{ mtxgetteaser(topEnt.description)|raw }}
 <!--            <a href="{{ path('sm_front_view_product_detail', { 'slug': mtxbuildurl(topEnt.product.id, topEnt.name) }) }}" title="{{ 'View more'|trans({}, 'SMFrontBundle') }}">[...]</a>-->
+            
         </p>
       </div>
     </div>
@@ -79,12 +80,14 @@
             </li> 
         {% endfor %}
       {% else %}
-<!--            <div class="noProduct">{{ 'No data was be found'|trans({}, 'SMFrontBundle') }}</div>-->
+            {% if topEnt is null %}
+                <div class="noProduct">{{ 'No data was be found'|trans({}, 'SMFrontBundle') }}</div>
+            {% endif %}
       {% endif %}
   </ul>
 </div>
     
-    {% if totalPage > 0%}
+    {% if totalPage > 1%}
         <div class="paging">
             <span>{{ 'Page'|trans({}, 'SMFrontBundle') }} {{currentPage}} / {{totalPage}}</span>
             <ul>

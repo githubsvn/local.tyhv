@@ -13,7 +13,7 @@
           <div class="wi-frame wi-frame-1">
             <ul class="slides">
                 {% if entity.getCompany.getThumb  != '' %}
-                    <li><img src="{{ asset(uploadPath ~ entity.company.thumb) }}" alt="{{ mtxgetteaser(entity.name)|raw }}"/></li>
+                    <li><img height="67px" width="153px" src="{{ asset(uploadPath ~ entity.company.thumb) }}" alt="{{ mtxgetteaser(entity.name)|raw }}"/></li>
                 {% else %}
                 <li><img src="{{asset('/web/front/images/no-image.jpg')}}" alt="#" width="155" height="67"/></li>
                 {% endif %}

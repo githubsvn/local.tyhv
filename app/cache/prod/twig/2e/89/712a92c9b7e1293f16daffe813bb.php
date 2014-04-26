@@ -53,7 +53,7 @@ class __TwigTemplate_2e89712a92c9b7e1293f16daffe813bb extends Twig_Template
         // line 15
         if (($this->getAttribute($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "getCompany"), "getThumb") != "")) {
             // line 16
-            echo "                    <li><img src=\"";
+            echo "                    <li><img height=\"67px\" width=\"153px\" src=\"";
             echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl(((isset($context["uploadPath"]) ? $context["uploadPath"] : $this->getContext($context, "uploadPath")) . $this->getAttribute($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "company"), "thumb"))), "html", null, true);
             echo "\" alt=\"";
             echo $this->env->getExtension('mtx.twig.teaser_extension')->getTeaser($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "name"));

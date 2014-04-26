@@ -166,6 +166,18 @@ class DefaultController extends Controller
      */
     public function footerAction()
     {
+        $idFooterLogo = Utilities::getConfig('id_footer_logo_img ');
+        $objMedia = $this->getDoctrine()
+                ->getRepository('SMAdminBundle:Media')
+                ->find($idFooterLogo);
+        
+        $logoFooterImg = '/web/front/images/logo-toi-yeu-hang-viet-2.png';
+        $logoFooterLink = "#";
+        if (!is_null($objMedia)) {
+            $logoFooterImg = $this->uploadPath . $objMedia->getName();
+            $logoFooterLink = $objMedia->getLink();
+        }
+        
         $footerAdd = Utilities::getConfig('footer_add');
         $phone = Utilities::getConfig('phone');
         $fax = Utilities::getConfig('fax');
@@ -186,7 +198,9 @@ class DefaultController extends Controller
             'facebookPage' => $facebookPage,
             'twitterPage' => $twitterPage,
             'youtubePage' => $youtubePage,
-            'arrCounter' => $arrCounter
+            'arrCounter' => $arrCounter,
+            'logoFooterImg' => $logoFooterImg,
+            'logoFooterLink' => $logoFooterLink
         ));
     }
 
@@ -221,11 +235,39 @@ class DefaultController extends Controller
         $hotLine = Utilities::getConfig('hot_line');
         $advNumber = Utilities::getConfig('advertisement_number');
         $name = isset($_SESSION['name']) ? $_SESSION['name'] : '';
+
+        $idLogo = Utilities::getConfig('id_logo_img');
+        $idBannerRight = Utilities::getConfig('id_banner_header ');
+        
+        $objMedia = $this->getDoctrine()
+                ->getRepository('SMAdminBundle:Media')
+                ->find($idLogo);
+        
+        $logoImg = '/web/front/images/logo-toi-yeu-hang-viet.png';
+        $logoLink = "#";
+        if (!is_null($objMedia)) {
+            $logoImg = $this->uploadPath . $objMedia->getName();
+            $logoLink = $objMedia->getLink();
+        }
+        
+        $objMedia = $this->getDoctrine()
+                ->getRepository('SMAdminBundle:Media')
+                ->find($idBannerRight);
+        $bannerRightImg = '/web/front/images/advertise-vietnam-airlines.png';
+        $bannerRightLink = "#";
+        if (!is_null($objMedia)) {
+            $bannerRightImg = $this->uploadPath . $objMedia->getName();
+            $bannerRightLink = $objMedia->getLink();
+        }
         
         return $this->render('SMFrontBundle:Default:header.html.twig', array(
                     'hotLine' => $hotLine,
                     'advNumber' => $advNumber,
                     'name' => $name,
+                    'logoImg' => $logoImg,
+                    'logoLink' => $logoLink,
+                    'bannerRightImg' => $bannerRightImg,
+                    'bannerRightLink' => $bannerRightLink,
         ));
     }
 
@@ -245,8 +287,7 @@ class DefaultController extends Controller
                 ->getRepository('SMAdminBundle:Menu');
 
         $mnuPosTop = $this->container->getParameter('menu_position_top');
-        $menuTop = $repMenu->getOptionParent($mnuPosTop, $lang);
-        unset($menuTop[0]); //unset for menu Lua Chon
+        $menuTop = $repMenu->getOnlyParentMenus($mnuPosTop, $lang);
         $menuTop = $this->removeHostUrl($menuTop);
 
         $urlHost = $this->container->getParameter('host');
@@ -261,16 +302,10 @@ class DefaultController extends Controller
 
     public function leftMenuAction()
     {
-        $isLeftProductMenu = $this->checkMenuLeftIsProductMenu();
-        if ($isLeftProductMenu) {
-            $idLeftMenu = Utilities::getConfig('menu_left_parent_id_product');
-        } else {
-            $idLeftMenu = Utilities::getConfig('menu_left_parent_id_speciality_product');
-        }
-        $entities = $this->getMenuItemsLeft($idLeftMenu);
         $urlHost = $this->container->getParameter('host');
         $currentUrl = $this->getRequest()->getUri();
         $currentUrl = str_replace($urlHost, '', $currentUrl);
+        $entities = $this->getLeftMenuItems();
         return $this->render('SMFrontBundle:Default:left-menu.html.twig', array(
             'entities' => $entities,
             'urlHost' => $urlHost,
@@ -278,75 +313,34 @@ class DefaultController extends Controller
         ));
     }
     
-    /**
-     * Check left menu is product menu or special product menu
-     * 
-     * @return boolean
-     */
-    private function checkMenuLeftIsProductMenu()
+    public function getLeftMenuItems()
     {
-        $isLeftProductMenu = false;
-        
-        $idRootProduct = Utilities::getConfig('menu_left_parent_id_product');
-
         $urlHost = $this->container->getParameter('host');
-        $slug = $currentUrl = $this->getRequest()->getUri();
+        $currentUrl = $this->getRequest()->getUri();
         $currentUrl = str_replace($urlHost, '', $currentUrl);
         $partMenus = explode("/", $currentUrl);
         
-        if (!empty($partMenus[1]) && in_array($partMenus[1], array('news', 'company'))) {
-            $isLeftProductMenu = true; //Left menu is product menu
-        } elseif (!empty($partMenus[1]) && in_array($partMenus[1], array('product'))) {
-            $currentBranchId = 0;
-            
-            if (!empty($partMenus[2]) && in_array($partMenus[2], array('view-branch'))) {
-                //We're viewing branch product
-                $currentBranchId = Helper::getIdFromUrl($slug); //to get current branch id
-            } elseif (!empty($partMenus[2]) && in_array($partMenus[2], array('detail'))) {
-                //We're viewing detail product
-                $currentDetailProductId = Helper::getIdFromUrl($slug); //get current product id
-                $entity = $this->getDoctrine()
-                        ->getRepository("SMAdminBundle:Products")
-                        ->find($currentDetailProductId);    //get entity product
-                
-                $branch = $entity->getBranch();
-                $currentBranchId = $branch->getId(); //get current branch id follow product id
-            }
-            
-            //After get current branch id, we need to get all id of left menu product
-            $allProductId = $this->getDoctrine()
-                    ->getRepository("SMAdminBundle:Branch")
-                    ->getAllChildrenIds($idRootProduct);
-            //Check if current id belong left menu or not
-            if (in_array($currentBranchId, $allProductId)) {
-                $isLeftProductMenu = true;
-            }
-        } elseif (empty($partMenus[0]) && empty($partMenus[1])) {
-            //Current page is home page
-            $isLeftProductMenu = true;
+        if (!empty($partMenus[1]) && in_array($partMenus[1], array('product'))) {
+            $slug = $currentUrl = $this->getRequest()->getUri();
+            $currentBranchId = Helper::getIdFromUrl($slug); //to get current branch id
+        } else {
+            $currentBranchId = Utilities::getConfig('menu_left_parent_id_product');
         }
-
-        return $isLeftProductMenu;
-    }
-
-    private function getMenuItemsLeft($idLeftMenu)
-    {
+        
+        $entities = $this->getDoctrine()
+                    ->getRepository("SMAdminBundle:Branch")
+                    ->getChildren($currentBranchId);
+        
         $lang = $this->getDefaultLang();
         $currentLanguage = $this->getDoctrine()
                 ->getRepository("SMAdminBundle:Language")
                 ->find($lang);
-        $criteria = array();
-        $criteria[] = array('op' => '=', 'fieldName' => 'status', 'fieldValue' => '1');
-        $criteria[] = array('op' => '=', 'fieldName' => 'parent', 'fieldValue' => $idLeftMenu);
-        $entities = $this->getDoctrine()
-                ->getRepository("SMAdminBundle:Branch")
-                ->getList(null, null, $criteria, array('lft' => 'ASC'));
-        foreach ($entities as $theCat) {
-            $theCat->setLanguage($currentLanguage);
+        foreach ($entities as $ent) {
+            $ent->setLanguage($currentLanguage);
         }
         return $entities;
     }
-
+    
     public function pricesMarketAction()
     {
         $lang = $this->getDefaultLang();
@@ -727,11 +721,35 @@ class DefaultController extends Controller
     
     public function leftAdsAction()
     {
-        $leftAdsUrl = Utilities::getConfig('left_ads_url');
-        $rightAdsUrl = Utilities::getConfig('right_ads_url');
+        $idLeftAds = Utilities::getConfig('left_ads_id_img');
+        $idRightAds = Utilities::getConfig('right_ads_id_img ');
+        
+        $objMedia = $this->getDoctrine()
+                ->getRepository('SMAdminBundle:Media')
+                ->find($idLeftAds);
+        
+        $leftImg = '/web/front/images/120x600.jpg';
+        $leftLink = "#";
+        if (!is_null($objMedia)) {
+            $leftImg = $this->uploadPath . $objMedia->getName();
+            $leftLink = $objMedia->getLink();
+        }
+        
+        $objMedia = $this->getDoctrine()
+                ->getRepository('SMAdminBundle:Media')
+                ->find($idRightAds);
+        $rightImg = '/web/front/images/120x600.jpg';
+        $rightLink = "#";
+        if (!is_null($objMedia)) {
+            $rightImg = $this->uploadPath . $objMedia->getName();
+            $rightLink = $objMedia->getLink();
+        }
+        
         return $this->render('SMFrontBundle:Default:left-ads.html.twig', array(
-            'leftAdsUrl' => $leftAdsUrl,
-            'rightAdsUrl' => $rightAdsUrl,
+            'leftImg' => $leftImg,
+            'leftLink' => $leftLink,
+            'rightImg' => $rightImg,
+            'rightLink' => $rightLink,
         ));
     }
 }
