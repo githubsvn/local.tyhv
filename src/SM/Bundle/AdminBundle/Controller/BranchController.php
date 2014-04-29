@@ -12,8 +12,7 @@ use SM\Bundle\AdminBundle\Form\BranchType;
  * Branch controller.
  *
  */
-class BranchController extends Controller
-{
+class BranchController extends Controller {
 
     /**
      *
@@ -62,14 +61,14 @@ class BranchController extends Controller
         }
 
         return $this->render('SMAdminBundle:Branch:index.html.twig', array(
-            'entities' => $entities,
-            'lastPage' => $lastPage,
-            'previousPage' => $previousPage,
-            'currentPage' => $page,
-            'nextPage' => $nextPage,
-            'total' => $total,
-            'lang' => intval($lang),
-            'langList' => $langList,
+                    'entities' => $entities,
+                    'lastPage' => $lastPage,
+                    'previousPage' => $previousPage,
+                    'currentPage' => $page,
+                    'nextPage' => $nextPage,
+                    'total' => $total,
+                    'lang' => intval($lang),
+                    'langList' => $langList,
         ));
     }
 
@@ -149,16 +148,16 @@ class BranchController extends Controller
                 $entityManager->flush();
 
                 $this->getRequest()
-                     ->getSession()
-                     ->getFlashBag()
-                     ->add('sm_flash_success', $this->get('translator')->trans('The operation is success'));
+                        ->getSession()
+                        ->getFlashBag()
+                        ->add('sm_flash_success', $this->get('translator')->trans('The operation is success'));
 
                 $referrer = $this->getRequest()->getSession()->get('referrer');
 
                 if (!$referrer) {
 
                     return $this->redirect(
-                        $this->generateUrl('admin_branch')
+                                    $this->generateUrl('admin_branch')
                     );
                 } else {
 
@@ -166,17 +165,17 @@ class BranchController extends Controller
                 }
             } else {
                 $this->getRequest()
-                     ->getSession()
-                     ->getFlashBag()
-                     ->add('sm_flash_error', $this->get('translator')->trans('The data input is invalid'));
+                        ->getSession()
+                        ->getFlashBag()
+                        ->add('sm_flash_error', $this->get('translator')->trans('The data input is invalid'));
             }
         }
 
         return $this->render('SMAdminBundle:Branch:new.html.twig', array(
-            'entity' => $entity,
-            'form' => $form->createView(),
-            'langList' => $langList,
-            'defaultLanguage' => $defaultLanguage
+                    'entity' => $entity,
+                    'form' => $form->createView(),
+                    'langList' => $langList,
+                    'defaultLanguage' => $defaultLanguage
         ));
     }
 
@@ -202,7 +201,6 @@ class BranchController extends Controller
         $langList = $this->getDoctrine()
                 ->getRepository("SMAdminBundle:Language")
                 ->findAll();
-
         if (is_array($langList)) {
             foreach ($langList as $language) {
                 if (!$entity->hasLanguage($language)) {
@@ -216,18 +214,28 @@ class BranchController extends Controller
                 }
             }
         }
-
         if (!$this->getRequest()->isMethod('POST')) {
             // set referrer redirect
             $session = $this->getRequest()->getSession();
             $session->set('referrer', $this->getRequest()->server->get('HTTP_REFERER'));
         }
 
-        $form = $this->createForm(new BranchType(), $entity);
+        $form = $this->createForm(new BranchType($id), $entity);
 
         if ($this->getRequest()->isMethod('POST')) {
             $form->bind($this->getRequest());
+            $parent = $form->get('parent')->getData();
+            if (!is_null($parent)) {
+                $parentId = $parent->getId();
+                if ($parentId == $id) {
+                    $entity->setLanguage($defaultLanguage);
 
+                    $this->getRequest()->getSession()->getFlashBag()
+                            ->add('sm_flash_error', 'Please dont select parent is ' . $entity->getCurrentLanguage()->getName());
+                    return $this->redirect($this->generateUrl('admin_branch_edit', array('id' => $id)));
+                }
+            }
+            
             if ($form->isValid()) {
                 $entityManager = $this->getDoctrine()->getEntityManager();
                 foreach ($entity->getBranchLanguages() as $catLanguage) {
@@ -246,16 +254,16 @@ class BranchController extends Controller
 
                 $entityManager->flush();
                 $this->getRequest()
-                     ->getSession()
-                     ->getFlashBag()
-                     ->add('sm_flash_success', $this->get('translator')->trans('The operation is success'));
+                        ->getSession()
+                        ->getFlashBag()
+                        ->add('sm_flash_success', $this->get('translator')->trans('The operation is success'));
 
                 $referrer = $this->getRequest()->getSession()->get('referrer');
 
                 if (!$referrer) {
 
                     return $this->redirect(
-                        $this->generateUrl('admin_branch')
+                                    $this->generateUrl('admin_branch')
                     );
                 } else {
 
@@ -263,17 +271,17 @@ class BranchController extends Controller
                 }
             } else {
                 $this->getRequest()
-                     ->getSession()
-                     ->getFlashBag()
-                     ->add('sm_flash_success', $this->get('translator')->trans('The data input is invalid'));
+                        ->getSession()
+                        ->getFlashBag()
+                        ->add('sm_flash_success', $this->get('translator')->trans('The data input is invalid'));
             }
         }
 
         return $this->render('SMAdminBundle:Branch:edit.html.twig', array(
-            'entity' => $entity,
-            'form' => $form->createView(),
-            'langList' => $langList,
-            'defaultLanguage' => $defaultLanguage,
+                    'entity' => $entity,
+                    'form' => $form->createView(),
+                    'langList' => $langList,
+                    'defaultLanguage' => $defaultLanguage,
         ));
     }
 
@@ -295,7 +303,7 @@ class BranchController extends Controller
         if ($rst) {
 
             return $this->redirect(
-                $this->generateUrl('admin_branch')
+                            $this->generateUrl('admin_branch')
             );
         } else {
 
@@ -310,8 +318,7 @@ class BranchController extends Controller
      *
      * @return type
      */
-    public function upAction($id)
-    {
+    public function upAction($id) {
         $em = $this->getDoctrine()->getEntityManager();
         $repo = $em->getRepository('SMAdminBundle:Branch');
         $oCat = $repo->findOneById($id);
@@ -320,9 +327,8 @@ class BranchController extends Controller
         }
 
         return $this->redirect(
-            $this->getRequest()->headers->get('referer')
+                        $this->getRequest()->headers->get('referer')
         );
-
     }
 
     /**
@@ -332,8 +338,7 @@ class BranchController extends Controller
      *
      * @return type
      */
-    public function downAction($id)
-    {
+    public function downAction($id) {
         $em = $this->getDoctrine()->getEntityManager();
         $repo = $em->getRepository('SMAdminBundle:Branch');
         $oCat = $repo->findOneById($id);
@@ -342,7 +347,7 @@ class BranchController extends Controller
         }
 
         return $this->redirect(
-            $this->getRequest()->headers->get('referer')
+                        $this->getRequest()->headers->get('referer')
         );
     }
 
@@ -352,8 +357,7 @@ class BranchController extends Controller
      * @param \Symfony\Component\HttpFoundation\Request $request
      * @return type
      */
-    public function deleteAllAction(Request $request)
-    {
+    public function deleteAllAction(Request $request) {
         $id = $request->get('checklist');
         $rep = $this->getDoctrine()
                 ->getRepository("SMAdminBundle:BranchLanguage");
@@ -365,24 +369,25 @@ class BranchController extends Controller
 
         if ($rst) {
             $this->getRequest()
-                     ->getSession()
-                     ->getFlashBag()
-                     ->add('sm_flash_success', $this->get('translator')->trans('The operation is success'));
+                    ->getSession()
+                    ->getFlashBag()
+                    ->add('sm_flash_success', $this->get('translator')->trans('The operation is success'));
         } else {
             $this->getRequest()
-                     ->getSession()
-                     ->getFlashBag()
-                     ->add('sm_flash_error', $this->get('translator')->trans('The operation is fail'));
+                    ->getSession()
+                    ->getFlashBag()
+                    ->add('sm_flash_error', $this->get('translator')->trans('The operation is fail'));
         }
 
         if (!$referrer) {
 
             return $this->redirect(
-                $this->generateUrl('admin_branch')
+                            $this->generateUrl('admin_branch')
             );
         } else {
 
             return $this->redirect($referrer);
         }
     }
+
 }

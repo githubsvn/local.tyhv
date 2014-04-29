@@ -139,7 +139,9 @@ class Utilities
             $repConfig = $container->get('doctrine')
                             ->getRepository('SMAdminBundle:Config');
             $obj = $repConfig->findByName($nameConfig);
-            $value = $obj->getValue();
+            if (!is_null($obj)) {
+                $value = $obj->getValue();
+            }
         }
         return $value;
                 

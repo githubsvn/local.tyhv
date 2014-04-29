@@ -100,6 +100,18 @@
                                             {% endif %}
                                         </div>
                                     </div>
+                                
+                                    <div class="control-group">
+                                        <label class="control-label" for="input01">{{ 'Alias'|trans({}, "SMAdminBundle") }}</label>
+                                        <div class="controls">
+                                            {{ form_errors(currentAL.name) }}
+                                            {% if defaultLanguage.name == currentAL.vars.value.language.name %}
+                                                {{ form_widget(currentAL.alias, {'attr': {'required': 'required'}}) }}
+                                            {% else %}
+                                                {{ form_widget(currentAL.alias) }}
+                                            {% endif %}
+                                        </div>
+                                    </div>
 
                                     <div class="control-group">
                                         <label class="control-label" for="input01">{{ 'Address'|trans({}, "SMAdminBundle") }}</label>

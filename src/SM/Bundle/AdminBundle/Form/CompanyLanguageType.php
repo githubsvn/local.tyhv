@@ -19,6 +19,9 @@ class CompanyLanguageType extends AbstractType {
         $builder->add('name', null, array(
                     'required' => false
                 ))
+                ->add('alias', null, array(
+                    'required' => false
+                ))
                 ->add('address', 'textarea', array(
                     'attr' => array(
                         'class' => 'tinymce',

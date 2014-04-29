@@ -97,6 +97,7 @@ $catalogue = new MessageCatalogue('vi', array (
     'Address' => 'Địa chỉ',
     'Representation' => 'Người đại diện',
     'Company Edit' => 'Chỉnh Sửa Công Ty',
+    'Alias' => 'Tên ngắn',
     'Branch List' => 'Danh Sách Ngành Hàng',
     'Branch Creation' => 'Thêm Mới Ngành Hàng',
     'Branch Edit' => 'Chỉnh Sửa Ngành Hàng',

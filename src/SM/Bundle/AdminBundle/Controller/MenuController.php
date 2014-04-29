@@ -5,7 +5,6 @@ namespace SM\Bundle\AdminBundle\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
-
 use SM\Bundle\AdminBundle\Entity\Menu;
 use SM\Bundle\AdminBundle\Entity\MenuLanguage;
 use SM\Bundle\AdminBundle\Form\MenuType;
@@ -15,8 +14,8 @@ use SM\Bundle\AdminBundle\Form\MenuLanguageType;
  * Menu controller.
  *
  */
-class MenuController extends Controller
-{
+class MenuController extends Controller {
+
     /**
      *
      * @param type $page
@@ -54,7 +53,7 @@ class MenuController extends Controller
         if (!empty($pos)) {
             $criteria[] = array('op' => '=', 'fieldName' => 'position', 'fieldValue' => $pos);
         }
-        
+
         $total = $this->getDoctrine()
                 ->getRepository("SMAdminBundle:Menu")
                 ->getTotal($criteria);
@@ -97,19 +96,19 @@ class MenuController extends Controller
         }
 
         $optPos = $this->getDoctrine()
-                            ->getRepository("SMAdminBundle:Menu")
-                            ->buildMenuPosition();
+                ->getRepository("SMAdminBundle:Menu")
+                ->buildMenuPosition();
         return $this->render('SMAdminBundle:Menu:index.html.twig', array(
-            'entities' => $entities,
-            'lastPage' => $lastPage,
-            'previousPage' => $previousPage,
-            'currentPage' => $page,
-            'nextPage' => $nextPage,
-            'total' => $total,
-            'lang' => intval($lang),
-            'langList' => $langList,
-            'optPosition' => $optPos,
-            'position' => $pos
+                    'entities' => $entities,
+                    'lastPage' => $lastPage,
+                    'previousPage' => $previousPage,
+                    'currentPage' => $page,
+                    'nextPage' => $nextPage,
+                    'total' => $total,
+                    'lang' => intval($lang),
+                    'langList' => $langList,
+                    'optPosition' => $optPos,
+                    'position' => $pos
         ));
     }
 
@@ -201,16 +200,16 @@ class MenuController extends Controller
                 $entityManager->flush();
 
                 $this->getRequest()
-                     ->getSession()
-                     ->getFlashBag()
-                     ->add('sm_flash_success', $this->get('translator')->trans('The operation is success'));
+                        ->getSession()
+                        ->getFlashBag()
+                        ->add('sm_flash_success', $this->get('translator')->trans('The operation is success'));
 
                 $referrer = $this->getRequest()->getSession()->get('referrer');
 
                 if (!$referrer) {
 
                     return $this->redirect(
-                        $this->generateUrl('admin_menu')
+                                    $this->generateUrl('admin_menu')
                     );
                 } else {
 
@@ -218,19 +217,19 @@ class MenuController extends Controller
                 }
             } else {
                 $this->getRequest()
-                     ->getSession()
-                     ->getFlashBag()
-                     ->add('sm_flash_error', $this->get('translator')->trans('The data input is invalid'));
+                        ->getSession()
+                        ->getFlashBag()
+                        ->add('sm_flash_error', $this->get('translator')->trans('The data input is invalid'));
             }
         }
 
         return $this->render('SMAdminBundle:Menu:new.html.twig', array(
-            'entity' => $entity,
-            'form' => $form->createView(),
-            'langList' => $langList,
-            'defaultLanguage' => $defaultLanguage,
-            'mnuTypeText' => $mnuTypeText,
-            'mnuTypeLink' => $mnuTypeLink
+                    'entity' => $entity,
+                    'form' => $form->createView(),
+                    'langList' => $langList,
+                    'defaultLanguage' => $defaultLanguage,
+                    'mnuTypeText' => $mnuTypeText,
+                    'mnuTypeLink' => $mnuTypeLink
         ));
     }
 
@@ -284,7 +283,17 @@ class MenuController extends Controller
 
         if ($this->getRequest()->isMethod('POST')) {
             $form->bind($this->getRequest());
+            $parent = $form->get('parent')->getData();
+            if (!is_null($parent)) {
+                $parentId = $parent->getId();
+                if ($parentId == $id) {
+                    $entity->setLanguage($defaultLanguage);
 
+                    $this->getRequest()->getSession()->getFlashBag()
+                            ->add('sm_flash_error', 'Please dont select parent is ' . $entity->getCurrentLanguage()->getName());
+                    return $this->redirect($this->generateUrl('admin_menu_edit', array('id' => $id)));
+                }
+            }
             if ($form->isValid()) {
                 //Set Url for menu
                 //Set Url for menu
@@ -312,15 +321,15 @@ class MenuController extends Controller
 
                 $entityManager->flush();
                 $this->getRequest()
-                     ->getSession()
-                     ->getFlashBag()
-                     ->add('sm_flash_success', $this->get('translator')->trans('The operation is success'));
+                        ->getSession()
+                        ->getFlashBag()
+                        ->add('sm_flash_success', $this->get('translator')->trans('The operation is success'));
                 $referrer = $this->getRequest()->getSession()->get('referrer');
 
                 if (!$referrer) {
 
                     return $this->redirect(
-                        $this->generateUrl('admin_menu')
+                                    $this->generateUrl('admin_menu')
                     );
                 } else {
 
@@ -328,19 +337,19 @@ class MenuController extends Controller
                 }
             } else {
                 $this->getRequest()
-                     ->getSession()
-                     ->getFlashBag()
-                     ->add('sm_flash_error', $this->get('translator')->trans('The data input is invalid'));
+                        ->getSession()
+                        ->getFlashBag()
+                        ->add('sm_flash_error', $this->get('translator')->trans('The data input is invalid'));
             }
         }
 
         return $this->render('SMAdminBundle:Menu:edit.html.twig', array(
-            'entity' => $entity,
-            'form' => $form->createView(),
-            'langList' => $langList,
-            'defaultLanguage' => $defaultLanguage,
-            'mnuTypeText' => $mnuTypeText,
-            'mnuTypeLink' => $mnuTypeLink
+                    'entity' => $entity,
+                    'form' => $form->createView(),
+                    'langList' => $langList,
+                    'defaultLanguage' => $defaultLanguage,
+                    'mnuTypeText' => $mnuTypeText,
+                    'mnuTypeLink' => $mnuTypeLink
         ));
     }
 
@@ -357,9 +366,9 @@ class MenuController extends Controller
         $rst = $rep->deleteByIds(array($id));
         if ($rst) {
             $this->getRequest()
-                     ->getSession()
-                     ->getFlashBag()
-                     ->add('sm_flash_success', $this->get('translator')->trans('The operation is success'));
+                    ->getSession()
+                    ->getFlashBag()
+                    ->add('sm_flash_success', $this->get('translator')->trans('The operation is success'));
         }
         // set referrer redirect
         $referrer = $this->getRequest()->server->get('HTTP_REFERER');
@@ -367,7 +376,7 @@ class MenuController extends Controller
         if (!$referrer) {
 
             return $this->redirect(
-                $this->generateUrl('admin_menu')
+                            $this->generateUrl('admin_menu')
             );
         } else {
 
@@ -382,8 +391,7 @@ class MenuController extends Controller
      *
      * @return type
      */
-    public function upAction($id)
-    {
+    public function upAction($id) {
         $em = $this->getDoctrine()->getEntityManager();
         $repo = $em->getRepository('SMAdminBundle:Menu');
         $oCat = $repo->findOneById($id);
@@ -392,9 +400,8 @@ class MenuController extends Controller
         }
 
         return $this->redirect(
-            $this->getRequest()->headers->get('referer')
+                        $this->getRequest()->headers->get('referer')
         );
-
     }
 
     /**
@@ -404,8 +411,7 @@ class MenuController extends Controller
      *
      * @return type
      */
-    public function downAction($id)
-    {
+    public function downAction($id) {
         $em = $this->getDoctrine()->getEntityManager();
         $repo = $em->getRepository('SMAdminBundle:Menu');
         $oCat = $repo->findOneById($id);
@@ -414,7 +420,7 @@ class MenuController extends Controller
         }
 
         return $this->redirect(
-            $this->getRequest()->headers->get('referer')
+                        $this->getRequest()->headers->get('referer')
         );
     }
 
@@ -424,8 +430,7 @@ class MenuController extends Controller
      * @param type $type
      * @return Response
      */
-    public function getParamAction($type)
-    {
+    public function getParamAction($type) {
         $container = \SM\Bundle\AdminBundle\SMAdminBundle::getContainer();
         $em = $this->getDoctrine()->getEntityManager();
         $repo = $em->getRepository('SMAdminBundle:Menu');
@@ -441,8 +446,7 @@ class MenuController extends Controller
      *
      * @return string
      */
-    private function buildUrlForMenu($type, $param = '', $idMenu = '')
-    {
+    private function buildUrlForMenu($type, $param = '', $idMenu = '') {
         $url = '';
         $container = \SM\Bundle\AdminBundle\SMAdminBundle::getContainer();
         $em = $this->getDoctrine()->getEntityManager();
@@ -506,7 +510,6 @@ class MenuController extends Controller
         return $url;
     }
 
-
     /**
      *
      * @param type $repo
@@ -515,8 +518,7 @@ class MenuController extends Controller
      *
      * @return string
      */
-    private function getAliasForMenu($repo, $id, $url, $idMenu = '')
-    {
+    private function getAliasForMenu($repo, $id, $url, $idMenu = '') {
         $container = \SM\Bundle\AdminBundle\SMAdminBundle::getContainer();
         $ext = $container->getParameter('ext_nice_url');
         $comma = $container->getParameter('comma_nice_url');
@@ -538,7 +540,7 @@ class MenuController extends Controller
         $entity->setLanguage($defaultLanguage);
         $name = $entity->getCurrentLanguage()->getName();
         $name = \SM\Bundle\AdminBundle\Utilities\Helper::cleanString($name, $comma);
-        $alias =  $url. $name . "$comma$id.$ext";
+        $alias = $url . $name . "$comma$id.$ext";
 
         //check menu is exist in table menu
         $repMenu = $this->getDoctrine()->getRepository("SMAdminBundle:Menu");
@@ -546,13 +548,13 @@ class MenuController extends Controller
         if ($isExist) {
             $lastestMenu = $repMenu->getLastestItem();
             $lastestId = $lastestMenu->getId() + 1;
-            $alias =  $url. $name . "$comma$lastestId"."$comma$id.".$ext;
+            $alias = $url . $name . "$comma$lastestId" . "$comma$id." . $ext;
         }
 
         $isExist = $repMenu->findBy(array('url' => $alias));
         if ($isExist) {
             $lastestId = $lastestId + 1;
-            $alias =  $url. $name . "$comma$lastestI"."$comma$id.".$ext;
+            $alias = $url . $name . "$comma$lastestI" . "$comma$id." . $ext;
         }
 
         return $alias;
@@ -564,12 +566,11 @@ class MenuController extends Controller
      * @param type $url
      * @return boolean
      */
-    private function checkUrlIsExist($url)
-    {
+    private function checkUrlIsExist($url) {
         $isExist = false;
         if ($url) {
             $rep = $this->getDoctrine()
-                ->getRepository("SMAdminBundle:Menu");
+                    ->getRepository("SMAdminBundle:Menu");
             $rst = $rep->findBy(array('url' => $url));
         }
         return $isExist;
@@ -581,8 +582,7 @@ class MenuController extends Controller
      * @param \Symfony\Component\HttpFoundation\Request $request
      * @return type
      */
-    public function deleteAllAction(Request $request)
-    {
+    public function deleteAllAction(Request $request) {
         $id = $request->get('checklist');
         $rep = $this->getDoctrine()
                 ->getRepository("SMAdminBundle:MenuLanguage");
@@ -594,20 +594,20 @@ class MenuController extends Controller
 
         if ($rst) {
             $this->getRequest()
-                     ->getSession()
-                     ->getFlashBag()
-                     ->add('sm_flash_success', $this->get('translator')->trans('The operation is success'));
+                    ->getSession()
+                    ->getFlashBag()
+                    ->add('sm_flash_success', $this->get('translator')->trans('The operation is success'));
         } else {
             $this->getRequest()
-                     ->getSession()
-                     ->getFlashBag()
-                     ->add('sm_flash_success', $this->get('translator')->trans('The operation is fail'));
+                    ->getSession()
+                    ->getFlashBag()
+                    ->add('sm_flash_success', $this->get('translator')->trans('The operation is fail'));
         }
 
         if (!$referrer) {
 
             return $this->redirect(
-                $this->generateUrl('admin_news')
+                            $this->generateUrl('admin_news')
             );
         } else {
 
@@ -620,12 +620,12 @@ class MenuController extends Controller
      * @param type $position
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function getMenuParentByPositionAction($position)
-    {
+    public function getMenuParentByPositionAction($position) {
         $container = \SM\Bundle\AdminBundle\SMAdminBundle::getContainer();
         $em = $this->getDoctrine()->getEntityManager();
         $repo = $em->getRepository('SMAdminBundle:Menu');
         $options = $repo->getOptionParent($position);
         return new Response(json_encode($options));
     }
+
 }

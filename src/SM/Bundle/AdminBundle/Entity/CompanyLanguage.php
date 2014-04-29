@@ -43,6 +43,13 @@ class CompanyLanguage {
      * @ORM\Column(name="name", type="string", length=255, nullable=true)
      */
     private $name;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="alias", type="string", length=255, nullable=true)
+     */
+    private $alias;
 
     /**
      * @var string
@@ -134,6 +141,18 @@ class CompanyLanguage {
 
         return $this;
     }
+    
+    /**
+     * Set alias
+     *
+     * @param string $alis
+     * @return CompanyLanguage
+     */
+    public function setAlias($alias) {
+        $this->alias = $alias;
+
+        return $this;
+    }
 
     /**
      * Get name
@@ -142,6 +161,15 @@ class CompanyLanguage {
      */
     public function getName() {
         return $this->name;
+    }
+    
+    /**
+     * Get alias
+     *
+     * @return string
+     */
+    public function getAlias() {
+        return $this->alias;
     }
 
     /**

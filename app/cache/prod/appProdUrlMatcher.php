@@ -716,7 +716,7 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
 
         if (0 === strpos($pathinfo, '/admin/media')) {
             // admin_media
-            if (preg_match('#^/admin/media(?:/(?P<page>\\d+)(?:/(?P<lang>[^/]+))?)?$#s', $pathinfo, $matches)) {
+            if (preg_match('#^/admin/media(?:/(?P<page>\\d+)(?:/(?P<lang>\\d+))?)?$#s', $pathinfo, $matches)) {
                 return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'SM\\Bundle\\AdminBundle\\Controller\\MediaController::indexAction',  'page' => '1',  'lang' => '1',)), array('_route' => 'admin_media'));
             }
 

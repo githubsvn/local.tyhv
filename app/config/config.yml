@@ -124,8 +124,6 @@ services:
      class: Twig_Extensions_Extension_Text
      tags:
          - { name: twig.extension }
-  #rss_service:
-    #class: SM\Bundle\SoapBundle\Services\RssService
 
 liip_imagine:
   web_root: %kernel.root_dir%/../web/uploads/images/
@@ -141,5 +139,5 @@ swiftmailer:
     encryption: ssl
     auth_mode:  login
     host:       smtp.gmail.com
-    username:   leminhthien84@gmail.com
-    password:   878533@@ThienLe
+    username:   tyhv2014@gmail.com
+    password:   Admin@@123456

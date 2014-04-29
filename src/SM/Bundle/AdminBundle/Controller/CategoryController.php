@@ -229,7 +229,19 @@ class CategoryController extends Controller
 
         if ($this->getRequest()->isMethod('POST')) {
             $form->bind($this->getRequest());
+            
+            $parent = $form->get('parent')->getData();
+            if (!is_null($parent)) {
+                $parentId = $parent->getId();
+                if ($parentId == $id) {
+                    $entity->setLanguage($defaultLanguage);
 
+                    $this->getRequest()->getSession()->getFlashBag()
+                            ->add('sm_flash_error', 'Please dont select parent is ' . $entity->getCurrentLanguage()->getName());
+                    return $this->redirect($this->generateUrl('admin_category_edit', array('id' => $id)));
+                }
+            }
+            
             if ($form->isValid()) {
                 $entityManager = $this->getDoctrine()->getEntityManager();
                 foreach ($entity->getCategoryLanguages() as $catLanguage) {
